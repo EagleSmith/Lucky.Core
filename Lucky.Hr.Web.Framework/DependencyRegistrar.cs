@@ -8,6 +8,7 @@ using Autofac.Core;
 using Autofac.Integration.Mvc;
 using Lucky.Hr.Caching;
 using Lucky.Hr.Core.Cache.RedisCache;
+using Lucky.Hr.Core.Data.Dapper;
 using Lucky.Hr.Core.Events.EventsBus;
 using Lucky.Hr.Core.Infrastructure.DependencyManagement;
 using Lucky.Hr.Core.Logging;
@@ -34,13 +35,13 @@ namespace Lucky.Hr.Web.Framework
 
             #region 缓存注入
             builder.RegisterModule(new CacheModule());
-           
-            builder.RegisterType<DefaultCacheManager>().Keyed<ICacheManager>("RedisCacheManager")
-                .WithParameters(
-                new[] { new ResolvedParameter((pi, i) => pi.ParameterType == typeof(Type), (pi, i) => GetType()), new ResolvedParameter((pi, i) => pi.ParameterType == typeof(ICacheHolder), (pi, i) => i.ResolveNamed<ICacheHolder>("RedisCache")) }
-                ).SingleInstance();
-            builder.RegisterType<RedisCacheHolder>().Keyed<ICacheHolder>("RedisCache").SingleInstance();
-            builder.RegisterType<DefaultCacheHolder>().As<ICacheHolder>().SingleInstance();
+            //builder.RegisterType<>().As<ICacheManager>().SingleInstance();
+            //builder.RegisterType<DefaultCacheManager>().Keyed<ICacheManager>("RedisCacheManager")
+            //    .WithParameters(
+            //    new[] { new ResolvedParameter((pi, i) => pi.ParameterType == typeof(Type), (pi, i) => GetType()), new ResolvedParameter((pi, i) => pi.ParameterType == typeof(ICacheHolder), (pi, i) => i.ResolveNamed<ICacheHolder>("RedisCache")) }
+            //    ).SingleInstance();
+            // builder.RegisterType<RedisCacheHolder>().Keyed<ICacheHolder>("RedisCache").SingleInstance();
+            builder.RegisterType<RedisCacheHolder>().As<ICacheHolder>().SingleInstance();
             builder.RegisterType<DefaultCacheContextAccessor>().As<ICacheContextAccessor>().SingleInstance();
             builder.RegisterType<DefaultParallelCacheContext>().As<IParallelCacheContext>().SingleInstance();
             builder.RegisterType<DefaultAsyncTokenProvider>().As<IAsyncTokenProvider>().SingleInstance();
@@ -74,6 +75,7 @@ namespace Lucky.Hr.Web.Framework
             #endregion
 
             #region 注册数据操作
+            builder.RegisterType<DapperContext>().As<IDbContext>().WithParameter("connectionName", "LuckyNewsContext").InstancePerLifetimeScope();
             builder.RegisterType<HrDbContext>().As<IHrDbContext>().InstancePerLifetimeScope();
             builder.RegisterType<NewsContext>().As<INewsContext>().InstancePerLifetimeScope();
 

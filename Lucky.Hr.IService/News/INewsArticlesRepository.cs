@@ -12,11 +12,13 @@ using System.Collections.Generic;
 using System.Text;
 using Lucky.Hr.Entity;
 using Lucky.Hr.Core.Data;
+using Lucky.Hr.ViewModels.Models.News;
 
 namespace Lucky.Hr.IService
 {
     public interface INewsArticlesRepository : IRepository<NewsArticle>
     {
         void DeleteMore(string ids);
+        List<NewsArticlesViewModel> GetArticlesViewModels();
     }
 }

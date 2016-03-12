@@ -206,6 +206,6 @@ namespace Lucky.Hr.Core.Data
         void Delete(object key);
 
 
-        Lucky.Hr.Core.IDbContext IContext { get; }
+        
     }
 }

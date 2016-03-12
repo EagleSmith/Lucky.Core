@@ -210,16 +210,7 @@ namespace Lucky.Hr.Core.Data
             _context.ObjectContext.ObjectStateManager.ChangeObjectState(item, System.Data.Entity.EntityState.Deleted);
         }
 
-        public Lucky.Hr.Core.IDbContext IContext
-        {
-            get
-            {
-                Lucky.Hr.Core.IDbContext context = new Lucky.Hr.Core.DbContext();
-                var dbContext = _context as System.Data.Entity.DbContext;
-                if (dbContext != null) context.CreateConnection(dbContext.Database.Connection, new SqlServerProvider());
-                return context;
-            }
-        }
+       
 
         #endregion
 

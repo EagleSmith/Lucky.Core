@@ -160,7 +160,7 @@ namespace Lucky.Hr.Core.Data.Dapper
     /// Use it to create your own DbContext
     /// It will help manage connection life time and transactions
     /// </summary>
-    public abstract class DapperContext : IDbContext
+    public  class DapperContext : IDbContext
     {
         private static readonly ConcurrentDictionary<RuntimeTypeHandle, IEnumerable<PropertyInfo>> KeyProperties = new ConcurrentDictionary<RuntimeTypeHandle, IEnumerable<PropertyInfo>>();
         private static readonly ConcurrentDictionary<RuntimeTypeHandle, IEnumerable<PropertyInfo>> TypeProperties = new ConcurrentDictionary<RuntimeTypeHandle, IEnumerable<PropertyInfo>>();
