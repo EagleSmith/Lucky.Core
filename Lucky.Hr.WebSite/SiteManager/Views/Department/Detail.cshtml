@@ -1,0 +1,130 @@
+﻿@model Lucky.Hr.ViewModels.Models.SiteManager.DepartmentViewModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+
+<header class="header bg-white b-b clearfix">
+
+    <div class="row m-t-sm">
+        <div class="col-sm-8 m-b-xs">
+            <div class="btn-group">
+                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-default" title="删除" data-msg-required="简介不能为空" data-toggle="batch" data-href="@Url.Action("Delete","Department",new{ID=Model.DepartmentId})">
+                    <i class="fa fa-trash-o m-r-xs"></i>删除
+                </button>
+            </div>
+
+            <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>新增部门</a>
+            <a href="@Url.Action("Index")" class="btn btn-sm btn-default m-r"><i class="fa fa-list m-r-xs"></i>部门列表</a>
+
+        </div>
+
+    </div>
+
+
+</header>
+
+<section class="scrollable wrapper">
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tabinfo" data-toggle="tab">部门信息</a>
+                </li>
+            </ul>
+        </header>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabinfo">
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DepartmentId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DepartmentId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DistributorId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DistributorId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ParentId)
+                            </dt>
+
+                            <dd>
+                                @if (Model.ParentId != "")
+                                {
+                                    @Html.ActionLink(Model.ParentName, "Detail", new { id = Model.ParentId })
+                                }
+                                @Html.DisplayFor(model => model.ParentName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DepartmentName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DepartmentName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Description)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.State)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.State)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Sort)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Sort)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </section>

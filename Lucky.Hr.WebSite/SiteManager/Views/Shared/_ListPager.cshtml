@@ -1,0 +1,21 @@
+﻿@using Lucky.Hr.Core
+@using LiteCode.MvcPager
+@model IPagedList<Lucky.Hr.ViewModels.ViewModelsBase>
+<footer class="footer bg-white b-t">
+    <div class="row text-center-xs">
+        <div class="col-md-4 hidden-sm">
+            <p class="text-muted m-t" style="color:#2a6496 !important;">共 @Model.TotalPages 页 @Model.TotalCount 条记录，当前为第 @Model.PageIndex 页</p>
+        </div>
+        <div class="col-md-8 col-sm-12 text-right text-center-xs">
+            @Html.Pager(Model, new PagerOptions
+                                                   {
+                                                       ShowPageIndexBox = false,
+                                                       ShowGoButton = false,
+                                                       AutoHide = false,
+                                                       PageIndexBoxType = PageIndexBoxType.TextBox,
+                                                       PagerItemsSeperator = "",
+                                                       CurrentPagerItemWrapperFormatString = "<li class=\"active\"><a href='#'>{0}</a></li>"
+                                                   }, new { id = "badoopager" })
+        </div>
+    </div>
+</footer>

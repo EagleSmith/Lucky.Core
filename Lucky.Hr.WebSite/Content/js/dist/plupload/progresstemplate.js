@@ -1,0 +1,2 @@
+/* 进度条模板 */
+define("dist/plupload/progresstemplate", [], '<div id="upload{{id}}" class="uploadify-queue-item">  \n	<span class="fileName">{{filename}} ({{filesize}}KB)</span>\n	<span class="data"> -上传完成 正在加载.....</span>   \n	<div class="uploadify-progress">                        \n		<div class="uploadify-progress-bar" style="width: 1%;"><!--Progress Bar-->\n		</div>                    \n	</div>                \n</div>');

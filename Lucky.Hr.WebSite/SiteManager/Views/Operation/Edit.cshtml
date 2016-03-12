@@ -1,0 +1,26 @@
+﻿@model Lucky.Hr.ViewModels.Models.SiteManager.OperationViewModel
+
+@{
+    ViewBag.Title = "修改";
+}
+
+<header class="header bg-white b-b b-light">
+    <p>添加权限</p>
+</header>
+<section class="scrollable  wrapper">
+    @using (Html.BeginForm("Edit", "Operation", FormMethod.Post, new { @class = "form-horizontal form-validate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model=>model.OperationId)
+        @Html.HiddenFor(model=>model.OperationValue)
+        <section class="panel panel-default">
+            <header class="panel-heading bg-light">
+                基本信息
+            </header>
+            @Html.Partial("_CreateOrEdit", Model)
+
+        </section>
+    }
+
+</section>

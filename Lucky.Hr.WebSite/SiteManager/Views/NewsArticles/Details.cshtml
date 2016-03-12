@@ -1,0 +1,250 @@
+﻿@using Lucky.Hr.Web.Framework.HtmlExtensions
+@model Lucky.Hr.ViewModels.Models.News.NewsArticlesViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<header class="header bg-white b-b clearfix">
+    <div class="row m-t-sm">
+        <div class="col-sm-8 m-b-xs">
+            <div class="btn-group">
+                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-default" title="删除" data-msg-required="标题不能为空" data-toggle="batch" data-href="@Url.Action("Delete","NewsArticles",new{ID=Model.ArticleID})">
+                    <i class="fa fa-trash-o m-r-xs"></i>删除
+                </button>
+            </div>
+            <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>添加文章</a>
+            <a href="@Url.Action("Edit",new{Id=Model.ArticleID})" class="btn btn-sm btn-default m-r"><i class="fa fa-edit m-r-xs"></i>编辑文章</a>
+
+        </div>
+
+    </div>
+</header>
+
+<section class="scrollable wrapper">
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tabinfo" data-toggle="tab">文章详细</a>
+                </li>
+            </ul>
+        </header>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabinfo">
+
+                   
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CategoryID)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CategoryTitle)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </dt>
+
+                            <dd>@Html.DisplayFor(model => model.Title) 
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Summarize)
+                            </dt>
+
+                            <dd>@Html.DisplayFor(model => model.Summarize)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Source)
+                            </dt>
+
+                            <dd>@Html.DisplayFor(model => model.Source)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Author)
+                            </dt>
+
+                            <dd>@Html.DisplayFor(model => model.Author)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Editor)
+                            </dt>
+
+                            <dd>@Html.DisplayFor(model => model.Editor)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.KeyWord)
+                            </dt>
+
+                            <dd>@Html.DisplayFor(model => model.KeyWord)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsTop)
+                            </dt>
+
+                            <dd>
+                                @Html.TextTrueOrFalseFor(model => model.IsTop)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsHot)
+                            </dt>
+
+                            <dd>
+                                @Html.TextTrueOrFalseFor(model => model.IsHot)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsComment)
+                            </dt>
+
+                            <dd>
+                                @Html.TextTrueOrFalseFor(model => model.IsComment)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsLock)
+                            </dt>
+
+                            <dd>
+                                @Html.TextTrueOrFalseFor(model => model.IsLock)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsCommend)
+                            </dt>
+
+                            <dd>
+                                @Html.TextTrueOrFalseFor(model => model.IsCommend)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsSlide)
+                            </dt>
+
+                            <dd>
+                                @Html.TextTrueOrFalseFor(model => model.IsSlide)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ImgUrl)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ImgUrl)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ClickNum)
+                            </dt>
+
+                            <dd>
+                               @Html.DisplayFor(model => model.ClickNum)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CreateDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CreateDate)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.UpdateDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.UpdateDate)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                               @Html.DisplayNameFor(model => model.OrgID)
+                            </dt>
+
+                            <dd>
+                               @Html.DisplayFor(model => model.OrgID)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.UserID)
+                            </dt>
+
+                            <dd>
+                               @Html.DisplayFor(model => model.UserID) 
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</section>

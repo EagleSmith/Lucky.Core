@@ -1,0 +1,374 @@
+﻿@model Lucky.Hr.ViewModels.Models.SiteManager.AspNetUsersViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<header class="header bg-white b-b clearfix">
+
+    <div class="row m-t-sm">
+        <div class="col-sm-8 m-b-xs">
+            <div class="btn-group">
+                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-default" title="删除" data-msg-required="简介不能为空" data-toggle="batch" data-href="@Url.Action("Delete","AspNetUsers",new{ID=Model.Id})">
+                    <i class="fa fa-trash-o m-r-xs"></i>删除
+                </button>
+            </div>
+            <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>新增用户</a>
+            <a href="@Url.Action("Edit",new{Id=Model.Id})" class="btn btn-sm btn-default m-r"><i class="fa fa-edit m-r-xs"></i>编辑用户</a>
+            <a href="@Url.Action("ChangePassword", new {Id = Model.Id})" class="btn btn-sm btn-default m-r"><i class="fa fa-edit m-r-xs"></i>修改密码</a>
+           @Html.ActionLink("修改密码", "ChangePassword", null, new { Id = Model.Id }, new { id = "btnCreate", @class = "btn btn-sm btn-default m-r" })
+
+           
+        </div>
+
+    </div>
+</header>
+<section class="scrollable wrapper">
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tabinfo" data-toggle="tab">用户详情</a>
+                </li>
+            </ul>
+        </header>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabinfo">
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DistributorId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DistributorId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DepartmentId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DepartmentId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.UserName)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.FullName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.FullName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsSuper)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.IsSuper)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsLock)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.IsLock)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LoginCount)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LoginCount)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LastLoginDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LastLoginDate)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LastLoginIp)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LastLoginIp)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LastModify)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LastModify)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Token)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Token)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.State)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.State)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.BehaviorRemind)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.BehaviorRemind)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AddManagerId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AddManagerId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AddFullName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AddFullName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AddDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AddDate)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.EmailConfirmed)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EmailConfirmed)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PhoneNumber)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TwoFactorEnabled)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LockoutEndDateUtc)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LockoutEnabled)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LockoutEnabled)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AccessFailedCount)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AccessFailedCount)
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id='dialogDiv' class='modal  fade in'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id='dialogContent'></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</section>
+@section Scripts
+{
+    <script type="text/javascript">
+        define("formSubmit", ["$"], function(require, exports, module) {
+            "use strict";
+            //调用jquery
+            var $ = require("$");
+            //模块内部对外提供接口
+            var formSubmit = {};
+            formSubmit.Submit = function() {
+                $.ajaxSetup({ cache: false });
+                $('#btnCreate').click(function() {
+                    $('#dialogContent').load(this.href, function() {
+                        $('#dialogDiv').modal({
+                            keyboard: true
+                        }, 'show');
+                        $("#dialogDiv").removeData("validator").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse($("#dialogDiv"));
+                        bindForm(this);
+                    });
+                    return false;
+                });
+
+                function bindForm(dialog) {
+                    $('form', dialog).submit(function() {
+                        $.ajax({
+                            url: this.action,
+                            type: this.method,
+                            data: $(this).serialize(),
+                            success: function(result) {
+                                if (result.success) {
+                                    $('#dialogDiv').modal('hide');
+                                } else {
+                                    $('#dialogContent').html(result);
+                                    bindForm();
+                                }
+                            }
+                        });
+                        return false;
+                    });
+                }
+            };
+            module.exports = formSubmit;
+        });
+
+        seajs.use("formSubmit", function(con) {
+            con.Submit();
+        });
+    </script>
+    }
+

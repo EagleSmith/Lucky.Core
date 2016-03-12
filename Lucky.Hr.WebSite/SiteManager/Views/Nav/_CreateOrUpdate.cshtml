@@ -1,0 +1,145 @@
+﻿@using Lucky.Hr.Web.Framework.HtmlExtensions
+@model Lucky.Hr.ViewModels.Models.SiteManager.NavViewModel
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.NavId, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.NavId, new { htmlAttributes = new { @class = "form-control" ,@readonly="true"} })
+            @Html.ValidationMessageFor(model => model.NavId)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ParentId, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.DropDownListTreeFor(model=>model.ParentId,Model.ParentItems,"",true, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ParentId)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.NavType, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.NavType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NavType)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.NavName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-4">
+        <div class="input-group">
+            @Html.EditorFor(model => model.NavName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NavName)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.SystemName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-4">
+        <div class="input-group">
+            @Html.EditorFor(model => model.SystemName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SystemName)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Logo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Logo)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Url, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Url)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ControllerName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.ControllerName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ControllerName)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ActionName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.ActionName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ActionName)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsExpend, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            
+                @Html.DropdownlistTrueOrFalse(model => model.IsExpend, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IsExpend)
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.State)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Sort, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Sort, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Sort)
+        </div>
+    </div>
+</div>
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    <div class="col-sm-4 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+        <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+    </div>
+</div>

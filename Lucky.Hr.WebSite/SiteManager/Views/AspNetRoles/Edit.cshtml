@@ -1,0 +1,27 @@
+﻿
+@model Lucky.Hr.ViewModels.Models.SiteManager.AspNetRolesViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<header class="header bg-white b-b b-light">
+    <p>修改角色</p>
+</header>
+<section class="scrollable  wrapper">
+    @using (Html.BeginForm("Edit", "AspNetRoles", FormMethod.Post, new { @class = "form-horizontal form-validate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <section class="panel panel-default">
+            <header class="panel-heading bg-light">
+                基本信息
+            </header>
+            @Html.Partial("_CreateOrEdit", Model)
+
+        </section>
+    }
+
+</section>
+

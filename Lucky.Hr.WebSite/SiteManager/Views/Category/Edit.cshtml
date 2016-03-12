@@ -1,0 +1,25 @@
+﻿@model Lucky.Hr.ViewModels.Models.News.CategoryViewModel
+
+@{
+    ViewBag.Title = "编辑";
+}
+
+
+<header class="header bg-white b-b b-light">
+    <p>编辑分类</p>
+</header>
+<section class="scrollable  wrapper">
+    @using (Html.BeginForm("Edit", "Category", FormMethod.Post, new { @class = "form-horizontal form-validate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <section class="panel panel-default">
+            <header class="panel-heading bg-light">
+                基本信息
+            </header>
+            @Html.Partial("_CreateOrUpdate", Model)
+        </section>
+    }
+
+</section>
+

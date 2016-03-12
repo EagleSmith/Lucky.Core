@@ -1,0 +1,53 @@
+﻿@using GridMvc.Html
+@model Lucky.Hr.Core.PagedList<Lucky.Hr.ViewModels.Models.News.CategoryViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<header class="header bg-white b-b clearfix">
+    <form class="talbe-search form-inline" method="post" action="@Url.Action("Index")">
+        <div class="row m-t-sm">
+            <div class="col-sm-8 m-b-xs">
+                <div class="btn-group">
+                    <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+
+                </div>
+
+                <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>新增分类</a>
+
+            </div>
+            <div class="col-sm-4 m-b-xs">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" value="" name="keyword" placeholder="名称/编号" data-rule-required="true" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</header>
+<section class="scrollable wrapper w-f">
+    <section class="panel panel-default ">
+        <div class="table-responsive">
+            @Html.Grid(Model).Columns(columns =>
+            {
+                columns.Add().Encoded(false).IsCheckBox(true).Sanitized(false).SetWidth(100).CheckBoxDataId(m=>m.CategoryID.ToString());
+                columns.Add(a => a.CategoryID).Titled("编号");
+                columns.Add(a => a.Title).Encoded(false).Sanitized(false).Titled("分类名称");
+                columns.Add(a => a.Description).Titled("分类描述");
+                columns.Add(a => a.CreateDate).Titled("添加时间");
+                columns.Add().Encoded(false).Sanitized(false).Titled("操作").RenderValueAs(a => @<b>
+                    @Html.ActionLink("查看 ", "Details", new { id = a.CategoryID })
+                </b>);
+            })
+
+        </div>
+    </section>
+</section>
+@Html.Partial("_ListPager", Model)

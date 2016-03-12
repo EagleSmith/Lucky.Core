@@ -1,0 +1,126 @@
+﻿@model Lucky.Hr.ViewModels.Models.News.CategoryViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<header class="header bg-white b-b clearfix">
+
+    <div class="row m-t-sm">
+        <div class="col-sm-8 m-b-xs">
+            <div class="btn-group">
+                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-default" title="删除" data-msg-required="分类不能为空" data-toggle="batch" data-href="@Url.Action("Delete","Category",new{ID=Model.CategoryID})">
+                    <i class="fa fa-trash-o m-r-xs"></i>删除
+                </button>
+            </div>
+            <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>新增分类</a>
+            <a href="@Url.Action("Edit",new{Id=Model.CategoryID})" class="btn btn-sm btn-default m-r"><i class="fa fa-edit m-r-xs"></i>编辑分类</a>
+
+        </div>
+
+    </div>
+
+
+</header>
+
+<section class="scrollable wrapper">
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tabinfo" data-toggle="tab">分类详细</a>
+                </li>
+            </ul>
+        </header>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabinfo">
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CategoryID)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CategoryID)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Title)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Description)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.HyperLink)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HyperLink)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ParentID)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ParentID)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DisplayOrder)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DisplayOrder)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CreateDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CreateDate)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</section>

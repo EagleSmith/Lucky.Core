@@ -1,0 +1,210 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="~/Content/assets/js/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        "use strict"
+        var _speedMark = new Date(), www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                <li><a href="javascript:;"><i class="fa fa-dashboard"></i>旺铺概况</a></li>
+            </ul>
+            <section class="panel panel-default m-t">
+                <div class="row m-l-none m-r-none bg-light lter">
+                    <div class="col-sm-6 col-md-3 padder-v b-r b-light">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-truck fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear">
+                            <span class="h3 block m-t-xs"><strong>0</strong></span>
+                            <small class="text-muted text-uc">待发货订单</small>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                            <i class="fa fa-legal fa-stack-1x text-white"></i>
+                            <span class="easypiechart pos-abt" data-percent="100" data-line-width="4" data-track-color="#fff" data-scale-color="false" data-size="50" data-line-cap='butt' data-animate="2000" data-target="#bugs" data-update="3000"></span>
+                        </span>
+                        <a class="clear">
+                            <span class="h3 block m-t-xs"><strong id="bugs">0</strong></span>
+                            <small class="text-muted text-uc">待处理维权</small>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 padder-v b-r b-light">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                            <i class="fa fa-clipboard  fa-stack-1x text-white"></i>
+                            <span class="easypiechart pos-abt" data-percent="100" data-line-width="4" data-track-color="#f5f5f5" data-scale-color="false" data-size="50" data-line-cap='butt' data-animate="3000" data-target="#firers" data-update="5000"></span>
+                        </span>
+                        <a class="clear">
+                            <span class="h3 block m-t-xs"><strong id="firers">1</strong></span>
+                            <small class="text-muted text-uc">昨日下单数</small>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x icon-muted"></i>
+                            <i class="fa fa-yen fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear">
+                            <span class="h3 block m-t-xs"><strong>0.00</strong></span>
+                            <small class="text-muted text-uc">昨日成交金额</small>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <div class="row">
+                <div class="col-md-8">
+                    <section class="panel panel-default">
+                        <header class="panel-heading font-bold">7天订单数据</header>
+                        <div class="panel-body">
+                            <div id="visit_charts" style="height: 210px" data-path="/SiteManager/Home/GetOrderCount">
+                                <div class="load">数据加载中...</div>
+                            </div>
+                        </div>
+                        <footer class="panel-footer bg-white no-padder">
+                            <div class="row text-center no-gutter">
+
+                                <div class="col-xs-3 b-r b-light">
+                                    <span class="h4 font-bold m-t block">1</span>
+                                    <small class="text-muted m-b block">下单数</small>
+                                </div>
+                                <div class="col-xs-3 b-r b-light">
+                                    <span class="h4 font-bold m-t block">0</span>
+                                    <small class="text-muted m-b block">成交数</small>
+                                </div>
+                                <div class="col-xs-3">
+                                    <span class="h4 font-bold m-t block">0</span>
+                                    <small class="text-muted m-b block">退单数</small>
+                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                </div>
+                <div class="col-md-4">
+                    <section class="panel panel-default">
+                        <header class="panel-heading font-bold">7天交易数据</header>
+                        <div class="bg-light dk wrapper">
+
+                            <div class="text-center m-b-n m-t-sm">
+                                <div class="js_turnover" style="height: 100px" data-path="/SiteManager/Home/GetOrderTrade?type=1"><i class="fa fa-spinner fa-spin"></i></div>
+                                <div class="js_refund inline" style="height: 50px" data-path="/SiteManager/Home/GetOrderTrade?type=2"><i class="fa fa-spinner fa-spin"></i></div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <span class="text-muted">总金额</span>
+                                <span class="h3 block money">0.00</span>
+                            </div>
+                            <div class="line pull-in"></div>
+                            <div class="row m-t-sm">
+                                <div class="col-xs-6">
+                                    <small class="text-muted block">成交额</small>
+                                    <span class="money">0.00</span>
+                                </div>
+                                <div class="col-xs-6">
+                                    <small class="text-muted block">退款</small>
+                                    <span class="money">0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="panel panel-default">
+                        <header class="panel-heading font-bold">
+                            <div class="row">
+                                <div class="col-sm-10 m-t-xs">更新通知</div>
+                                <div class="col-sm-2 text-right">
+                                    <div class="form-group m-n">
+                                        <a class="btn btn-default btn-sm " href="/vshop/SystemSet/SystemMessageList">
+                                            更多
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="m-r-xs">2014年11月14日</span> 旺铺“满减/包邮”活动全新上线，支持减免（可上不封顶）、折扣、包邮等多种活动规则，可多层级设置。<a style="color:#009DDA;" href="http://bbs.weimob.com/forum.php?mod=viewthread&tid=820" target="_blank">进入微盟社区查看更多信息。</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="m-r-xs">2014年11月7日</span>新增旺铺模板消息功能，模板消息需要在微盟后台进行新建和设置；新增旺铺红包功能，商户可在微盟后台设置红包相关信息，用户获得的红包可直接在旺铺进行消费抵扣
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="m-r-xs">2014年10月31日</span>新增收货地址共享功能；新增订单设置只允许粉丝购买、自动关闭、自动确认收货、指定时间后关闭退款/退货功能；发货管理增加快递单打印功能；订单导出列表增加新的导出内容；修复库存计算方式为下单减库存时，订单关闭后没有恢复库存的问题；修复收货地址区县没有选项时无法保存收货地址的问题
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="m-r-xs">2014年10月31日</span>订单详情页增加订单支付信息展示；新增网页消息提醒功能；从购物车下单成功后返回购物车时清空已购商品，优化购物车中对下架、库存不足、限购商品的提示文案；修复购买设置运费模板的商品，下单页有时没有使用收货地址所对应运费的问题；修复评论成功后返回评论页面时可以重复评论的问题
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="m-r-xs">2014年10月31日</span>发货管理已发货列表展示快递公司和快递单号信息；运费模板设置运费时，重量、体积、运费可输入最多两位的小数；优化多人同时支付时的众筹结束提示；积分、优惠券能够抵扣所有订单金额时，支付方式改为“无”；修复商品详情模板2中数量加减功能有时无效的问题；修复多人同时支付时，可能导致的库存显示为负数的问题
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="~/Content/js/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="~/Content/js/seajs_config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/home/init.js"],function() {
+           var thisURL = document.URL;
+           var thisHREF = document.location.href;
+           var thisSLoc = self.location.href;
+           var thisDLoc = document.location;
+
+           var thisTLoc = top.location.href;
+           var thisPLoc = parent.document.location;
+           var thisTHost = top.location.hostname;
+           var thisHost = location.hostname;
+
+           var tmpHPage = thisHREF.split("/");
+           var thisHPage = tmpHPage[tmpHPage.length - 1];
+           var tmpUPage = thisURL.split("/");
+           var thisUPage = tmpUPage[tmpUPage.length - 1];
+            console.log(document.location.origin);
+           console.log(thisURL);
+           console.log(thisHREF);
+           console.log(thisSLoc);
+           console.log(thisDLoc);
+           console.log(thisTLoc);
+           console.log(thisPLoc);
+
+           console.log(thisTHost);
+           console.log(thisHost);
+           console.log(tmpHPage);
+
+           console.log(thisHPage);
+           console.log(tmpUPage);
+           console.log(thisUPage);
+
+        })
+    </script>
+</body>
+</html>

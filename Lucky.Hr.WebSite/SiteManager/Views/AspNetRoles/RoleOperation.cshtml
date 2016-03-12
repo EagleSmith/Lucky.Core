@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Lucky.Hr.ViewModels.Models.SiteManager.NavOperationViewModel>
+@{
+    ViewBag.Title = "RoleOperation";
+    string RoleId = @ViewBag.RoleId;
+}
+
+<header class="header bg-white b-b clearfix">
+
+    <div class="row m-t-sm">
+        <div class="col-sm-8 m-b-xs">
+            <div class="btn-group">
+                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                    <i class="fa fa-refresh"></i>
+                </button>
+
+            </div>
+            <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>新增角色</a>
+            <a href="@Url.Action("Index")" class="btn btn-sm btn-default m-r"><i class="fa fa-list m-r-xs"></i>角色列表</a>
+
+        </div>
+
+    </div>
+
+
+</header>
+<section class="scrollable wrapper w-f">
+    <section class="panel panel-default">
+        @using (Html.BeginForm("RoleOperation", "AspNetRoles",FormMethod.Post))
+        {
+            
+            @Html.Hidden("RoleId",RoleId)
+            <div class="row">
+                <div class="col-md-12">
+
+                    @foreach (var pmodel in Model.Where(a => a.NavId.Length == 6))
+                    {
+                        <div class="panel panel-default  div-m-top">
+                            <header class="panel-heading bg-info ">
+                                <i class="fa fa-list m-r-sm"></i> @pmodel.NavName
+                            </header>
+                            @{ int i = 1, a1 = 0; }
+                            @foreach (var navmodel in Model.Where(b => b.ParentId == pmodel.NavId))
+                            {
+                                <div class="row">
+                                    <div class="col-sm-12">
+
+                                        <dl class="dl-horizontal borderline">
+                                            <dt>
+                                                @navmodel.NavName
+                                            </dt>
+
+                                            <dd>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+
+                                                        @foreach (var oper in navmodel.Operations)
+                                                        {
+
+                                                            if (oper.Checked)
+                                                            {
+                                                                <span class="checkboxFour"><input id="@navmodel.NavId@a1" type=checkbox name='@navmodel.NavId' value='@oper.OperationId' checked="checked"><label for="@navmodel.NavId@a1"></label><label>@oper.OperationName</label></span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="checkboxFour"><input id="@navmodel.NavId@a1" type=checkbox name='@navmodel.NavId' value='@oper.OperationId'><label for="@navmodel.NavId@a1"></label><label>@oper.OperationName</label></span>
+                                                            }
+                                                            a1++;
+
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+
+                                </div>
+                                i++;
+                            }
+
+                        </div>
+                    }
+                    
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                            <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        }
+    </section>
+</section>

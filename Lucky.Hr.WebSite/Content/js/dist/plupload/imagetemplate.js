@@ -1,0 +1,2 @@
+/* 图片模板 */
+define("dist/plupload/imagetemplate", [], '<li class="imgbox" data-post-id="{{id}}" data-path="{{thumbnail}}">\n	<a class="item_new_close item_close" href="javascript:void(0)" data-delpath="{{deletepath}}" data-progressid="{{progressid}}" title="删除"  data-path="{{thumbnail}}" data-post-id="{{id}}"></a>  \n	<input type="hidden" value="{{id}}" name="{{sname}}[{{index}}].id"> \n	<input type="hidden" value="{{thumbnail}}" name="{{sname}}[{{index}}].path"> \n	<span class="item_box"><img src="{{path}}"></span>\n</li>');

@@ -1,0 +1,89 @@
+﻿@using Lucky.Hr.Web.Framework.HtmlExtensions
+@model Lucky.Hr.ViewModels.Models.SiteManager.DistributorViewModel
+<div class="panel-body">
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.DistributionName, new {@class = "col-sm-2 control-label"})
+        <div class="col-sm-2">
+            @Html.TextBoxFor(a => a.DistributionName, new {@class = "form-control"})
+            @Html.ValidationMessageFor(a => a.DistributionName)
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Phone, new {@class = "col-sm-2 control-label"})
+        <div class="col-sm-2">
+            @Html.TextBoxFor(a => a.Phone, new {@class = "form-control"})
+            @Html.ValidationMessageFor(a => a.Phone)
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.WeiXin, new {@class = "col-sm-2 control-label"})
+        <div class="col-sm-2">
+            @Html.TextBoxFor(a => a.WeiXin, new {@class = "form-control"})
+            @Html.ValidationMessageFor(a => a.WeiXin)
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.BankAccount, new {@class = "col-sm-2 control-label"})
+        <div class="col-sm-2">
+            @Html.TextBoxFor(a => a.BankAccount, new {@class = "form-control"})
+            @Html.ValidationMessageFor(a => a.BankAccount)
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.HomePage, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-2">
+            @Html.TextBoxFor(a => a.HomePage, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.HomePage)
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Email, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-2">
+            @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.Email)
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Fax, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-2">
+            <div class="input-group">
+                @Html.TextBoxFor(a => a.Fax, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Fax)
+            </div>
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Remark, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-2">
+            <div class="input-group">
+                @Html.TextBoxFor(a => a.Remark, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Remark)
+            </div>
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.IsLock, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-2">
+            <div class="input-group">
+                @Html.DropdownlistTrueOrFalse(a => a.IsLock, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <!--提交按钮-->
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        <div class="col-sm-4 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+            <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+        </div>
+    </div>
+</div>

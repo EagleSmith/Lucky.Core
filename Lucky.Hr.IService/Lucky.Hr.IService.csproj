@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C61AF106-538F-4C42-BE56-1FEE125F91FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lucky.Hr.IService</RootNamespace>
+    <AssemblyName>Lucky.Hr.IService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IHrDbContext.cs" />
+    <Compile Include="INewsContext.cs" />
+    <Compile Include="News\ICategoryRepository.cs" />
+    <Compile Include="News\ILinksRepository.cs" />
+    <Compile Include="News\INewsArticlesRepository.cs" />
+    <Compile Include="News\INewsArticleTextRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolePurview\IAchievementRepository.cs" />
+    <Compile Include="RolePurview\IAreaRepository.cs" />
+    <Compile Include="RolePurview\ICertCategoryRepository.cs" />
+    <Compile Include="RolePurview\ICertRepository.cs" />
+    <Compile Include="RolePurview\IDepartmentRepository.cs" />
+    <Compile Include="RolePurview\IDepartmentRoleRepository.cs" />
+    <Compile Include="RolePurview\IDistributorConfigRepository.cs" />
+    <Compile Include="RolePurview\IDistributorRepository.cs" />
+    <Compile Include="RolePurview\IEducationRepository.cs" />
+    <Compile Include="RolePurview\IIndustryRepository.cs" />
+    <Compile Include="RolePurview\IJobCategoryRepository.cs" />
+    <Compile Include="RolePurview\ILanguageCategoryRepository.cs" />
+    <Compile Include="RolePurview\ILanguageRepository.cs" />
+    <Compile Include="RolePurview\IManagerFileRepository.cs" />
+    <Compile Include="RolePurview\IManagerLogRepository.cs" />
+    <Compile Include="RolePurview\IManagerRecordRepository.cs" />
+    <Compile Include="RolePurview\IManagerRepository.cs" />
+    <Compile Include="RolePurview\INavOperationRepository.cs" />
+    <Compile Include="RolePurview\INavRepository.cs" />
+    <Compile Include="RolePurview\INewsRepository.cs" />
+    <Compile Include="RolePurview\INewsTypeRepository.cs" />
+    <Compile Include="RolePurview\IOperationRepository.cs" />
+    <Compile Include="RolePurview\IOtherRepository.cs" />
+    <Compile Include="RolePurview\IPersonalRepository.cs" />
+    <Compile Include="RolePurview\IPracticeRepository.cs" />
+    <Compile Include="RolePurview\IProjectRepository.cs" />
+    <Compile Include="RolePurview\IResumeAreaRepository.cs" />
+    <Compile Include="RolePurview\IResumeIndustryRepository.cs" />
+    <Compile Include="RolePurview\IResumeJobCategoryRepository.cs" />
+    <Compile Include="RolePurview\IResumeRepository.cs" />
+    <Compile Include="RolePurview\IRoleNavRepository.cs" />
+    <Compile Include="RolePurview\IRoleRepository.cs" />
+    <Compile Include="RolePurview\ISkillCategoryRepository.cs" />
+    <Compile Include="RolePurview\ISkillRepository.cs" />
+    <Compile Include="RolePurview\IWorkRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lucky.Hr.Core\Lucky.Hr.Core.csproj">
+      <Project>{8ae7f2fc-c45b-46df-9bda-362cf8cd756e}</Project>
+      <Name>Lucky.Hr.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucky.Hr.Entity\Lucky.Hr.Entity.csproj">
+      <Project>{b1f36ffd-aa17-475e-8287-7c6bc3f0ca45}</Project>
+      <Name>Lucky.Hr.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucky.Hr.ViewModels\Lucky.Hr.ViewModels.csproj">
+      <Project>{b0dac2c8-d84c-4db7-aa0e-6659b1ecb77d}</Project>
+      <Name>Lucky.Hr.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

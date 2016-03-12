@@ -1,0 +1,59 @@
+﻿@model Lucky.Hr.ViewModels.Models.SiteManager.NavViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<header class="header bg-white b-b b-light">
+    <p>添加模块</p>
+</header>
+<section class="scrollable  wrapper">
+    @using (Html.BeginForm("Create", "Nav", FormMethod.Post, new { @class = "form-horizontal form-validate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <section class="panel panel-default">
+            <header class="panel-heading bg-light">
+                基本信息
+            </header>
+            @Html.Partial("_CreateOrUpdate", Model)
+        </section>
+    }
+
+</section>
+@section Scripts
+{
+    <script type="text/javascript">
+        //定义模块
+        define("dropdownlist", ["$"], function (require, exports, module) {
+            "use strict";
+            //调用jquery
+            var $ = require("$");
+            //模块内部对外提供接口
+            var dropdownlist = {};
+            dropdownlist.change = function () {
+                $("#ParentId").change(function () {
+                    $.ajax({
+                        url: '@Url.Action("GetNavNextID")' + '?id=' + $("#ParentId").val(),
+                        type: "Get",
+                        dataType: "json",
+                        success: SetValue
+                    });
+                });
+            };
+
+            module.exports = dropdownlist;
+
+            function SetValue(data) {
+                    $('#NavId').val(data.ID);
+            }
+        });
+
+        seajs.use('dropdownlist', function (con) {
+            con.change();
+        });
+
+    </script>
+
+}

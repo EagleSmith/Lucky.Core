@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/css/style.min.css" rel="stylesheet" />
+    <link href="/Content/css/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/Content/js/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(), www_version = 1201405081147;
+    </script>
+</head>
+
+<body>
+    <section class="vbox">
+       @RenderBody()
+    </section>
+
+    <script src="/Content/js/sea-modules/seajs/seajs/2.2.0/sea.js?v=005"></script>
+    <script src="/Content/js/seajs_config.js?v=005"></script>
+    <script type="text/javascript">
+        seajs.use("dist/application/app.js");
+    </script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model Lucky.Hr.ViewModels.Models.News.CategoryViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<header class="header bg-white b-b b-light">
+    <p>添加分类</p>
+</header>
+<section class="scrollable  wrapper">
+    @using (Html.BeginForm("Create", "Category", FormMethod.Post, new {@class = "form-horizontal form-validate"}))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <section class="panel panel-default">
+            <header class="panel-heading bg-light">
+                基本信息
+            </header>
+            @Html.Partial("_CreateOrUpdate", Model)
+        </section>
+    }
+
+</section>
+@section Scripts
+{
+    <script type="text/javascript">
+        //定义模块
+        define("Categorydropdownlist", ["$"], function (require, exports, module) {
+            "use strict";
+            //调用jquery
+            var $ = require("$");
+            //模块内部对外提供接口
+            var dropdownlist = {};
+            dropdownlist.change = function () {
+                
+                    
+                $("#ParentID").change(function () {
+                    $.ajax({
+                        url: '@Url.Action("GetCategoryNextID")' + '?id=' + $("#ParentID").val(),
+                        type: "Get",
+                        dataType: "json",
+                        success: SetValue
+                    });
+                });
+            };
+
+            module.exports = dropdownlist;
+
+            function SetValue(data) {
+                $('#CategoryID').val(data.ID);
+            }
+        });
+
+        seajs.use('Categorydropdownlist', function (con) {
+            
+            
+            con.change();
+        });
+
+    </script>
+
+}

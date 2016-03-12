@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1F36FFD-AA17-475E-8287-7C6BC3F0CA45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lucky.Hr.Entity</RootNamespace>
+    <AssemblyName>Lucky.Hr.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="News\Category.cs" />
+    <Compile Include="News\Link.cs" />
+    <Compile Include="News\Mapping\CategoryMap.cs" />
+    <Compile Include="News\Mapping\LinkMap.cs" />
+    <Compile Include="News\Mapping\NewsArticleMap.cs" />
+    <Compile Include="News\Mapping\NewsArticleTextMap.cs" />
+    <Compile Include="News\NewsArticle.cs" />
+    <Compile Include="News\NewsArticleText.cs" />
+    <Compile Include="RolePurview\Achievement.cs" />
+    <Compile Include="RolePurview\Area.cs" />
+    <Compile Include="RolePurview\Cert.cs" />
+    <Compile Include="RolePurview\CertCategory.cs" />
+    <Compile Include="RolePurview\Department.cs" />
+    <Compile Include="RolePurview\DepartmentRole.cs" />
+    <Compile Include="RolePurview\Distributor.cs" />
+    <Compile Include="RolePurview\DistributorConfig.cs" />
+    <Compile Include="RolePurview\Education.cs" />
+    <Compile Include="RolePurview\Industry.cs" />
+    <Compile Include="RolePurview\JobCategory.cs" />
+    <Compile Include="RolePurview\Language.cs" />
+    <Compile Include="RolePurview\LanguageCategory.cs" />
+    <Compile Include="RolePurview\Manager.cs" />
+    <Compile Include="RolePurview\ManagerFile.cs" />
+    <Compile Include="RolePurview\ManagerLog.cs" />
+    <Compile Include="RolePurview\ManagerRecord.cs" />
+    <Compile Include="RolePurview\Mapping\AchievementMap.cs" />
+    <Compile Include="RolePurview\Mapping\AreaMap.cs" />
+    <Compile Include="RolePurview\Mapping\CertCategoryMap.cs" />
+    <Compile Include="RolePurview\Mapping\CertMap.cs" />
+    <Compile Include="RolePurview\Mapping\DepartmentMap.cs" />
+    <Compile Include="RolePurview\Mapping\DepartmentRoleMap.cs" />
+    <Compile Include="RolePurview\Mapping\DistributorConfigMap.cs" />
+    <Compile Include="RolePurview\Mapping\DistributorMap.cs" />
+    <Compile Include="RolePurview\Mapping\EducationMap.cs" />
+    <Compile Include="RolePurview\Mapping\IndustryMap.cs" />
+    <Compile Include="RolePurview\Mapping\JobCategoryMap.cs" />
+    <Compile Include="RolePurview\Mapping\LanguageCategoryMap.cs" />
+    <Compile Include="RolePurview\Mapping\LanguageMap.cs" />
+    <Compile Include="RolePurview\Mapping\ManagerFileMap.cs" />
+    <Compile Include="RolePurview\Mapping\ManagerLogMap.cs" />
+    <Compile Include="RolePurview\Mapping\ManagerMap.cs" />
+    <Compile Include="RolePurview\Mapping\ManagerRecordMap.cs" />
+    <Compile Include="RolePurview\Mapping\NavMap.cs" />
+    <Compile Include="RolePurview\Mapping\NavOperationMap.cs" />
+    <Compile Include="RolePurview\Mapping\NewsMap.cs" />
+    <Compile Include="RolePurview\Mapping\NewsTypeMap.cs" />
+    <Compile Include="RolePurview\Mapping\OperationMap.cs" />
+    <Compile Include="RolePurview\Mapping\OtherMap.cs" />
+    <Compile Include="RolePurview\Mapping\PersonalMap.cs" />
+    <Compile Include="RolePurview\Mapping\PracticeMap.cs" />
+    <Compile Include="RolePurview\Mapping\ProjectMap.cs" />
+    <Compile Include="RolePurview\Mapping\ResumeAreaMap.cs" />
+    <Compile Include="RolePurview\Mapping\ResumeIndustryMap.cs" />
+    <Compile Include="RolePurview\Mapping\ResumeJobCategoryMap.cs" />
+    <Compile Include="RolePurview\Mapping\ResumeMap.cs" />
+    <Compile Include="RolePurview\Mapping\RoleMap.cs" />
+    <Compile Include="RolePurview\Mapping\RoleNavMap.cs" />
+    <Compile Include="RolePurview\Mapping\SkillCategoryMap.cs" />
+    <Compile Include="RolePurview\Mapping\SkillMap.cs" />
+    <Compile Include="RolePurview\Mapping\WorkMap.cs" />
+    <Compile Include="RolePurview\Nav.cs" />
+    <Compile Include="RolePurview\NavOperation.cs" />
+    <Compile Include="RolePurview\News.cs" />
+    <Compile Include="RolePurview\NewsType.cs" />
+    <Compile Include="RolePurview\Operation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolePurview\Other.cs" />
+    <Compile Include="RolePurview\Personal.cs" />
+    <Compile Include="RolePurview\Practice.cs" />
+    <Compile Include="RolePurview\Project.cs" />
+    <Compile Include="RolePurview\Resume.cs" />
+    <Compile Include="RolePurview\ResumeArea.cs" />
+    <Compile Include="RolePurview\ResumeIndustry.cs" />
+    <Compile Include="RolePurview\ResumeJobCategory.cs" />
+    <Compile Include="RolePurview\Role.cs" />
+    <Compile Include="RolePurview\RoleNav.cs" />
+    <Compile Include="RolePurview\Skill.cs" />
+    <Compile Include="RolePurview\SkillCategory.cs" />
+    <Compile Include="RolePurview\Work.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

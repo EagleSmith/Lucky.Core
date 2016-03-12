@@ -1,0 +1,224 @@
+﻿@using Lucky.Hr.Web.Framework.HtmlExtensions
+@model Lucky.Hr.ViewModels.Models.News.NewsArticlesViewModel
+
+
+
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Summarize, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Summarize, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Summarize)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Source, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Source, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Source)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Author)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Editor, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Editor, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Editor)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.KeyWord, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.KeyWord, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.KeyWord)
+        </div>
+    </div>
+</div>
+
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ImgUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.ImgUrl, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ImgUrl)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ClickNum, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.ClickNum, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ClickNum)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            
+            @Html.DatePickerFor(model => model.CreateDate,  new {@class = "form-control"})
+            @Html.ValidationMessageFor(model => model.CreateDate)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.UpdateDate, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.DatePickerFor(model => model.UpdateDate,  new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.UpdateDate)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.OrgID, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.OrgID, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OrgID)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.UserID, htmlAttributes: new {@class = "control-label col-md-2"})
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.UserID, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.ValidationMessageFor(model => model.UserID)
+        </div>
+    </div>
+</div>
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsTop, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.IsTop)
+                @Html.ValidationMessageFor(model => model.IsTop)
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsHot, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.IsHot)
+                @Html.ValidationMessageFor(model => model.IsHot)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsComment, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.IsComment)
+                @Html.ValidationMessageFor(model => model.IsComment)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsLock, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.IsLock)
+                @Html.ValidationMessageFor(model => model.IsLock)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsCommend, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.IsCommend)
+                @Html.ValidationMessageFor(model => model.IsCommend)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsSlide, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.IsSlide)
+                @Html.ValidationMessageFor(model => model.IsSlide)
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsSlide, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            <div class="checkbox">
+                <input type="text" id="url_11" value="" /> <input type="button" id="image_11" value="选择图片" />（网络图片 + 本地上传）
+                
+            </div>
+        </div>
+    </div>
+</div>

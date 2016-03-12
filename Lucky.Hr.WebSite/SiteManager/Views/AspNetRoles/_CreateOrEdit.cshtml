@@ -1,0 +1,59 @@
+﻿@using Lucky.Hr.Web.Framework.HtmlExtensions
+@model Lucky.Hr.ViewModels.Models.SiteManager.AspNetRolesViewModel
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.DistributorId, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.DropDownListTree(model => model.DistributorId,Model.DistributorListItems,"",true, new {  @class = "form-control"  })
+            @Html.ValidationMessageFor(model => model.DistributorId)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.RoleName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+    </div>
+</div>
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsSystem, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            
+                @Html.DropdownlistTrueOrFalse(model => model.IsSystem, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IsSystem)
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Sort, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-2">
+        <div class="input-group">
+            @Html.EditorFor(model => model.Sort, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Sort)
+        </div>
+    </div>
+</div>
+
+
+
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    <div class="col-sm-4 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+        <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+    </div>
+</div>

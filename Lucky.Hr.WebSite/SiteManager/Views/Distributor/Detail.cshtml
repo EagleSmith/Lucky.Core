@@ -1,0 +1,217 @@
+﻿@model Lucky.Hr.ViewModels.Models.SiteManager.DistributorViewModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<header class="header bg-white b-b b-light">
+    <p>分部详情</p>
+</header>
+
+<section class="scrollable wrapper">
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tabinfo" data-toggle="tab">分部详情</a>
+                </li>
+            </ul>
+        </header>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabinfo">
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DistributorId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DistributorId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ParentId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ParentId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Path)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Path)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DistributionName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DistributionName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AreaId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AreaId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Street)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Street)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Lng)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Lng)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Lat)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Lat)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Phone)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Phone)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Fax)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Fax)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.HomePage)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HomePage)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.WeiXin)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.WeiXin)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.BankAccount)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.BankAccount)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Remark)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Remark)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsLock)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.IsLock)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.State)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.State)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</section>

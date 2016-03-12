@@ -1,0 +1,222 @@
+﻿@using Lucky.Hr.ViewModels.Models.SiteManager
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="cn" class="app frameset">
+<head>
+    <meta charset="utf-8" />
+    <title>管理系统</title>
+    <base target="mainFrame" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link href="/content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/content/css/animate.min.css" rel="stylesheet" />
+    <link href="/content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/content/css/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/content/js/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(), www_version = 1201505081146;
+    </script>
+    <style type="text/css">
+        .hidden-bsection {
+            display: none;
+        }
+
+        .pageload-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #fff;
+        }
+
+        #loading_done {
+            background: url('/content/images/loading2.gif') no-repeat left top;
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            left: 50%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="vbox hidden-bsection">
+        <header class="bg-dark bmsg dk header navbar navbar-fixed-top-xs">
+            <div class="navbar-header">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a class="navbar-brand" data-toggle="fullscreen">
+                    @*<img src="/assets/images/logo.png" class="m-r-sm">*@
+                    管理系统
+                </a>
+                <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+                    <i class="fa fa-cog"></i>
+                </a>
+            </div>
+            <div class="msgbox"></div>
+            <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+                <li class="hidden-xs">
+                    <a href="" class="dk" target="_blank" title="打开首页"><i class="fa fa-mobile fa-xx"></i></a>
+                </li>
+                <li class="hidden-xs js_show_msg" data-default="管理系统" data-msg="【新消息】">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell fa-lg"></i>
+                        <span class="badge badge-sm up bg-danger m-l-n-sm js_msg_count"></span>
+                    </a>
+                    <section class="dropdown-menu aside-xl ">
+                        <section class="panel bg-white js_msg_content"></section>
+                        <script type="text/html" id="js_msg_content_footer">
+                            <footer class="panel-footer text-sm no-border">
+                                <a href="/vshop/SystemSet/MessageSet" class="pull-right" title="消息通知设置"><i class="fa fa-gear fa-lg"></i></a>
+                                <a href="javascript:;" data-path="/vshop/Ajax/Post/MakeAllVShopMessageRead" class="m-l-sm js_msg_empty">清空全部未读</a>
+                            </footer>
+                        </script>
+                    </section>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="thumb-sm avatar pull-left">
+                            <img src="/content/images/avatar1.jpg">
+                        </span>超级管理员 <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight">
+                        <span class="arrow top"></span>
+                        <li>
+                            <a href="/SiteManager/Home/Help" target="_blank">帮助</a>
+                        </li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-light b-r lter aside-md hidden-print hidden-xs" id="nav">
+                    <section class="vbox">
+                        <header class="header bg-primary lter text-center clearfix">
+                            <div class="btn-group" id="shortcutMenu">
+                                <button type="button" id="shortcutMenuBtn" class="btn btn-sm btn-dark btn-icon" title="New project">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                                <div class="btn-group hidden-nav-xs">
+                                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        快捷菜单
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu text-left" id="shortcutHrefList">
+                                        <script type="text/html" id="addUrlTem">
+                                            <li><a id="{{id}}" title="{{title}}" data-url="{{url}}" href="{{url}}">{{title}}</a></li>
+                                        </script>
+                                        <li><a id="decoration" title="首页装饰" data-url="/vshop/HomePageTemplate" href="/vshop/HomePageTemplate">基本信息</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </header>
+
+                        @{ Html.RenderPartial("_PartialLeftNav", ViewBag.NavList as IEnumerable<NavViewModel>); }
+                        <footer class="footer lt hidden-xs b-t b-light">
+                            <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-default btn-icon">
+                                <i class="fa fa-angle-left text"></i>
+                                <i class="fa fa-angle-right text-active"></i>
+                            </a>
+                            <div class="copyright hidden-nav-xs">
+                                Copyright ©
+                            </div>
+                        </footer>
+                    </section>
+                </aside>
+                <!-- /.aside -->
+                <section id="content">
+                    <section class="vbox">
+                        <iframe id="mainFrame" name="mainFrame"  src="/SiteManager/Home/main"  style="background: url('/content/images/loading.gif') center no-repeat; height: 100%; width: 100%; border: 0px;"></iframe>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <div class="pageload-overlay show"></div>
+    <div id="loading_done"></div>
+    <div class="modal fade in" id="showShortcutMenuModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">快捷菜单</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-unstyled inline clearfix shortmenu-ul" id="shortmenuShow" style="padding-bottom: 10px">
+                        <script type="text/html" id="shortMenuShowTem">
+                            {{each slist as value}}
+                            <li>
+                                <a class="btn btn-default" data-title="{{value.title}}" data-id="{{value.id}}" href="javascript:;" data-url="{{value.url}}">{{value.title}}<i class="fa fa-times m-r-xs" title="删除"></i></a>
+                            </li>
+                            {{/each}}
+                        </script>
+                        <script type="text/html" id="addTem">
+                            <li>
+                                <a class="btn btn-default" data-title="{{title}}" data-id="{{id}}" href="javascript:;" data-url="{{url}}">{{title}}<i class="fa fa-times m-r-xs" title="删除"></i></a>
+                            </li>
+                        </script>
+                    </ul>
+                    <p></p>
+                    <div class="tabbable tabs-left">
+                        <ul class="nav nav-tabs" role="tablist" id="shortcutMenuFirst">
+                            <script type="text/html" id="shortcutMenuFirstTem">
+                                {{each firstmenu as value i}}
+                                <li class="{{if i==0}}active{{/if}}">
+                                    <a href="#firstMenu{{i}}" data-toggle="tab">{{value.name}}</a>
+                                </li>
+                                {{/each}}
+                            </script>
+                        </ul>
+                        <div class="tab-content" id="shortcutMenuList">
+                            <script type="text/html" id="shortcutMenuSecondTem">
+                                {{each secondmenu as value i}}
+                                <div class="tab-pane {{if i==0}}active{{/if}}" id="firstMenu{{i}}">
+                                    {{each value as val }}
+                                    {{if val.name}}
+                                    <h6>{{val.name}}</h6>
+                                    {{/if}}
+                                    <ul class="list-unstyled inline clearfix shortmenu-ul">
+                                        {{each val.tlist as v j}}
+                                        <li><a data-title="{{v.title}}" data-id="{{v.id}}" title="{{if v.flag}}已添加，点击取消{{/if}}{{if !v.flag}}点击添加快捷菜单{{/if}}" class="btn btn-default {{if v.flag}}show-disabled{{/if}}" data-url="{{v.url}}" href="javascript:;"><i class="fa {{if v.flag}}fa-check{{/if}}{{if !v.flag}}fa-plus{{/if}} m-r-xs"></i>{{v.title}}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                    {{/each}}
+                                </div>
+                                {{/each}}
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/content/js/sea-modules/seajs/seajs/2.2.0/sea.js?v=005"></script>
+    <script src="/content/js/seajs_config.js?v=005"></script>
+    <script type="text/javascript">
+        window.letter_path = "/SiteManager/Home/GetMessage";
+        seajs.use("dist/frameset/init.js", function(menu) {
+            menu.shortcutMenu.init({
+                loadUrl: "/SiteManager/Home/IndexMenu",
+                addUrl: "/SiteManager/Home/AddShortcutMenu",
+                delUrl: "/SiteManager/Home/DelShortcutMenu"
+            });
+        });
+    </script>
+</body>
+
+</html>

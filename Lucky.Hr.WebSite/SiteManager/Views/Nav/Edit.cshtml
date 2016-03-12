@@ -1,0 +1,25 @@
+﻿@model Lucky.Hr.ViewModels.Models.SiteManager.NavViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<header class="header bg-white b-b b-light">
+    <p>修改模块</p>
+</header>
+<section class="scrollable  wrapper">
+    @using (Html.BeginForm("Edit", "Nav", FormMethod.Post, new { @class = "form-horizontal form-validate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        
+        <section class="panel panel-default">
+            <header class="panel-heading bg-light">
+                基本信息
+            </header>
+            @Html.Partial("_CreateOrUpdate", Model)
+        </section>
+    }
+
+</section>
+

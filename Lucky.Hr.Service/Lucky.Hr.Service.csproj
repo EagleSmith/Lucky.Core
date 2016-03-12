@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2872F643-DBC1-4C44-AEEF-EFDF2C368ABC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lucky.Hr.Service</RootNamespace>
+    <AssemblyName>Lucky.Hr.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HrDbContext.cs" />
+    <Compile Include="NewsContext.cs" />
+    <Compile Include="News\CategoryRepository.cs" />
+    <Compile Include="News\LinksRepository.cs" />
+    <Compile Include="News\NewsArticlesRepository.cs" />
+    <Compile Include="News\NewsArticleTextRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolePurview\AchievementRepository.cs" />
+    <Compile Include="RolePurview\AreaRepository.cs" />
+    <Compile Include="RolePurview\CertCategoryRepository.cs" />
+    <Compile Include="RolePurview\CertRepository.cs" />
+    <Compile Include="RolePurview\DepartmentRepository.cs" />
+    <Compile Include="RolePurview\DepartmentRoleRepository.cs" />
+    <Compile Include="RolePurview\DistributorConfigRepository.cs" />
+    <Compile Include="RolePurview\DistributorRepository.cs" />
+    <Compile Include="RolePurview\EducationRepository.cs" />
+    <Compile Include="RolePurview\IndustryRepository.cs" />
+    <Compile Include="RolePurview\JobCategoryRepository.cs" />
+    <Compile Include="RolePurview\LanguageCategoryRepository.cs" />
+    <Compile Include="RolePurview\LanguageRepository.cs" />
+    <Compile Include="RolePurview\ManagerFileRepository.cs" />
+    <Compile Include="RolePurview\ManagerLogRepository.cs" />
+    <Compile Include="RolePurview\ManagerRecordRepository.cs" />
+    <Compile Include="RolePurview\ManagerRepository.cs" />
+    <Compile Include="RolePurview\NavOperationRepository.cs" />
+    <Compile Include="RolePurview\NavRepository.cs" />
+    <Compile Include="RolePurview\NewsRepository.cs" />
+    <Compile Include="RolePurview\NewsTypeRepository.cs" />
+    <Compile Include="RolePurview\OperationRepository.cs" />
+    <Compile Include="RolePurview\OtherRepository.cs" />
+    <Compile Include="RolePurview\PersonalRepository.cs" />
+    <Compile Include="RolePurview\PracticeRepository.cs" />
+    <Compile Include="RolePurview\ProjectRepository.cs" />
+    <Compile Include="RolePurview\ResumeAreaRepository.cs" />
+    <Compile Include="RolePurview\ResumeIndustryRepository.cs" />
+    <Compile Include="RolePurview\ResumeJobCategoryRepository.cs" />
+    <Compile Include="RolePurview\ResumeRepository.cs" />
+    <Compile Include="RolePurview\RoleNavRepository.cs" />
+    <Compile Include="RolePurview\RoleRepository.cs" />
+    <Compile Include="RolePurview\SkillCategoryRepository.cs" />
+    <Compile Include="RolePurview\SkillRepository.cs" />
+    <Compile Include="RolePurview\WorkRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lucky.Hr.Core\Lucky.Hr.Core.csproj">
+      <Project>{8ae7f2fc-c45b-46df-9bda-362cf8cd756e}</Project>
+      <Name>Lucky.Hr.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucky.Hr.Entity\Lucky.Hr.Entity.csproj">
+      <Project>{b1f36ffd-aa17-475e-8287-7c6bc3f0ca45}</Project>
+      <Name>Lucky.Hr.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucky.Hr.IService\Lucky.Hr.IService.csproj">
+      <Project>{c61af106-538f-4c42-be56-1fee125f91fd}</Project>
+      <Name>Lucky.Hr.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucky.Hr.ViewModels\Lucky.Hr.ViewModels.csproj">
+      <Project>{b0dac2c8-d84c-4db7-aa0e-6659b1ecb77d}</Project>
+      <Name>Lucky.Hr.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

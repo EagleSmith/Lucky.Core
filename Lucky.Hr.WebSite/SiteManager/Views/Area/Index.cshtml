@@ -1,0 +1,72 @@
+﻿@using LiteCode.MvcPager
+@using Lucky.Hr.Core
+@using GridMvc.Html
+@using Lucky.Hr.ViewModels
+@using Lucky.Hr.ViewModels.Models.SiteManager
+@model PagedList<Lucky.Hr.ViewModels.Models.SiteManager.AreaViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<header class="header bg-white b-b clearfix">
+    <form class="talbe-search form-inline" method="get" action="@Url.Action("Index")">
+        <div class="row m-t-sm">
+            <div class="col-sm-8 m-b-xs">
+                <div class="btn-group">
+                    <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="" disabled>
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                    <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>新增用户</a>
+                </div>
+            </div>
+            <div class="col-sm-4 m-b-xs">
+                <div class="input-group">
+                    <input type="text" class="input-sm form-control" value="@Request.QueryString["keyword"]" name="keyword" placeholder="" data-rule-required="true" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="PageIndex" id="pageIndex" value="@Model.PageIndex" />
+        <input type="hidden" name="OrderBy" id="orderBy" value="desc" />
+        <input type="hidden" name="Order" id="order" value="PutAwayDate" />
+    </form>
+</header>
+<section class="scrollable wrapper w-f">
+    <section class="panel panel-default ">
+        <div class="table-responsive">
+            @Html.Grid(Model).Columns(columns =>
+            {
+                columns.Add(a => a.AreaId).Titled("编号");
+                columns.Add(a => a.AreaName).Encoded(false).Sanitized(false).Titled("地区名称");
+                columns.Add(a => a.FullName).Titled("地区全名");
+                columns.Add(a => a.Layer).Titled("层级");
+                columns.Add().Encoded(false).Sanitized(false).Titled("操作").RenderValueAs(a => @<b>
+                                                                                                   @Html.ActionLink("查看 ", "Detail", new { id = a.AreaId })
+                                                                                               </b>);
+            })
+            
+        </div>
+
+    </section>
+</section>
+@Html.Partial("_ListPager",Model)
+
+@*<footer class="footer bg-white b-t" >
+    <div class="row text-center-xs">
+        <div class="col-md-4 hidden-sm">
+            <p class="text-muted m-t" style="color:#2a6496 !important;">共 @Model.TotalPages 页 @Model.TotalCount 条记录，当前为第 @Model.PageIndex 页</p>
+        </div>
+        <div class="col-md-8 col-sm-12 text-right text-center-xs">
+            <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="@Model.TotalPages" data-page-current="@Model.PageIndex"></ul>
+        </div>
+    </div>
+</footer>*@
+
+

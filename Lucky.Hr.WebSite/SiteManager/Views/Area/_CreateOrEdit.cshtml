@@ -1,0 +1,72 @@
+﻿@using Lucky.Hr.Web.Framework.HtmlExtensions
+@model Lucky.Hr.ViewModels.Models.SiteManager.AreaViewModel
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+@Html.HiddenFor(model => model.AreaId)
+<section class="panel panel-default">
+    <header class="panel-heading bg-light">
+        基本信息
+    </header>
+    <div class="panel-body">
+        <div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AreaName, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-2">
+                @Html.TextBoxFor(m => m.AreaName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m=>m.AreaName)
+            </div>
+        </div>
+        <div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentId, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-8">
+                <div class="container-fluid" style="margin-left:-15px;">
+                    <div class="row" >
+                        <div class="col-sm-2" >@Html.DropDownListTree("ParentId", Model.AreaItems, "", true, new { @class = "form-control" })</div>
+                        <div class="col-sm-2" ><select class="form-control" id="group_id2">
+    <option selected="selected" value="0000">-----请选择----</option>
+</select></div>
+                        <div class="col-sm-2">@Html.DropDownListTree("ParentId", Model.AreaItems, "", true, new { @class = "form-control" })</div>
+                        <div class="col-sm-2">@Html.DropDownListTree("ParentId", Model.AreaItems, "", true, new { @class = "form-control" })</div>
+                    </div>
+                </div>
+                
+                
+                @*<input type="text" class="form-control" name="Inventory" data-rule-digits="true" data-rule-required="true" data-msg-required="库存不能为空" value="">*@
+            </div>
+        </div>
+        <div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">地区</label>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <div class="rule-area">
+                        <input type="text" class="form-control" name="Weight" value="">
+                        
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">区域</label>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <div class="rule-multi-radio">
+                        @Html.RadioButtonList("AID", @ViewBag.SelectItems as List<SelectListItem>, null)
+                    </div>
+                    @*<input type="text" class="form-control" name="Volume" value="">
+                    <span class="input-group-addon">m³</span>*@
+                </div>
+            </div>
+        </div>
+        <!--提交按钮-->
+        <div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+            </div>
+        </div>
+    </div>
+</section>

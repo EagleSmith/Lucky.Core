@@ -1,0 +1,310 @@
+﻿@using Lucky.Hr.Web.Framework.HtmlExtensions
+@model Lucky.Hr.ViewModels.Models.SiteManager.NavViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<header class="header bg-white b-b clearfix">
+
+    <div class="row m-t-sm">
+        <div class="col-sm-8 m-b-xs">
+            <div class="btn-group">
+                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-default" title="删除" data-msg-required="简介不能为空" data-toggle="batch" data-href="@Url.Action("Delete","Nav",new{ID=Model.NavId})">
+                    <i class="fa fa-trash-o m-r-xs"></i>删除
+                </button>
+            </div>
+            <a href="@Url.Action("Create")" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>新增模块</a>
+            <a href="@Url.Action("Edit",new{Id=Model.NavId})" class="btn btn-sm btn-default m-r"><i class="fa fa-edit m-r-xs"></i>编辑模块</a>
+
+        </div>
+
+    </div>
+
+
+</header>
+
+<section class="scrollable wrapper">
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tabinfo" data-toggle="tab">模块详情</a>
+                </li>
+                @if (Model.NavId.Length == 9)
+            {
+            <li class="">
+                <a href="#Operationinfo" data-toggle="tab">权限详情</a>
+            </li>
+            }
+            </ul>
+        </header>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabinfo">
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.NavId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NavId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ParentId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ParentId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.NavType)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NavType)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.NavName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NavName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.SystemName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SystemName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Logo)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Logo)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Url)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Url)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ControllerName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ControllerName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ActionName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ActionName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsExpend)
+                            </dt>
+
+                            <dd>
+                                @(Model.IsExpend?"是":"否")
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.State)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.State)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Sort)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Sort)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="tab-pane" id="Operationinfo">
+                    <div class="col-sm-12 ">
+                        @using (Html.BeginForm("OpertionCreate", "Nav", FormMethod.Post, new {@class = "form-horizontal form-validate"}))
+                    {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(a => a.NavId)
+                    <div class="form-group">
+                        <label class="control-label col-md-2">所有权限</label>
+
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                @Html.CheckBoxList("ParentId", Model.NavOperationItems)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                            <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                        </div>
+                    </div>
+                    }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+    <!-- 建立一个模态对话框，渐显渐消 -->
+    <div id="myModal" class="modal hide fade">
+        <div class="modal-header">Hello World!</div>
+        <!-- 对话框内容 -->
+        <div class="modal-body">
+            Hello world!
+        </div>
+        <!-- 对话框按钮 -->
+        <div class="modal-footer">
+            <a href="#" class="btn primary">OK</a>
+        </div>
+    </div>
+    @section Scripts
+{
+        <script type="text/javascript">
+            // 确保对话框只在页面加载完成后显示
+            define("dropdownlist", ["$", "dist/tips/init"], function (require, exports, module) {
+                "use strict";
+                //调用jquery
+                var $ = require("$");
+                var app = require("dist/application/app"), config = app.config;
+
+                var model = {};
+                // 点击之后隐藏对话框
+                $("#myModal").bind("show", function () {
+                    $("#myModal a.btn").click(function (e) {
+                        // 这里放点击后的代码
+                        // 我们这里只放一点示例内容
+                        console.log("button pressed: " + $(this).html());
+
+                        // 隐藏对话框
+                        $("#myModal").modal('hide');
+                    });
+                });
+
+                //config.msg.msgbox.dialog();
+                // 对话框隐藏后就可以删除事件监听了
+                $("#myModal").bind("hide", function () {
+                    // 所谓“松绑”
+                    $("#myModal a.btn").unbind();
+                });
+
+                // 最后再设置对话框本身
+                model.click = function () {
+                    $(document).on("click", '[data-toggle="modal"]', function (e) {
+                        config.msg.msgbox.dialog({
+                            //"backdrop": "static",
+                            //"keyboard": true,
+                            //"show": true // 这个参数确保对话框立即显示
+                            message: "Hello World!",
+
+                            // dialog的标题
+                            title: "Custom title",
+
+                            // 退出dialog时的回调函数，包括用户使用ESC键及点击关闭
+                            onEscape: function () { },
+
+                            // 是否显示此dialog，默认true
+                            show: true,
+
+                            // 是否显示body的遮罩，默认true
+                            backdrop: true,
+
+                            // 是否显示关闭按钮，默认true
+                            closeButton: true,
+
+                            // 是否动画弹出dialog，IE10以下版本不支持
+                            animate: false,
+
+                            // dialog的类名
+                            className: "my-modal",
+
+                            //// dialog底端按钮配置
+                            buttons: {
+
+                                // 其中一个按钮配置
+                                success: {
+                                    // 按钮显示的名称
+                                    label: "Success!",
+
+                                    // 按钮的类名
+                                    className: "btn-success",
+
+                                    // 点击按钮时的回调函数
+                                    callback: function () { }
+                                }
+
+
+                            }
+                        });
+                    });
+                };
+                module.exports = model;
+            });
+            seajs.use('dropdownlist', function (con) {
+                con.click();
+            });
+        </script>
+    }

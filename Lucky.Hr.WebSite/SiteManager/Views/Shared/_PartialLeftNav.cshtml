@@ -1,0 +1,233 @@
+﻿@model IEnumerable<Lucky.Hr.ViewModels.Models.SiteManager.NavViewModel>
+           @{
+               var plist = Model.Where(a => a.NavId.Length == 6);
+               var clist = Model.Where(a => a.ParentId.Length == 6);
+           }
+<section class="w-f scrollable">
+    <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
+        <!-- nav -->
+        <nav class="nav-primary hidden-xs">
+            <ul class="nav">
+                <li class="active ">
+                    <a href="/SiteManager/Home/Main" class="active">
+                        <i class="fa fa-dashboard icon">
+                            <b class="bg-danger"></b>
+                        </i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                @foreach (var p in plist)
+                {
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-gear icon">
+                                <b class="bg-info"></b>
+                            </i>
+                            <span class="pull-right">
+                                <i class="fa fa-angle-down text"></i>
+                                <i class="fa fa-angle-up text-active"></i>
+                            </span>
+                            <span>@p.NavName</span>
+                        </a>
+                        <ul class="nav lt">
+                            @foreach (var item in clist.Where(a => a.ParentId == p.NavId))
+                            {
+                                <li>
+                                    <a href="/SiteManager/@item.ControllerName/">
+                                        <i class="fa fa-angle-right"></i>
+                                        <span>@item.NavName</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                                @*
+                    <li>
+                                    <a href="/SiteManager/AspNetRoles">
+                                        <i class="fa fa-angle-right"></i>
+                                        <span>角色管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/SiteManager/Nav">
+                                        <i class="fa fa-angle-right"></i>
+                                        <span>模块管理</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/SiteManager/Operation">
+                                        <i class="fa fa-angle-right"></i>
+                                        <span>权限管理</span>
+                                    </a>
+                                </li>
+                          <li>
+            <a href="javascript:;">
+                <i class="fa  fa-magic icon">
+                    <b class="bg-dark lter"></b>
+                </i>
+                <span class="pull-right">
+                    <i class="fa fa-angle-down text"></i>
+                    <i class="fa fa-angle-up text-active"></i>
+                </span>
+                <span>分销管理</span>
+            </a>
+            <ul class="nav lt">
+                <li>
+                    <a href="/SiteManager/Area/">
+                        <i class="fa fa-angle-right"></i>
+                        <span>区域管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/SiteManager/Distributor/">
+                        <i class="fa fa-angle-right"></i>
+                        <span>分销商</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/SiteManager/Department/">
+                        <i class="fa fa-angle-right"></i>
+                        <span>部门管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="fa  fa-magic icon">
+                    <b class="bg-dark lter"></b>
+                </i>
+                <span class="pull-right">
+                    <i class="fa fa-angle-down text"></i>
+                    <i class="fa fa-angle-up text-active"></i>
+                </span>
+                <span>店铺装修</span>
+            </a>
+            <ul class="nav lt">
+                <li>
+                    <a href="list.html">
+                        <i class="fa fa-angle-right"></i>
+                        <span>首页装饰</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="list.html">
+                        <i class="fa fa-angle-right"></i>
+                        <span>其他样式</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="list.html">
+                        <i class="fa fa-angle-right"></i>
+                        <span>菜单设置</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="fa fa-inbox icon">
+                    <b class="bg-warning"></b>
+                </i>
+                <span class="pull-right">
+                    <i class="fa fa-angle-down text"></i>
+                    <i class="fa fa-angle-up text-active"></i>
+                </span>
+                <span>商品管理</span>
+            </a>
+            <ul class="nav lt">
+                <li>
+                    <a href="classifyList.html">
+                        <i class="fa fa-angle-right"></i>
+                        <span>分组列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="list.html">
+                        <i class="fa fa-angle-right"></i>
+                        <span>商品列表</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tags.html">
+                        <i class="fa fa-angle-right"></i>
+                        <span>商品标签</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="fa fa-clipboard icon">
+                    <b class="bg-success"></b>
+                </i>
+                <span class="pull-right">
+                    <i class="fa fa-angle-down text"></i>
+                    <i class="fa fa-angle-up text-active"></i>
+                </span>
+                <span>订单管理</span>
+            </a>
+            <ul class="nav lt">
+                <li>
+                    <a href="/vshop/Order/OrderList">
+                        <i class="fa fa-angle-right"></i>
+                        <span>订单管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/vshop/Order/RefundOrderList">
+                        <i class="fa fa-angle-right"></i>
+                        <span>维权管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/vshop/Order/OrderEvaluation">
+                        <i class="fa fa-angle-right"></i>
+                        <span>评论管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/vshop/Order/OrderDelivery">
+                        <i class="fa fa-angle-right"></i>
+                        <span>发货管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="fa fa-gift icon">
+                    <b class="bg-primary"></b>
+                </i>
+                <span class="pull-right">
+                    <i class="fa fa-angle-down text"></i>
+                    <i class="fa fa-angle-up text-active"></i>
+                </span>
+                <span>营销管理</span>
+            </a>
+            <ul class="nav lt">
+
+                <li>
+                    <a href="/vshop/SystemSet/MarKetingSet/VipMarketing">
+                        <i class="fa fa-angle-right"></i>
+                        <span>会员营销</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/vshop/ShopActivity/ActivityList">
+                        <i class="fa fa-angle-right"></i>
+                        <span>活动营销</span>
+                    </a>
+                </li>
+            </ul>
+        </li>*@
+
+
+            </ul>
+        </nav>
+        <!-- / nav -->
+    </div>
+</section>

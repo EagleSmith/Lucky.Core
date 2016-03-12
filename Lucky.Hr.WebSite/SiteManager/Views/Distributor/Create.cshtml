@@ -1,0 +1,23 @@
+﻿
+@model Lucky.Hr.ViewModels.Models.SiteManager.DistributorViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<header class="header bg-white b-b b-light">
+    <p>添加分部</p>
+</header>
+<section class="scrollable  wrapper">
+    @using (Html.BeginForm("Create", "Distributor", FormMethod.Post, new { @class = "form-horizontal form-validate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    基本信息
+                </header>
+                @Html.Partial("_CreateOrEdit",Model)
+            </section>
+    }
+</section>
+

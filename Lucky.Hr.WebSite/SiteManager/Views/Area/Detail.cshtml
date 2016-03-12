@@ -1,0 +1,91 @@
+﻿@model Lucky.Hr.ViewModels.Models.SiteManager.AreaViewModel
+
+@{
+    ViewBag.Title = "区域详情";
+}
+
+<header class="header bg-white b-b b-light">
+    <p>区域详情</p>
+</header>
+
+<section class="scrollable wrapper">
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tabinfo" data-toggle="tab">区域详情</a>
+                </li>
+            </ul>
+        </header>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabinfo">
+
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AreaId)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AreaId)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ParentName)
+                            </dt>
+
+                            <dd>
+                                @if (Model.ParentName != "无")
+                                {@Html.ActionLink(Model.ParentName, "Detail", new { id = Model.ParentId })}
+                                else
+                                {
+                                    @Html.DisplayFor(model => model.ParentName)
+                                }
+
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AreaName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AreaName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.FullName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.FullName)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <dl class="dl-horizontal borderline">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Layer)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Layer)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</section>
