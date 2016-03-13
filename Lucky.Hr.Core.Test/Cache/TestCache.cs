@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
 using Lucky.Hr.Caching;
@@ -43,6 +44,7 @@ namespace Lucky.Hr.Core.Test.Cache
             builder.RegisterType<MemSignals>().As<IMemSignals>().SingleInstance();
             builder.RegisterType<HrLogger>().As<ILogger>().InstancePerLifetimeScope();
             builder.RegisterType<Clock>().As<IClock>().SingleInstance();
+            builder.RegisterType<MemClock>().As<IMemClock>().SingleInstance();
 
             builder.RegisterType<ProtoBufferSerializer>().As<IProtoBufferSerializer>().SingleInstance();
             builder.RegisterType<ProtoBufferDeserializer>().As<IProtoBufferDeserializer>().SingleInstance();
@@ -88,6 +90,31 @@ namespace Lucky.Hr.Core.Test.Cache
             }
             strw.Close();
 
+        }
+        [Test]
+        public void TestMemcachedTime()
+        {
+            var _cacheManager = _container.Resolve<ICacheManager>(new TypedParameter(typeof(Type), GetType()));
+            var _clock = _container.Resolve<IMemClock>();
+            var inOneSecond = _clock.UtcNow.AddSeconds(3);
+            var cached = 0;
+
+            // each call after the specified datetime will be reevaluated
+            Func<string> retrieve = ()
+                => _cacheManager.Get("testItem1",
+                        ctx =>
+                        {
+                            ctx.Monitor(_clock.When("testItem1",TimeSpan.FromSeconds(2)));
+                            return DateTime.Now.ToString();
+                        });
+
+            Console.WriteLine(retrieve());
+            Thread.Sleep(3000);
+            Console.WriteLine(retrieve());
+            Console.WriteLine(retrieve());
+            Console.WriteLine(retrieve());
+            Thread.Sleep(3000);
+            Console.WriteLine(retrieve());
         }
         [Test]
         public void DeserializerProtoBuf()
