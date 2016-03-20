@@ -47,6 +47,7 @@ namespace Lucky.Hr.WebSite.Controllers
             _articlesRepository = articlesRepository;
         }
         // GET: Home
+        [OutputCache(Duration = 60)]
         public  ActionResult Index()
         {
             List<NewsArticlesViewModel> list = _articlesRepository.GetArticlesViewModels();

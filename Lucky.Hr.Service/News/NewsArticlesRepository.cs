@@ -40,9 +40,9 @@ namespace Lucky.Hr.Service
         public List<NewsArticlesViewModel> GetArticlesViewModels()
         {
             string key = "Article_List";
-            return _dbContext.Query<NewsArticlesViewModel>("ArticleListNatively", CommandType.StoredProcedure).ToList();
-            //return _cacheManager.Get(key, acx => GetList().Select(a => a.ToModel()).ToList());
-            //return GetList().Select(a => a.ToModel()).ToList();
+            //return _dbContext.Query<NewsArticlesViewModel>("ArticleListNatively", CommandType.StoredProcedure).ToList();
+            return _cacheManager.Get(key, acx => GetList().Select(a => a.ToModel()).ToList());
+            return GetList().Select(a => a.ToModel()).ToList();
         }
         public void DeleteMore(string ids)
       {
