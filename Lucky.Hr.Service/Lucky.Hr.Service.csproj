@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbContextConfiguration.cs" />
     <Compile Include="HrDbContext.cs" />
     <Compile Include="NewsContext.cs" />
     <Compile Include="News\CategoryRepository.cs" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Infrastructure.Interception;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Lucky.Hr.Core.Data.UnitOfWork
             : base(connectionString)
         {
             _context = this;
+            
             //this.Configuration.LazyLoadingEnabled = false;
             //Database.SetInitializer<MainContext>(new DropCreateDatabaseIfModelChanges<MainContext>());
         }

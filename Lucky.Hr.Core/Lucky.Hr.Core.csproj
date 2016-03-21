@@ -168,6 +168,7 @@
     <Compile Include="Data\Dapper\SqlMappe.cs" />
     <Compile Include="Data\EntityRepository.cs" />
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\NLogCommandInterceptor.cs" />
     <Compile Include="Data\Specification\AndSpecification.cs" />
     <Compile Include="Data\Specification\CompositeSpecification.cs" />
     <Compile Include="Data\Specification\DirectSpecification.cs" />
@@ -272,7 +273,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Nlog.Config" />
+    <None Include="Nlog.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
