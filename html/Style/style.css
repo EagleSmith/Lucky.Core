@@ -1,0 +1,61 @@
+﻿/*基本样式*/
+BODY {
+	FONT: 10px Arial, Verdana, Geneva, Helvetica, sans-serif;COLOR: #333333
+}
+P {
+	padding:0; margin:0;
+}
+TD {
+	FONT: 10px Arial, Verdana, Geneva, Helvetica, sans-serif;
+}
+INPUT {
+	FONT: 10px Arial, Verdana, Geneva, Helvetica, sans-serif;
+}
+OPTION {
+	FONT: 10px Arial, Verdana, Geneva, Helvetica, sans-serif;
+}
+TEXTAREA {
+	FONT: 10px Arial, Verdana, Geneva, Helvetica, sans-serif;
+}
+SELECT {
+	FONT: 10px Arial, Verdana, Geneva, Helvetica, sans-serif;
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BODY {
+	/*BACKGROUND:url(../images/htmlBack.jpg) #767676 repeat-x 0 0; TEXT-ALIGN:center;*/
+	BACKGROUND:none; TEXT-ALIGN:center;
+}
+div{ padding:0; margin:0;}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+UL ,li,OL {
+	LIST-STYLE-TYPE: none
+}
+TABLE {
+	TEXT-ALIGN: left
+}
+.relative {
+	POSITION: relative; MARGIN: 0px auto;z-index:1;
+}
+.absolute {
+	POSITION: absolute;z-index:1;
+	height: 1px;
+}
+.overflow {
+	OVERFLOW: hidden; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis;
+}

@@ -1,0 +1,112 @@
+﻿@charset "utf-8";
+body{font-family: "微软雅黑",Microsoft YaHei,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px;line-height: 1.42857143; color: #333;}
+a:link,a:visited {color: #000;text-decoration: none;}
+a:hover,a:active {text-decoration: none;color:#111;}
+.left{ float:left;}
+.right{ float:right;}
+.line{clear:both;}
+.col-md-4{float: left;width:33.33333333%;}
+
+.clearfix{
+	content: " ";
+	display: table;
+	clear: both;
+}
+.container{ margin:0 auto 0 auto; width:1140px;}
+header#topBox{ background:#fff; border-bottom:1px #ddd solid;}
+#topBox .container{ height:83px;}
+#topBox .container #topLogo{float: left;height:37px;padding:23px 5px;font-size: 18px;line-height: 20px;}
+#topBox .container .nav.navbar-nav{margin:7.5px 0;float: left;margin: 0;}
+#topBox .container .nav {padding-left: 0;margin-bottom: 0;list-style: none;}
+#topBox .container .nav>li {position: relative;display: block;}
+#topBox .container .nav.navbar-right{float: right;}
+#topBox .container .nav.navbar-nav>li{position: relative;display: block;padding: 24px 15px 0 15px;float: left;}
+#topBox .container .nav.navbar-nav>li>a{padding:10px 15px;display: block;}
+#topBox .container .nav.navbar-nav>li.active>a{background:#de232e; border-radius:3px; color:#fff;}
+#topBox .container .nav.navbar-nav>li>a:hover,#topBox .nav.navbar-nav>li>a:active{background:#de232e; border-radius:3px; color:#fff;}
+#bannerBox{ height:500px; background-repeat:no-repeat; background-position: center 0;}
+
+#itemTypeBox{}
+#itemTypeBox .container{ height:350px;}
+#itemTypeBox .container .itemTypeBox{ padding:60px 50px 0 50px;}
+#itemTypeBox .container .itemTypeBox .itemTypeImg{}
+#itemTypeBox .container .itemTypeBox .itemTypeImg img{ height:72px;}
+#itemTypeBox .container .itemTypeBox .itemTypeTitle{ font-weight:700; color:#575551; line-height:60px;}
+#itemTypeBox .container .itemTypeBox .itemTypeDescribe{font-size:12px; color:#a3a3a3; height:70px;}
+#itemTypeBox .container .itemTypeBox .itemTypeLink{ color:#de232e;}
+#itemTypeBox .container .itemTypeBox .itemTypeLink a{color:#de232e;}
+#itemTypeBox .container .itemTypeBox .itemTypeLink a:hover,
+#itemTypeBox .container .itemTypeBox .itemTypeLink a:active{ text-decoration:underline;}
+
+#caseBox{
+	background: -moz-linear-gradient(top, #f8f7f7 0%, #f8f7f7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f7f7), color-stop(100%,#f8f7f7));
+	background: -webkit-linear-gradient(top, #f8f7f7 0%,#f8f7f7 100%);
+	background: -o-linear-gradient(top, #f8f7f7 0%,#f8f7f7 100%);
+	background: -ms-linear-gradient(top, #f8f7f7 0%,#f8f7f7 100%);
+	background: linear-gradient(to bottom, #f8f7f7 0%,#f8f7f7 100%);	
+}
+#caseBox .container{height:740px;}
+#caseBox .container .caseTitle{ width:274px; height:61px; font-size:20px; font-weight:700; color:#de232e; line-height:60px; position:relative; margin:0 auto; border-bottom:1px #d5d5d5 solid; padding-top:55px;}
+#caseBox .container .caseTitle .lineStyle{width:30px; height:3px; background:#171717; margin:0 auto; }
+#caseBox .container .caseDescribe{ color:#5c5c5c; font-size:12px; width:800px; margin:15px auto; line-height:22px;}
+#caseBox .container .caseItemSwitchBox{ padding-bottom:30px; width:60px; height:30px; margin:0 auto;}
+#caseBox .container .caseItemSwitchBox a{ display:block; width:26px; height:26px; background:#de232e; border-radius:3px; line-height:26px; color:#fff; float:left; margin:0 2px;}
+#caseBox .container .caseItemSwitchBox a:hover,
+#caseBox .container .caseItemSwitchBox a:active{ background:#000;}
+#caseBox .container .caseItem{ 
+	-webkit-box-shadow:5px 5px 5px rgba(23, 23, 23, .3);  
+	-moz-box-shadow:5px 5px 5px rgba(23, 23, 23, .3);  
+	box-shadow:5px 5px 5px rgba(23, 23, 23, .3);  
+	float:left;
+	margin-right:12px;
+	width:368px;
+	text-align:left;
+	padding:0 0 20px 0;
+}
+#caseBox .container .caseItem .caseItemPic{}
+#caseBox .container .caseItem .caseItemTitle{ font-size:14px; color:#6c6c6d; font-weight:700; padding:2px 20px;}
+#caseBox .container .caseItem .caseItemDescribe{ font-size:14px; color:#6c6c6d; padding:2px 20px 20px 20px;}
+#caseBox .container .caseItem .caseItemContent{ font-size:14px; color:#b9b9b9;padding:2px 20px;}
+#caseBox .container #caseItemBtnBox{ margin-top:50px;}
+#caseBox .container #caseItemBtnBox a{ display:block; margin:0 auto; background:#de232e; color:#fff; width:270px; height:40px; line-height:40px; border-radius:4px;}
+
+
+#serviceBox{height:465px; background-repeat:no-repeat; background-position: center 0;}
+#serviceBox .container{height:465px;}
+#serviceBox .container .serviceTitle{ width:274px; height:61px; font-size:20px; font-weight:700; color:#fff; line-height:60px; position:relative; margin:0 auto; border-bottom:1px #fff solid; padding-top:55px;}
+#serviceBox .container .serviceTitle .lineStyle{width:30px; height:3px; background:#fff; margin:0 auto; }
+#serviceBox .container .serviceDescribe{ color:#fff; font-size:12px; width:800px; margin:15px auto; line-height:22px;}
+
+#serviceBox .container .itemTypeBox{ padding:60px 50px 0 50px;}
+#serviceBox .container .itemTypeBox .itemTypeImg{}
+#serviceBox .container .itemTypeBox .itemTypeImg img{ height:72px;}
+#serviceBox .container .itemTypeBox .itemTypeTitle{ font-weight:700; font-size:24px; color:#fff; line-height:60px; letter-spacing:2px;}
+#serviceBox .container .itemTypeBox .itemTypeDescribe{font-size:12px; color:#fff; height:70px; letter-spacing:1px;}
+
+#linkBox{}
+#linkBox .container{ padding:30px 0;}
+#linkBox .container ul li{ float:left;}
+#linkBox .container ul li img{border:1px #efeff0 solid; margin:0 8px;}
+
+#footLinkBox{ background:#171717;}
+#footLinkBox .container{height:220px; color:#fff; position:relative;}
+#footLinkBox .container #footLogo{ float:left; padding:50px 0 0 0; width:220px; text-align:left;}
+#footLinkBox .container .footNav{ float:left; padding:50px 0 0 0; width:260px;}
+#footLinkBox .container .footNav ul{float:left;  width:120px; display:block;}
+#footLinkBox .container .footNav ul p{ text-align:left; padding:0;margin:0; font-size:14px; font-weight:700; padding-bottom:20px;}
+#footLinkBox .container .footNav ul li{text-align:left; color:#717171; line-height:22px;} 
+#footLinkBox .container .footNav ul li a{color:#717171;}
+#footLinkBox .container .footNav ul li a:hover,
+#footLinkBox .container .footNav ul li a:active{ text-decoration:underline;}
+#footLinkBox .container .footContent{float:left; width:470px; text-align:left;padding:50px 0 0 0; line-height:24px;}
+
+#footLinkBox .container  .qrcodeBox{float:right;padding:50px 0 0 0; }
+#footLinkBox .container  .qrcodeBox a{ display:block; background:#de232e; color:#fff; line-height:22px;}
+
+#footBox{background:#111111;}
+#footBox .container{height:50px; color:#fff; position:relative; line-height:50px;}
+
+
+
+
