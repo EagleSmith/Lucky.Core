@@ -52,11 +52,8 @@ namespace Lucky.Hr.WebSite.Controllers
         public  ActionResult Index()
         {
             //List<NewsArticlesViewModel> list = _articlesRepository.GetArticlesViewModels();
-            Globals.Execute(() =>
-            {
-                throw new Exception("SSSS");
-            });
-            return View();
+           return Globals.Execute(() => View());
+            
         }
         
     }
