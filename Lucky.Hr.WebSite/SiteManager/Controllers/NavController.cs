@@ -15,16 +15,16 @@ namespace Lucky.Hr.SiteManager.Controllers
 {
     public class NavController : BaseAdminController
     {
-        private INavRepository _navRepository;
+        private INavService _navService;
         private IHrDbContext _context;
-        private IOperationRepository _operationRepository;
-        private INavOperationRepository _navOperationRepository;
-        public NavController(IHrDbContext context, INavRepository navRepository,IOperationRepository navOperation,INavOperationRepository navOperationRepository)
+        private IOperationService _operationService;
+        private INavOperationService _navOperationService;
+        public NavController(IHrDbContext context, INavService navService,IOperationService navOperation,INavOperationService navOperationService)
         {
             _context = context;
-            _navRepository = navRepository;
-            _operationRepository = navOperation;
-            _navOperationRepository = navOperationRepository;
+            _navService = navService;
+            _operationService = navOperation;
+            _navOperationService = navOperationService;
         }
         // GET: Nav
         public ActionResult Index(int pageIndex = 1, string keyword = "")
@@ -33,7 +33,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             spec.Equals(a => a.State, 1);
             if (keyword != "")
                 spec.Like(a => a.NavName, keyword);
-            var pagelist = _navRepository.GetPaged(spec.Predicate, a => a.NavId, pageIndex, 20);
+            var pagelist = _navService.GetPaged(spec.Predicate, a => a.NavId, pageIndex, 20);
             var models = pagelist.Select(a => { return a.ToModel(); }).ToPagedList(pageIndex, 20, pagelist.TotalCount);
             return View(models);
         }
@@ -41,9 +41,9 @@ namespace Lucky.Hr.SiteManager.Controllers
         // GET: Nav/Details/5
         public ActionResult Details(string id)
         {
-            var entity = _navRepository.Single(a => a.NavId == id);
-            var navoperlist = _navOperationRepository.GetQuery(a => a.NavId == id);
-            var operlist = _operationRepository.GetList().Select(a => new SelectListItem() {Text = a.OperationName, Value = a.OperationId.ToString(), Selected = navoperlist.Any(b => a.OperationId == b.OperationId)}).ToList();
+            var entity = _navService.Single(a => a.NavId == id);
+            var navoperlist = _navOperationService.GetQuery(a => a.NavId == id);
+            var operlist = _operationService.GetList().Select(a => new SelectListItem() {Text = a.OperationName, Value = a.OperationId.ToString(), Selected = navoperlist.Any(b => a.OperationId == b.OperationId)}).ToList();
             var model = entity.ToModel();
 
             model.NavOperationItems = operlist;
@@ -69,7 +69,7 @@ namespace Lucky.Hr.SiteManager.Controllers
                 if (ModelState.IsValid)
                 {
                     var entity = model.ToEntity();
-                    _navRepository.Add(entity);
+                    _navService.Add(entity);
                 }
 
                 return RedirectToAction("Index");
@@ -87,14 +87,14 @@ namespace Lucky.Hr.SiteManager.Controllers
             {
                 string navid = from["NavID"];
                 var array = s.Split(',');
-                _navOperationRepository.Delete(a=>a.NavId==navid);
+                _navOperationService.Delete(a=>a.NavId==navid);
                
                 foreach (string str in array)
                 {
                     NavOperation entity=new NavOperation();
                     entity.NavId = navid;
                     entity.OperationId = Convert.ToInt32(str);
-                    _navOperationRepository.Add(entity);
+                    _navOperationService.Add(entity);
                 }
               
             }
@@ -105,7 +105,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         {
             try
             {
-                var entity = _navRepository.Single(a => a.NavId == id);
+                var entity = _navService.Single(a => a.NavId == id);
                 var model = entity.ToModel();
                 GetViewModel(model);
 
@@ -127,7 +127,7 @@ namespace Lucky.Hr.SiteManager.Controllers
                 if (ModelState.IsValid)
                 {
                     var entity = model.ToEntity();
-                    _navRepository.Update(entity);
+                    _navService.Update(entity);
                 }
 
                 return RedirectToAction("Index");
@@ -142,7 +142,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         // GET: Nav/Delete/5
         public ActionResult Delete(string id)
         {
-            _navRepository.Delete(a=>a.NavId==id);
+            _navService.Delete(a=>a.NavId==id);
             var redirectUrl = new UrlHelper(Request.RequestContext).Action("Index", "Nav");
             return Json(new { Url = redirectUrl }, JsonRequestBehavior.AllowGet);
         }
@@ -152,7 +152,7 @@ namespace Lucky.Hr.SiteManager.Controllers
 
         private void GetViewModel(NavViewModel model)
         {
-            model.ParentItems = _navRepository.GetQuery(a=>a.NavId.Length<=6).ToList().Select(a => new ListItemEntity()
+            model.ParentItems = _navService.GetQuery(a=>a.NavId.Length<=6).ToList().Select(a => new ListItemEntity()
             {
                 ID = a.NavId,
                 ParentID = a.ParentId,
@@ -172,7 +172,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             if (id.Length == 6||id.Length==3)
                 temid = id;
             else temid = "";
-            string e = _navRepository.GetQuery().Where(a => a.ParentId == temid).ToList().Max(a => a.NavId);
+            string e = _navService.GetQuery().Where(a => a.ParentId == temid).ToList().Max(a => a.NavId);
             if (e == null) e = temid + "000";//二级菜单没有下级时 e 为null
             if(e.Length==9)
                 res = StringHelper.GetID(e, 6, 3, 3);
@@ -183,7 +183,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         }
         public ActionResult ValidateNavName(string navId, string navName)
         {
-            var user = _navRepository.Single(a => a.NavId != navId && a.NavName == navName);
+            var user = _navService.Single(a => a.NavId != navId && a.NavName == navName);
             if (user == null)
                 return Json(true, JsonRequestBehavior.AllowGet);
             return Json("导航名称已经存在！", JsonRequestBehavior.AllowGet);

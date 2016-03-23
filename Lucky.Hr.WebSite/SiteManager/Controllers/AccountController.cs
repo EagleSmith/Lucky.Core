@@ -20,23 +20,23 @@ namespace Lucky.Hr.SiteManager.Controllers
     {
         private ICacheManager _cacheManager;
         public ILogger _Logger;
-        private IAreaRepository _areaRepository;
-        private IDistributorConfigRepository _distributorConfigRepository;
+        private IAreaService _areaService;
+        private IDistributorConfigService _distributorConfigService;
         private IHrDbContext _dbContext;
 
         public AccountController(
             ICacheManager cacheManager,
             ILogger logger,
-            IAreaRepository areaRepository,
+            IAreaService areaService,
             IHrDbContext hrDbContext,
-            IDistributorConfigRepository distributorConfigRepository
+            IDistributorConfigService distributorConfigService
             )
         {
             _cacheManager = cacheManager;
             _Logger = logger;
-            _areaRepository = areaRepository;
+            _areaService = areaService;
             _dbContext = hrDbContext;
-            _distributorConfigRepository = distributorConfigRepository;
+            _distributorConfigService = distributorConfigService;
         }
         // GET: Account
         public ActionResult Index()

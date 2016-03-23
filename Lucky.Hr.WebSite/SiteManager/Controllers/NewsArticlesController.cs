@@ -18,11 +18,11 @@ namespace Lucky.Hr.SiteManager.Controllers
     {
         // GET: NewsArticles
         private INewsContext _context;
-        private INewsArticlesRepository _newsArticlesRepository;
-        private ICategoryRepository _categoryRepository;
+        private INewsArticlesService _newsArticlesRepository;
+        private ICategoryService _categoryRepository;
         private ILogger _logger;
-        private INewsArticleTextRepository _articleText;
-        public NewsArticlesController(ILogger logger,INewsContext context, INewsArticlesRepository newsArticlesRepository,ICategoryRepository categoryRepository,INewsArticleTextRepository articleText)
+        private INewsArticleTextService _articleText;
+        public NewsArticlesController(ILogger logger,INewsContext context, INewsArticlesService newsArticlesRepository,ICategoryService categoryRepository, INewsArticleTextService articleText)
         {
             _logger = logger;
             _context = context;

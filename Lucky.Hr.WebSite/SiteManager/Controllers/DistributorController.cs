@@ -10,15 +10,15 @@ namespace Lucky.Hr.SiteManager.Controllers
 {
     public class DistributorController : BaseAdminController
     {
-        private readonly IDistributorRepository _distributorRepository;
-        public DistributorController(IDistributorRepository distributorRepository)
+        private readonly IDistributorService _distributorService;
+        public DistributorController(IDistributorService distributorService)
         {
-            _distributorRepository = distributorRepository;
+            _distributorService = distributorService;
         }
         // GET: Distributor
         public ActionResult Index(int pageIndex = 1)
         {
-            var pagedList = _distributorRepository.GetPaged(a=>a.DistributorId, pageIndex, 1);
+            var pagedList = _distributorService.GetPaged(a=>a.DistributorId, pageIndex, 1);
             var models = pagedList.Select(x => { var m = x.ToModel();
                                                    return m;
             }).ToPagedList(pageIndex,1,pagedList.TotalCount);
@@ -45,7 +45,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             entity.Lng = 30;
             entity.State = 1;
             entity.Path = "aaa";
-            _distributorRepository.Add(entity);
+            _distributorService.Add(entity);
             return RedirectToAction("Detail",entity.ToModel());
         }
         public ActionResult Edit()

@@ -16,8 +16,8 @@ namespace Lucky.Hr.SiteManager.Controllers
     public class CategoryController : BaseAdminController
     {
         private INewsContext _context;
-        private ICategoryRepository _categoryRepository;
-        public CategoryController(INewsContext context, ICategoryRepository categoryRepository)
+        private ICategoryService _categoryRepository;
+        public CategoryController(INewsContext context, ICategoryService categoryRepository)
         {
             _context = context;
             _categoryRepository = categoryRepository;

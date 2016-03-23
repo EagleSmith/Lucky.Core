@@ -22,7 +22,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         #region 私有变量
         private ICacheManager _cacheManager;
         public ILogger _Logger;
-        private readonly IAreaRepository _areaRepository;
+        private readonly IAreaService _areaService;
         private IHrDbContext _dbContext;
         #endregion
 
@@ -30,20 +30,20 @@ namespace Lucky.Hr.SiteManager.Controllers
         public AreaController(
             ICacheManager cacheManager,
             ILogger logger,
-            IAreaRepository areaRepository,
+            IAreaService areaService,
             IHrDbContext dbContext
             )
         {
             _cacheManager = cacheManager;
             _Logger = logger;
-            _areaRepository = areaRepository;
+            _areaService = areaService;
             _dbContext = dbContext;
         }
         #endregion
 
         public JsonpResult Droplet(string citycode = "", int levelid = 1)
         {
-            var list = _areaRepository.Find(a => a.ParentId == citycode).Select(a => new {code = a.AreaId, label = a.AreaName}).ToList();// AreaHelper.GetAll(citycode).Select(a => new { code = a.AreaId, label = a.AreaName }).ToList();
+            var list = _areaService.Find(a => a.ParentId == citycode).Select(a => new {code = a.AreaId, label = a.AreaName}).ToList();// AreaHelper.GetAll(citycode).Select(a => new { code = a.AreaId, label = a.AreaName }).ToList();
             return new JsonpResult(new { result = new { division = list } });
         }
         // GET: Area
@@ -53,7 +53,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             var forms = HttpContext.Request.QueryString.AllKeys;
             var spec = SpecificationBuilder.Create<Area>();
             model.Expression(spec);
-            var pagedList = _areaRepository.GetPaged(spec.Predicate,a => a.AreaId, pageIndex, 20);
+            var pagedList = _areaService.GetPaged(spec.Predicate,a => a.AreaId, pageIndex, 20);
             var models = pagedList.Select(x =>
             {
                 var m = x.ToModel();
@@ -88,10 +88,10 @@ namespace Lucky.Hr.SiteManager.Controllers
 
         public ActionResult Detail(string id)
         {
-            var entity = _areaRepository.Single(a => a.AreaId == id);
+            var entity = _areaService.Single(a => a.AreaId == id);
             var model = entity.ToModel();
             string pid = entity.ParentId;
-            var ep = _areaRepository.Single(a => a.AreaId == pid);
+            var ep = _areaService.Single(a => a.AreaId == pid);
 
             model.ParentName = ep == null ? "无" : ep.AreaName;
             return View(model);
@@ -105,7 +105,7 @@ namespace Lucky.Hr.SiteManager.Controllers
 
         private void GetViewModel(AreaViewModel model)
         {
-            model.AreaItems = _areaRepository.GetQuery(a=>a.ParentId=="").Select(
+            model.AreaItems = _areaService.GetQuery(a=>a.ParentId=="").Select(
                 a=>new ListItemEntity
                 {
                     ID =a.AreaId,
@@ -118,7 +118,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         public JsonResult GetAreaParentID(string parentid)
         {
             parentid = parentid.Substring(0, 2);
-            IList<SelectListItem> list = _areaRepository.GetQuery(a => a.ParentId.StartsWith(parentid)).Select(
+            IList<SelectListItem> list = _areaService.GetQuery(a => a.ParentId.StartsWith(parentid)).Select(
                 a => new SelectListItem() {Value = a.AreaId,Text = a.AreaName}
                 ).ToList();
             return Json(list, JsonRequestBehavior.AllowGet);

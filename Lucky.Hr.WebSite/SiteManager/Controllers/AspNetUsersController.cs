@@ -19,11 +19,11 @@ namespace Lucky.Hr.SiteManager.Controllers
     public class AspNetUsersController : BaseAdminController
     {
         private IHrDbContext _context;
-        private IManagerRepository _managerRepository;
-        public AspNetUsersController(IHrDbContext context,IManagerRepository managerRepository)
+        private IManagerService _managerService;
+        public AspNetUsersController(IHrDbContext context,IManagerService managerService)
         {
             _context = context;
-            _managerRepository = managerRepository;
+            _managerService = managerService;
         }
         // GET: AspNetUsers
         public ActionResult Index(int pageIndex = 1, string keyword = "")
@@ -31,7 +31,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             var spec = SpecificationBuilder.Create<Manager>();
             if (keyword != "")
                 spec.Like(a => a.FullName, keyword);
-            var pagelist = _managerRepository.GetPaged(spec.Predicate, a => a.AddDate, pageIndex,20);
+            var pagelist = _managerService.GetPaged(spec.Predicate, a => a.AddDate, pageIndex,20);
             var models = pagelist.Select(a=> { return a.ToModel(); }).ToPagedList(pageIndex,20,pagelist.TotalCount);
             return View(models);
         }
@@ -39,7 +39,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         // GET: AspNetUsers/Details/5
         public ActionResult Details(string id)
         {
-            var entity = _managerRepository.Single(a => a.Id == id);
+            var entity = _managerService.Single(a => a.Id == id);
             var model = entity.ToModel();
             ViewBag.ChangePassWord = new ChangePasswordViewModel();
             return View(model);
@@ -93,7 +93,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         // GET: AspNetUsers/Edit/5
         public ActionResult Edit(string id)
         {
-            var entity = _managerRepository.Single(a => a.Id == id);
+            var entity = _managerService.Single(a => a.Id == id);
             var model = entity.ToModel();
             return View(model);
         }

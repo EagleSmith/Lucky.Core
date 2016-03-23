@@ -19,10 +19,10 @@ namespace Lucky.Hr.SiteManager.Controllers
 {
     public class HomeController : BaseAdminController
     {
-        private INavRepository _navRepository;
-        public HomeController(INavRepository nav)
+        private INavService _navService;
+        public HomeController(INavService nav)
         {
-            _navRepository = nav;
+            _navService = nav;
         }
 
         #region KindeEditor
@@ -281,7 +281,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             var ci = User.Identity as ClaimsIdentity;
             var role = ci.FindFirst(ClaimTypes.Role);
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
-            ViewBag.NavList = _navRepository.GetQuery(a=>a.State==1).ToList().Select(a=> { return a.ToModel(); });
+            ViewBag.NavList = _navService.GetQuery(a=>a.State==1).ToList().Select(a=> { return a.ToModel(); });
             return View();
         }
         private IAuthenticationManager AuthenticationManager

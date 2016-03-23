@@ -17,18 +17,18 @@ namespace Lucky.Hr.SiteManager.Controllers
     public class AspNetRolesController : BaseAdminController
     {
         private IHrDbContext _context;
-        private IRoleRepository _roleRepository;
-        private IDistributorRepository _distributorRepository;
-        private INavRepository _navRepository;
-        private IRoleNavRepository _roleNavRepository;
+        private IRoleService _roleService;
+        private IDistributorService _distributorService;
+        private INavService _navService;
+        private IRoleNavService _roleNavService;
         private ILogger _logger;
-        public AspNetRolesController(IHrDbContext context,ILogger logger,IRoleRepository roleRepository,IDistributorRepository distributor,INavRepository navRepository,IRoleNavRepository roleNavRepository)
+        public AspNetRolesController(IHrDbContext context,ILogger logger,IRoleService roleService,IDistributorService distributor,INavService navService,IRoleNavService roleNavService)
         {
             _context = context;
-            _roleRepository = roleRepository;
-            _distributorRepository = distributor;
-            _navRepository = navRepository;
-            _roleNavRepository = roleNavRepository;
+            _roleService = roleService;
+            _distributorService = distributor;
+            _navService = navService;
+            _roleNavService = roleNavService;
             _logger = logger;
         }
         // GET: AspNetRoles
@@ -37,7 +37,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             var spec = SpecificationBuilder.Create<Role>();
             if (keyword != "")
                 spec.Like(a => a.RoleName, keyword);
-            var pagelist = _roleRepository.GetPaged(spec.Predicate, a => a.Id, pageIndex, 20);
+            var pagelist = _roleService.GetPaged(spec.Predicate, a => a.Id, pageIndex, 20);
             var models = pagelist.Select(a => { return a.ToModel(); }).ToPagedList(pageIndex, 20, pagelist.TotalCount);
             return View(models);
 
@@ -46,12 +46,12 @@ namespace Lucky.Hr.SiteManager.Controllers
         // GET: AspNetRoles/Details/5
         public ActionResult Details(string id)
         {
-            var entity = _roleRepository.Single(a => a.Id == id);
+            var entity = _roleService.Single(a => a.Id == id);
             var model = entity.ToModel();
             int disid = entity.DistributorId;
-            var disentity = _distributorRepository.Single(a => a.DistributorId == disid);
+            var disentity = _distributorService.Single(a => a.DistributorId == disid);
             model.DistributorName = disentity!=null?disentity.DistributionName:"";
-            model.OperationViewModels = _roleRepository.GetNavOperationViewModels(id);
+            model.OperationViewModels = _roleService.GetNavOperationViewModels(id);
             return View(model);
         }
 
@@ -74,7 +74,7 @@ namespace Lucky.Hr.SiteManager.Controllers
                 {
                     var entity = model.ToEntity();
                     entity.Name = model.RoleName;
-                    _roleRepository.Add(entity);
+                    _roleService.Add(entity);
                 }
 
                 return RedirectToAction("Index");
@@ -88,7 +88,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         // GET: AspNetRoles/Edit/5
         public ActionResult Edit(string id)
         {
-            var entity = _roleRepository.Single(a => a.Id == id);
+            var entity = _roleService.Single(a => a.Id == id);
             var model = entity.ToModel();
             GetViewModel(model);
             return View(model);
@@ -104,7 +104,7 @@ namespace Lucky.Hr.SiteManager.Controllers
                 {
                     var entity = model.ToEntity();
                     entity.Name = model.RoleName;
-                    _roleRepository.Update(entity);
+                    _roleService.Update(entity);
                 }
 
 
@@ -119,7 +119,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         // GET: AspNetRoles/Delete/5
         public ActionResult Delete(string id)
         {
-            _roleRepository.Delete(a => a.Id == id);
+            _roleService.Delete(a => a.Id == id);
             var redirectUrl = new UrlHelper(Request.RequestContext).Action("Index", "AspNetRoles");
             return Json(new { Url = redirectUrl }, JsonRequestBehavior.AllowGet);
             
@@ -127,7 +127,7 @@ namespace Lucky.Hr.SiteManager.Controllers
 
         public ActionResult RoleOperation(string id)
         {
-            IEnumerable<NavOperationViewModel> models = _roleRepository.GetNavOperationViewModels(id);
+            IEnumerable<NavOperationViewModel> models = _roleService.GetNavOperationViewModels(id);
             ViewBag.RoleId = id;
             return View(models);
         }
@@ -141,7 +141,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             {
                 
                 from.Remove("RoleId");
-                _roleNavRepository.Delete(a => a.RoleId == roleid, false);
+                _roleNavService.Delete(a => a.RoleId == roleid, false);
                 if (from.Keys.Count > 0)
                 {
                     foreach (string k in from.Keys)
@@ -158,7 +158,7 @@ namespace Lucky.Hr.SiteManager.Controllers
                         }
                     }
                 }
-                _roleNavRepository.AddRange(list, false);
+                _roleNavService.AddRange(list, false);
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -173,7 +173,7 @@ namespace Lucky.Hr.SiteManager.Controllers
         private void GetViewModel(AspNetRolesViewModel model)
         {
             
-            model.DistributorListItems = _distributorRepository.GetList().Select(a=>new ListItemEntity()
+            model.DistributorListItems = _distributorService.GetList().Select(a=>new ListItemEntity()
             {
                 ID = a.DistributorId.ToString(),
                 ParentID = "",

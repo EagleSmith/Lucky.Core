@@ -9,18 +9,18 @@ namespace Lucky.Hr.SiteManager.Controllers
 {
     public class DepartmentController:BaseAdminController
     {
-        private readonly IDepartmentRepository _departmentRepository;
-        private readonly IDistributorRepository _distributorRepository;
+        private readonly IDepartmentService _departmentService;
+        private readonly IDistributorService _distributorService;
         
-        public DepartmentController(IDepartmentRepository department,IDistributorRepository distributor)
+        public DepartmentController(IDepartmentService department,IDistributorService distributor)
         {
-            _departmentRepository = department;
-            _distributorRepository = distributor;
+            _departmentService = department;
+            _distributorService = distributor;
         }
         // GET: Department
         public ActionResult Index(int pageIndex=1,string keyword="")
         {
-            var models = _departmentRepository.GetList(pageIndex, keyword);
+            var models = _departmentService.GetList(pageIndex, keyword);
             return View(models);
         }
 
@@ -34,7 +34,7 @@ namespace Lucky.Hr.SiteManager.Controllers
 
         public ActionResult Edit(string id)
         {
-            var entity = _departmentRepository.Single(a => a.DepartmentId == id);
+            var entity = _departmentService.Single(a => a.DepartmentId == id);
             var model = entity.ToModel();
             SetModel(model);
             return View(model);
@@ -45,7 +45,7 @@ namespace Lucky.Hr.SiteManager.Controllers
             if (ModelState.IsValid)
             {
                 var entity = model.ToEntity();
-                _departmentRepository.Add(entity);
+                _departmentService.Add(entity);
                 return RedirectToAction("Index");
             }
             return View();
@@ -56,16 +56,16 @@ namespace Lucky.Hr.SiteManager.Controllers
             if (ModelState.IsValid)
             {
                 string id = model.DepartmentId;
-                var entity = _departmentRepository.Single(a => a.DepartmentId == id);
+                var entity = _departmentService.Single(a => a.DepartmentId == id);
                 entity = model.ToEntity(entity);
-                _departmentRepository.Update(entity);
+                _departmentService.Update(entity);
                 return RedirectToAction("Index");
             }
             return View();
         }
         public ActionResult Detail(string id)
         {
-            var entity = _departmentRepository.Single(a => a.DepartmentId == id);
+            var entity = _departmentService.Single(a => a.DepartmentId == id);
             var model = entity.ToModel();
             model.ParentName = entity.Parent!=null?entity.Parent.DepartmentName:"无";
             return View(model);
@@ -73,10 +73,10 @@ namespace Lucky.Hr.SiteManager.Controllers
 
         public ActionResult Delete(string id)
         {
-            var entity=_departmentRepository.Single(a => a.DepartmentId == id);
+            var entity=_departmentService.Single(a => a.DepartmentId == id);
             if (entity != null)
             {
-                _departmentRepository.Delete(entity);
+                _departmentService.Delete(entity);
                 var redirectUrl = new UrlHelper(Request.RequestContext).Action("Index", "Department");
                 return Json(new {Url = redirectUrl}, JsonRequestBehavior.AllowGet);
             }
@@ -86,14 +86,14 @@ namespace Lucky.Hr.SiteManager.Controllers
 
         private void SetModel(DepartmentViewModel model)
         {
-            model.DepartmentListItems = _departmentRepository.Find(a => true).Select(a => new ListItemEntity()
+            model.DepartmentListItems = _departmentService.Find(a => true).Select(a => new ListItemEntity()
             {
                 ID = a.DepartmentId,
                 ParentID = a.ParentId,
                 Title = a.DepartmentName,
                 Selected = (a.DepartmentId==model.DepartmentId)
             }).ToList();
-            model.DistributorListItems = _distributorRepository.Find(a=>true).Select(a => new SelectListItem()
+            model.DistributorListItems = _distributorService.Find(a=>true).Select(a => new SelectListItem()
             {
                 Value = a.DistributorId.ToString(),
                 Text = a.DistributionName,

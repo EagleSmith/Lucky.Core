@@ -25,25 +25,25 @@ namespace Lucky.Hr.WebSite.Controllers
     {
         private ICacheManager _cacheManager;
         public ILogger _Logger;
-        private IAreaRepository _areaRepository;
-        private IDistributorConfigRepository _distributorConfigRepository;
+        private IAreaService _areaService;
+        private IDistributorConfigService _distributorConfigService;
         private IHrDbContext _dbContext;
-        private INewsArticlesRepository _articlesRepository;
+        private INewsArticlesService _articlesRepository;
 
         public HomeController(
             ICacheManager cacheManager,
             ILogger logger,
-            IAreaRepository areaRepository,
+            IAreaService areaService,
             IHrDbContext hrDbContext,
-            IDistributorConfigRepository distributorConfigRepository,
-            INewsArticlesRepository articlesRepository
+            IDistributorConfigService distributorConfigService,
+            INewsArticlesService articlesRepository
             )
         {
             _cacheManager = cacheManager;
             _Logger = logger;
-            _areaRepository = areaRepository;
+            _areaService = areaService;
             _dbContext = hrDbContext;
-            _distributorConfigRepository = distributorConfigRepository;
+            _distributorConfigService = distributorConfigService;
             _articlesRepository = articlesRepository;
         }
         // GET: Home
