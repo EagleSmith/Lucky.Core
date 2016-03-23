@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Lucky.Hr.Caching;
 using Lucky.Hr.Core;
 using Lucky.Hr.Core.Logging;
+using Lucky.Hr.Core.Utility;
 using Lucky.Hr.Entity;
 using Lucky.Hr.Entity.Mapping;
 using Lucky.Hr.IService;
@@ -50,8 +51,12 @@ namespace Lucky.Hr.WebSite.Controllers
         [OutputCache(Duration = 60)]
         public  ActionResult Index()
         {
-            List<NewsArticlesViewModel> list = _articlesRepository.GetArticlesViewModels();
-            return  View(list);
+            //List<NewsArticlesViewModel> list = _articlesRepository.GetArticlesViewModels();
+            Globals.Execute(() =>
+            {
+                throw new Exception("SSSS");
+            });
+            return View();
         }
         
     }

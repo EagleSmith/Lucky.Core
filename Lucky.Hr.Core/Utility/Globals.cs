@@ -10,11 +10,41 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Mvc;
+using Lucky.Hr.Core.Infrastructure;
+using Lucky.Hr.Core.Logging;
 
 namespace Lucky.Hr.Core.Utility
 {
     public sealed class Globals
     {
+        public static ActionResult Execute(Func<ActionResult> action)
+        {
+            try
+            {
+                return action();
+            }
+            catch (Exception ex)
+            {
+                EngineContext.Current.Resolve<ILogger>().Error("{0}\r\n{1}", ex.Message, ex.InnerException?.Message);
+            }
+            return null;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action"></param>
+        public static void Execute(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception ex)
+            {
+                EngineContext.Current.Resolve<ILogger>().Error("{0}\r\n{1}", ex.Message, ex.InnerException?.Message);
+            }
+        }
         public static T InvokeHandler<T>(Delegate delegateWarpper, object[] parameters)
         {
             try
