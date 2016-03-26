@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
+
 using Lucky.Hr.Core.Data.UnitOfWork;
 using Lucky.Hr.Core.Utility.Extensions;
 namespace Lucky.Hr.Core.Data
@@ -23,10 +24,8 @@ namespace Lucky.Hr.Core.Data
         {
             get { return _context.DbSet<TEntity>(); }
         }
-        public Database Database
-        {
-            get { return (_context as System.Data.Entity.DbContext).Database; }
-        }
+        public Database Database => (_context as DbContext)?.Database;
+
         #region IRepository<TEntity> 成员
 
         public IQueryable<TEntity> GetQuery(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate, bool IsNoTracking = true)
@@ -214,7 +213,7 @@ namespace Lucky.Hr.Core.Data
 
         #endregion
 
-
+        
 
         #region 异步操作
         public async Task<TEntity> SingleAsync(Specification.ISpecification<TEntity> specification, bool IsNoTracking = true)

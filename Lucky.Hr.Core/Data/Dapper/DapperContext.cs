@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -141,7 +142,19 @@ namespace Lucky.Hr.Core.Data.Dapper
         IDbConnection Connection { get; }
 
         int Execute(CommandDefinition definition);
-
+        /// <summary>
+        /// 取得数据表结构，不包含数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        DataTable GetSchemaTable<T>();
+        /// <summary>
+        /// 批量插入
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="tablename"></param>
+        /// <returns></returns>
+        bool ExecBlukCopy(DataTable table, string tablename);
         IEnumerable<T> Query<T>(CommandDefinition definition);
         int? Insert<T>(dynamic data);
         int Update<T>(dynamic data);
@@ -265,6 +278,46 @@ namespace Lucky.Hr.Core.Data.Dapper
             {
                 return _connection.Execute(command);
             }
+            public DataTable GetSchemaTable<T>()
+            {
+                string tableName = GetTableName(typeof(T));
+                DataTable table = new DataTable(tableName);
+                table.Load(_connection.ExecuteReader($"select * from {tableName} where 1=2"));
+                return table;
+            }
+
+            public bool ExecBlukCopy(DataTable table, string tablename)
+            {
+
+                using (SqlConnection conn = (SqlConnection)_connection)
+                {
+                    conn.Open();
+                    using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
+                    {
+                        bulkCopy.BatchSize = 5000;
+                        bulkCopy.DestinationTableName = tablename;
+                        foreach (DataColumn column in table.Columns)
+                        {
+                            bulkCopy.ColumnMappings.Add(column.ColumnName, column.ColumnName);
+                        }
+                        try
+                        {
+                            bulkCopy.WriteToServer(table);
+                        }
+                        catch (Exception)
+                        {
+                            return false;
+                        }
+                        finally
+                        {
+                            bulkCopy.Close();
+                            conn.Close();
+                        }
+
+                    }
+                }
+                return true;
+            }
             /// <summary>
             /// Insert a row into the db
             /// </summary>
@@ -386,7 +439,7 @@ namespace Lucky.Hr.Core.Data.Dapper
             {
                 return _connection.QueryMultiple(new CommandDefinition(sql, param, _transaction, commandTimeout, commandType));
             }
-
+           // SqlMapper.
         }
 
         public int Execute(string sql, object param = null, CommandType? commandType = null, int? commandTimeout = 0)
