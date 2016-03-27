@@ -3,28 +3,177 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="container">
-    <div class="row show-grid">
-        <div class="col-md-3" style="background-color: royalblue">bootstrap左边</div>
-        <div class="col-md-9" style="background-color: lightblue">bootstrap右边</div>
-    </div>
-    <div class="row show-grid">
-        @foreach (var _model in Model)
-        {
-            <div class="col-md-6" style="background-color: royalblue">@_model.Title</div>
-            <div class="col-md-3" style="background-color: lightblue">@_model.CreateDate</div>
-            <div class="col-md-3" style="background-color: royalblue">3</div>
-        }
-    </div>
+<div class="slider-inner">
+    <div id="da-slider" class="da-slider">
+        <div class="da-slide">
 
-</div>
-<div class=" container-fluid">
-    <div class="row show-grid">
-        <div class="dl20" style="background-color: royalblue">左边</div>
-        <div class="fluid" style=" background-color: lightblue">自适应</div>
+            <p><i>http://www.luckearth.cn</i> <br /> <i></i> <br /> <i>上海-幸运草</i></p>
+            <div class="da-img"><img class="img-responsive" src="/Content/Default/plugins/parallax-slider/img/1.png" alt="" /></div>
+        </div>
+
+        <div class="da-slide">
+
+            <p><i>http://www.luckearth.cn</i> <br /> <i></i> <br /> <i>上海-幸运草</i></p>
+            <div class="da-img"><img src="/Content/Default/plugins/parallax-slider/img/html5andcss3.png" alt="image01" /></div>
+        </div>
+        <div class="da-arrows">
+            <span class="da-arrows-prev"></span>
+            <span class="da-arrows-next"></span>
+        </div>
     </div>
-    <div class="row show-grid">
-        <div class="dl20" style="background-color: royalblue">左边</div>
-        <div class="fluid" style=" background-color: lightblue">自适应</div>
+</div><!--/slider-->
+<!--=== End Slider ===-->
+<!--=== Purchase Block ===-->
+<div class="purchase">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 animated fadeInLeft">
+                <span> CMS</span>
+                <p>
+                    一个方便程序员快速搭建网站的内容管理程序。<br />
+                    采用技术有 ASP.NET MVC 3 + .Net Framework 4.0 + Bootstrap + SQLite
+                </p>
+            </div>
+            <div class="col-md-3 btn-buy animated fadeInRight">
+                <a href="http://www.luckearth.cn" target="_blank" class="btn-u btn-u-lg"><i class="fa fa-cloud-download"></i> Download Now</a>
+            </div>
+        </div>
     </div>
+</div><!--/row-->
+<!-- End Purchase Block -->
+<!--=== Content Part ===-->
+<div class="container content-sm">
+    <!-- Service Blocks -->
+    <div class="row margin-bottom-30">
+        <div class="col-md-4">
+            <div class="service">
+                <i class="fa fa-compress service-icon"></i>
+                <div class="desc">
+                    <h4>公司新闻</h4>
+                    <ul class="list-unstyled blog-trending margin-bottom-50">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service">
+                <i class="fa fa-cogs service-icon"></i>
+                <div class="desc">
+                    <h4>行业新闻</h4>
+                    <ul class="list-unstyled blog-trending margin-bottom-50">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service">
+                <i class="fa fa-rocket service-icon"></i>
+                <div class="desc">
+                    <h4>联系我们</h4>
+                    <p>
+                        上海市金沙江西路慧创国际园区<br />
+                        联系人：上海-幸运草<br />
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Service Blokcs -->
+    <!-- Recent Works -->
+    <div class="headline"><h2>成功案例</h2></div>
+    <div class="row margin-bottom-20">
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden">
+                        <img class="img-responsive" src="/Content/Default/Images/main/img1.jpg" alt="">
+                    </div>
+                    <a class="btn-more hover-effect" href="#">read more +</a>
+                </div>
+                <div class="caption">
+                    <h3><a class="hover-effect" href="#">Project One</a></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden">
+                        <img class="img-responsive" src="/Content/Default/Images/main/img12.jpg" alt="">
+                    </div>
+                    <a class="btn-more hover-effect" href="#">read more +</a>
+                </div>
+                <div class="caption">
+                    <h3><a class="hover-effect" href="#">Project Two</a></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden">
+                        <img class="img-responsive" src="/Content/Default/Images/main/img3.jpg" alt="">
+                    </div>
+                    <a class="btn-more hover-effect" href="#">read more +</a>
+                </div>
+                <div class="caption">
+                    <h3><a class="hover-effect" href="#">Project Three</a></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden">
+                        <img class="img-responsive" src="/Content/Default/Images/main/img17.jpg" alt="">
+                    </div>
+                    <a class="btn-more hover-effect" href="#">read more +</a>
+                </div>
+                <div class="caption">
+                    <h3><a class="hover-effect" href="#">Project Four</a></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Owl Clients v1 -->
+    <div class="headline"><h2>Our Clients</h2></div>
+    <div class="owl-clients-v1">
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/1.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/2.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/3.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/4.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/5.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/6.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/7.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/8.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/Content/Default/Images/clients4/9.png" alt="">
+        </div>
+    </div>
+    <!-- End Owl Clients v1 -->
 </div>
+<!--/container-->
+<!-- End Content Part -->

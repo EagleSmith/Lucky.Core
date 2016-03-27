@@ -1,47 +1,297 @@
 ﻿<!DOCTYPE html>
-<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>内容管理系统</title>
+    <!-- Meta -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/bootstrap")
-    @*@Scripts.Render("~/bundles/modernizr")*@
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='/Content/Default/css/css.css' />
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="/Content/Default/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/Default/css/style.css" />
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="/Content/Default/css/headers/header-default.css" />
+    <link rel="stylesheet" href="/Content/Default/css/footers/footer-v1.css" />
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="/Content/Default/plugins/animate.css" />
+    <link rel="stylesheet" href="/Content/Default/plugins/line-icons/line-icons.css" />
+    <link rel="stylesheet" href="/Content/Default/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Content/Default/plugins/parallax-slider/css/parallax-slider.css" />
+    <link rel="stylesheet" href="/Content/Default/plugins/owl-carousel/owl.carousel.css" />
+
+    <link rel="stylesheet" href="/Content/Default/plugins/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="/Content/Default/plugins/cubeportfolio/custom/custom-cubeportfolio.css">
+
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="/Content/Default/themes-colors/default.css" id="style_color" />
+    
+ 
+    @RenderSection("Style", false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-               
-                @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                        @if (Request.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("授权", "About", "Home")</li>
-                            <li>@Html.ActionLink("授权", "About", "Home")</li>
-                        }
-                    
-                </ul>
-                
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
-    </div>
 
-    @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")*@
-    @RenderSection("scripts", required: false)
+    <!--=== End Style Switcher ===-->
+    <div class="wrapper">
+        <!--=== Header ===-->
+        <div class="header">
+            <div class="container">
+                <!-- Logo -->
+                <a class="logo" href="javascript:void(0);">
+                    <img src="/Content/Default/Images/logo1-default.png" alt="Logo" />
+                    @*<div>幸运草工作室</div>*@
+                </a>
+                <!-- End Logo -->
+                <!-- Topbar -->
+                <div class="topbar">
+                    <ul class="loginbar pull-right">
+                        <li class="hoverSelector">
+                            <i class="fa fa-globe"></i>
+                            <a href="/Home"></a>
+                        </li>
+                        <li class="topbar-devider"></li>
+                        <li><a href="#">Help</a></li>
+                        <li class="topbar-devider"></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+                <!-- End Topbar -->
+                <!-- Toggle get grouped for better mobile display -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <!-- End Toggle -->
+            </div><!--/end container-->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+                <div class="container">
+                    <ul class="nav navbar-nav">
+                        <!-- Home -->
+                        <li class="active">
+                            <a href="/">
+                                首页
+                            </a>
+                        </li>
+                        <!-- End Home -->
+                        <!-- Pages -->
+                        <li class="">
+                            <a href="#">
+                                关于我们
+                            </a>
+                        </li>
+                        <!-- End Pages -->
+                        <!-- Blog -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                最新动态
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">公司新闻</a></li>
+                                <li><a href="#">行业新闻</a></li>
+                            </ul>
+                        </li>
+                        <!-- End Blog -->
+                        <!-- Portfolio -->
+                        <li class="">
+                            <a href="#">
+                                成功案例
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                加入我们
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                授权服务
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                联系我们
+                            </a>
+                        </li>
+                        <!-- Search Block -->
+                        <li>
+                            <i class="search fa fa-search search-btn"></i>
+                            <div class="search-open">
+                                <div class="input-group animated fadeInDown">
+                                    <input type="text" class="form-control" placeholder="Search" />
+                                    <span class="input-group-btn">
+                                        <button class="btn-u" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- End Search Block -->
+                    </ul>
+                </div><!--/end container-->
+            </div><!--/navbar-collapse-->
+        </div>
+        <!--=== End Header ===-->
+        <!--=== Content Part ===-->
+        @RenderBody()
+        <!--/container-->
+        <!-- End Content Part -->
+        <!--=== Footer Version 1 ===-->
+        <div class="footer-v1">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <!-- About -->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <a href="/"><img id="logo-footer" class="footer-logo" src="/Content/Default/Images/logo2-default.png" alt="" /></a>
+                            <p>是一个开源的CMS产品，面向软件开发者、程序爱好者，服务于个人、企业的网站。</p>
+                            <p> 在不修改作者版权的情况下，可任意使用，有偿提供功能扩展服务。具体参考“授权服务” </p>
+                        </div><!--/col-md-3-->
+                        <!-- End About -->
+                        <!-- Latest -->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <div class="posts">
+                                <div class="headline"><h2>Latest Posts</h2></div>
+                                <ul class="list-unstyled latest-list">
+                                    <li>
+                                        <a href="#">Incredible content</a>May 8, 2014
+                                    </li>
+                                    <li>
+                                        <a href="#">Best shoots</a>
+                                        <small>June 23, 2014</small>
+                                    </li>
+                                    <li>
+                                        <a href="#">New Terms and Conditions</a>
+                                        <small>September 15, 2014</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--/col-md-3-->
+                        <!-- End Latest -->
+                        <!-- Link List -->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <div class="headline"><h2>Useful Links</h2></div>
+                            <ul class="list-unstyled link-list">
+                                <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
+                            </ul>
+                        </div><!--/col-md-3-->
+                        <!-- End Link List -->
+                        <!-- Address -->
+                        <div class="col-md-3 map-img md-margin-bottom-40">
+                            <div class="headline"><h2>联系我们</h2></div>
+                            <address class="md-margin-bottom-40">
+                                上海市金沙江西路慧创国际园区  <br />
+
+                                邮箱：luckearth@luckearth.cn <br />
+                                联系人：上海-幸运草 <br />
+                            </address>
+                        </div><!--/col-md-3-->
+                        <!-- End Address -->
+                    </div>
+                </div>
+            </div><!--/footer-->
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="http://www.vipsoft.com.cn/" target="_blank">
+                                    <span class="blue bolder">luckearth</span>.cn
+                                </a>
+                                2015 &copy; All Rights Reserved.
+                                <a href="javascript:void(0);">Privacy Policy</a> | <a href="javascript:void(0);">Terms of Service</a>
+                            </p>
+                        </div>
+                        <!-- Social Links -->
+                        <div class="col-md-6">
+                            <ul class="footer-socials list-inline">
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+                                        <i class="fa fa-skype"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+                                        <i class="fa fa-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
+                                        <i class="fa fa-dribbble"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Social Links -->
+                    </div>
+                </div>
+            </div><!--/copyright-->
+        </div>
+        <!--=== End Footer Version 1 ===-->
+    </div><!--/wrapper-->
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="/Content/Default/Scripts/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/Content/Default/Scripts/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="/Content/Default/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script type="text/javascript" src="/Content/Default/Scripts/back-to-top.js"></script>
+    <script type="text/javascript" src="/Content/Default/Scripts/smoothScroll.js"></script>
+    <script type="text/javascript" src="/Content/Default/plugins/parallax-slider/js/modernizr.js"></script>
+    <script type="text/javascript" src="/Content/Default/plugins/parallax-slider/js/jquery.cslider.js"></script>
+    <script type="text/javascript" src="/Content/Default/plugins/owl-carousel/owl.carousel.js"></script>
+
+    <script type="text/javascript" src="/Content/Default/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+
+    <!-- JS Page Level -->
+<script type="text/javascript" src="/Content/Default/Scripts/app.js"></script>
+    <script type="text/javascript" src="/Content/Default/Scripts/owl-carousel.js"></script>
+    <script type="text/javascript" src="/Content/Default/Scripts/style-switcher.js"></script>
+    <script type="text/javascript" src="/Content/Default/Scripts/parallax-slider.js"></script>
+
+    <script src="~/Content/Default/Scripts/cube-portfolio-3.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+            OwlCarousel.initOwlCarousel();
+            StyleSwitcher.initStyleSwitcher();
+            ParallaxSlider.initParallaxSlider();
+        });
+    </script>
+    <!--[if lt IE 9]>
+        <script src="/Content/Default/Scripts/respond.js"></script>
+        <script src="/Content/Default/Scripts/html5shiv.js"></script>
+        <script src="/Content/Default/Scripts/placeholder-IE-fixes.js"></script>
+    <![endif]-->
 </body>
 </html>
