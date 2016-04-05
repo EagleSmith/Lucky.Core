@@ -9,7 +9,7 @@ namespace Lucky.Hr.Core.Infrastructure
     /// <summary>
     /// 提供单例引擎上下文
     /// </summary>
-    public class EngineContext
+    public class EngineContext 
     {
         #region Initialization Methods
         /// <summary>初始化引擎上下文</summary>

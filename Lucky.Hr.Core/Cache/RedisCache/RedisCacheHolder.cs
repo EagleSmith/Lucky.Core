@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lucky.Hr.Caching;
+using StackExchange.Redis.Extensions.Core;
 
 namespace Lucky.Hr.Core.Cache.RedisCache
 {
@@ -12,9 +13,11 @@ namespace Lucky.Hr.Core.Cache.RedisCache
     {
         private readonly ICacheContextAccessor _cacheContextAccessor;
         private readonly ConcurrentDictionary<CacheKey, object> _caches = new ConcurrentDictionary<CacheKey, object>();
-        public RedisCacheHolder(ICacheContextAccessor cacheContextAccessor)
+        private ICacheClient _client;
+        public RedisCacheHolder(ICacheContextAccessor cacheContextAccessor, ICacheClient client)
         {
             _cacheContextAccessor = cacheContextAccessor;
+            _client = client;
         }
         private class CacheKey : Tuple<Type, Type, Type>
         {
@@ -24,7 +27,7 @@ namespace Lucky.Hr.Core.Cache.RedisCache
         public ICache<TKey, TResult> GetCache<TKey, TResult>(Type component)
         {
             var cacheKey = new CacheKey(component, typeof(TKey), typeof(TResult));
-            var result = _caches.GetOrAdd(cacheKey, k => new RedisCache<TKey, TResult>(_cacheContextAccessor));
+            var result = _caches.GetOrAdd(cacheKey, k => new RedisCache<TKey, TResult>(_cacheContextAccessor,_client));
             return (RedisCache<TKey, TResult>)result;
         }
     }

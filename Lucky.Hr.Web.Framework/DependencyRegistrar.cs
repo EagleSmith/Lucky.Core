@@ -45,7 +45,8 @@ namespace Lucky.Hr.Web.Framework
             builder.RegisterType<DefaultCacheContextAccessor>().As<ICacheContextAccessor>().SingleInstance();
             builder.RegisterType<DefaultParallelCacheContext>().As<IParallelCacheContext>().SingleInstance();
             builder.RegisterType<DefaultAsyncTokenProvider>().As<IAsyncTokenProvider>().SingleInstance();
-            
+            builder.RegisterType<RedisSignals>().As<IRedisSignals>().SingleInstance();
+
             RegisterVolatileProvider<Signals, ISignals>(builder);
             RegisterVolatileProvider<RedisSignals, IRedisSignals>(builder);
 

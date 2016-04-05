@@ -17,10 +17,10 @@ namespace Lucky.Hr.Core.Cache.RedisCache
     {
         private readonly ICacheContextAccessor _cacheContextAccessor;
         private static ICacheClient _client;
-        public RedisCache(ICacheContextAccessor cacheContextAccessor)
+        public RedisCache(ICacheContextAccessor cacheContextAccessor,ICacheClient client)
         {
             _cacheContextAccessor = cacheContextAccessor;
-            _client = EngineContext.Current.Resolve<ICacheClient>();
+            _client = client;// EngineContext.Current.Resolve<ICacheClient>();
         }
 
         public TResult Get(TKey key, Func<AcquireContext<TKey>, TResult> acquire)
