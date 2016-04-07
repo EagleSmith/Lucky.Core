@@ -102,7 +102,7 @@ namespace Lucky.Hr.Core.Services
             timeCache[key] = token;
             return token;
         }
-        [Serializable] 
+        [Serializable]  
         public class AbsoluteExpirationToken : IVolatileToken
         {
             private readonly IMemClock _clock;

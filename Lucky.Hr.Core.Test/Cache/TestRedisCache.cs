@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -101,5 +102,157 @@ namespace Lucky.Hr.Core.Test.Cache
             Thread.Sleep(5000);
             Console.WriteLine(retrieve());
         }
+        [Test]
+        public void TestGuid()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                //Console.WriteLine(GenerateComb());
+                
+               Console.WriteLine(CreateSequentialUID());
+
+            }
+        }
+       
+
+        private Guid GenerateComb()
+        {
+
+            byte[] guidArray = Guid.NewGuid().ToByteArray();
+            DateTime baseDate = new DateTime(1900, 1, 1);
+
+            DateTime now = DateTime.Now;
+            // Get the days and milliseconds which will be used to build    
+
+            //the byte string    
+
+            TimeSpan days = new TimeSpan(now.Ticks - baseDate.Ticks);
+
+            TimeSpan msecs = now.TimeOfDay;
+            // Convert to a byte array        
+
+            // Note that SQL Server is accurate to 1/300th of a    
+
+            // millisecond so we divide by 3.333333    
+
+            byte[] daysArray = BitConverter.GetBytes(days.Days);
+
+            byte[] msecsArray = BitConverter.GetBytes((long)
+
+              (msecs.TotalMilliseconds / 3.333333));
+            // Reverse the bytes to match SQL Servers ordering    
+
+            Array.Reverse(daysArray);
+
+            Array.Reverse(msecsArray);
+
+            // Copy the bytes into the guid    
+
+            Array.Copy(daysArray, daysArray.Length - 2, guidArray,
+
+              guidArray.Length - 6, 2);
+
+            Array.Copy(msecsArray, msecsArray.Length - 4, guidArray,
+
+              guidArray.Length - 4, 4);
+
+
+
+            return new Guid(guidArray);
+
+        }
+        private static Guid CreateSequentialUID()
+
+        {
+            var address = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().GetAddressBytes(); // TODO: Interrogate, choose, and store the MAC address.
+
+            var time = System.BitConverter.GetBytes(DateTime.Now.Ticks).Reverse().ToList();
+
+
+            var byteList = new List<byte>(time);
+
+
+            
+            byteList.Add(0x0);
+
+            byteList.Add(0x0);
+
+            byteList.AddRange(address);
+
+            Thread.Sleep((int)time[4] / 10);
+
+            return new Guid(byteList.ToArray());
+
+
+        }
+
     }
-}
+
+    public enum GuidVersion
+	{ 
+		TimeBased = 0x01, 
+		Reserved = 0x02, 
+ 		NameBased = 0x03, 
+ 		Random = 0x04 
+ 	} 
+
+ } 
+
+
+
+    public class SequentialGuid
+    {
+        Guid _CurrentGuid;
+        public Guid CurrentGuid
+        {
+            get
+            {
+                return _CurrentGuid;
+            }
+        }
+
+        public SequentialGuid()
+        {
+            _CurrentGuid = Guid.NewGuid();
+        }
+
+        public SequentialGuid(Guid previousGuid)
+        {
+            _CurrentGuid = previousGuid;
+        }
+
+        public static SequentialGuid operator ++(SequentialGuid sequentialGuid)
+        {
+            byte[] bytes = sequentialGuid._CurrentGuid.ToByteArray();
+            for (int mapIndex = 0; mapIndex < 16; mapIndex++)
+            {
+                int bytesIndex = SqlOrderMap[mapIndex];
+                bytes[bytesIndex]++;
+                if (bytes[bytesIndex] != 0)
+                {
+                    break; // No need to increment more significant bytes
+                }
+            }
+            sequentialGuid._CurrentGuid = new Guid(bytes);
+            return sequentialGuid;
+        }
+
+        private static int[] _SqlOrderMap = null;
+        private static int[] SqlOrderMap
+        {
+            get
+            {
+                if (_SqlOrderMap == null)
+                {
+                    _SqlOrderMap = new int[16] {
+                    3, 2, 1, 0, 5, 4, 7, 6, 9, 8, 15, 14, 13, 12, 11, 10
+                };
+                    // 3 - the least significant byte in Guid ByteArray [for SQL Server ORDER BY clause]
+                    // 10 - the most significant byte in Guid ByteArray [for SQL Server ORDERY BY clause]
+                }
+                return _SqlOrderMap;
+            }
+        }
+    }
+
+
