@@ -47,7 +47,7 @@ namespace Lucky.Hr.Core.Test.Cache
             builder.RegisterType<HrLogger>().As<ILogger>().InstancePerLifetimeScope();
             builder.RegisterType<Clock>().As<IClock>().SingleInstance();
             builder.RegisterType<MemClock>().As<IMemClock>().SingleInstance();
-
+            builder.RegisterType<RedisClock>().As<IRedisClock>().SingleInstance();
             builder.RegisterType<ProtoBufferSerializer>().As<IProtoBufferSerializer>().SingleInstance();
             builder.RegisterType<ProtoBufferDeserializer>().As<IProtoBufferDeserializer>().SingleInstance();
 
@@ -83,6 +83,23 @@ namespace Lucky.Hr.Core.Test.Cache
             //Assert.That(retrieve(), Is.EqualTo(1));
             Console.WriteLine(retrieve());
             _signals.Trigger(key, key);
+        }
+        [Test]
+        public void TestClock()
+        {
+            _cacheManager = _container.Resolve<ICacheManager>(new TypedParameter(typeof(Type), GetType()));
+            IRedisClock _clock= _container.Resolve<IRedisClock>();
+            string key = "testItem2";
+            Func<DateTime> retrieve = ()
+                => _cacheManager.Get(key,
+                        ctx =>
+                        {
+                            ctx.Monitor(_clock.When(key,TimeSpan.FromSeconds(1)));
+                            return DateTime.Now;
+                        });
+            Console.WriteLine(retrieve());
+            Thread.Sleep(5000);
+            Console.WriteLine(retrieve());
         }
     }
 }

@@ -237,6 +237,7 @@
     <Compile Include="Services\Clock.cs" />
     <Compile Include="Services\IClock.cs" />
     <Compile Include="Services\MemClock.cs" />
+    <Compile Include="Services\RedisClock.cs" />
     <Compile Include="Utility\ArgumentValidationAttribute.cs" />
     <Compile Include="Utility\Extensions\BinarySerializerExtensions.cs" />
     <Compile Include="Utility\Extensions\DbEnttityExtensions.cs" />

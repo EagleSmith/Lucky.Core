@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using System.Timers;
 using Lucky.Hr.Caching;
 using Lucky.Hr.Core.Cache.Memcached;
+using Lucky.Hr.Core.Infrastructure;
+using StackExchange.Redis.Extensions.Core;
 
 namespace Lucky.Hr.Core.Services
 {
-    public interface IMemClock : IVolatileProvider
+    public interface IRedisClock : IVolatileProvider
     {
         /// <summary>
         /// Gets the current <see cref="DateTime"/> of the system, expressed in Utc
@@ -33,7 +35,7 @@ namespace Lucky.Hr.Core.Services
         /// });
         /// </code>
         /// </example>
-        IVolatileToken When(string key,TimeSpan duration);
+        IVolatileToken When(string key, TimeSpan duration);
 
         /// <summary>
         /// Provides a <see cref="IVolatileToken"/> instance which can be used to cache some 
@@ -58,13 +60,13 @@ namespace Lucky.Hr.Core.Services
         IVolatileToken WhenUtc(string key, DateTime absoluteUtc);
     }
     [Serializable]
-    public class MemClock : IMemClock
+    public class RedisClock:IRedisClock
     {
         static readonly ConcurrentDictionary<string, IVolatileToken> timeCache = new ConcurrentDictionary<string, IVolatileToken>();
         private System.Timers.Timer _timer;
-        public MemClock()
+        public RedisClock()
         {
-            _timer=new Timer();
+            _timer = new Timer();
             _timer.Interval = 1000;
             _timer.Elapsed += _timer_Elapsed;
             _timer.Start();
@@ -76,11 +78,11 @@ namespace Lucky.Hr.Core.Services
             {
                 if (!token.Value.IsCurrent)
                 {
-                    IVolatileToken _token=new AbsoluteExpirationToken(this,TimeSpan.Zero);
-                    MemcachedHelper.GetInstance().Remove(token.Key);
+                    IVolatileToken _token = new AbsoluteExpirationToken(this, TimeSpan.Zero);
+                    EngineContext.Current.Resolve<ICacheClient>().Remove(token.Key);
                     timeCache.TryRemove(token.Key, out _token);
                 }
-                    
+
             }
         }
 
@@ -102,19 +104,19 @@ namespace Lucky.Hr.Core.Services
             timeCache[key] = token;
             return token;
         }
-        [Serializable] 
+        [Serializable]
         public class AbsoluteExpirationToken : IVolatileToken
         {
-            private readonly IMemClock _clock;
+            private readonly IRedisClock _clock;
             private readonly DateTime _invalidateUtc;
 
-            public AbsoluteExpirationToken(IMemClock clock, DateTime invalidateUtc)
+            public AbsoluteExpirationToken(IRedisClock clock, DateTime invalidateUtc)
             {
                 _clock = clock;
                 _invalidateUtc = invalidateUtc;
             }
 
-            public AbsoluteExpirationToken(IMemClock clock, TimeSpan duration)
+            public AbsoluteExpirationToken(IRedisClock clock, TimeSpan duration)
             {
                 _clock = clock;
                 _invalidateUtc = _clock.UtcNow.Add(duration);
