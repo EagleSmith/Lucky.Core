@@ -267,11 +267,17 @@
     <Compile Include="Utility\Globals.cs" />
     <Compile Include="Utility\ListItemEntity.cs" />
     <Compile Include="Utility\NotNullAttribute.cs" />
+    <Compile Include="Utility\PropertyAccessor.cs" />
     <Compile Include="Utility\ProtoBuffer\IProtoBufferDeserializer.cs" />
     <Compile Include="Utility\ProtoBuffer\IProtoBufferSerializer.cs" />
     <Compile Include="Utility\ProtoBuffer\ProtoBufferDeserializer.cs" />
     <Compile Include="Utility\ProtoBuffer\ProtoBufferSerializer.cs" />
     <Compile Include="Utility\RedisUtils.cs" />
+    <Compile Include="Utility\Sequence\Encoder.cs" />
+    <Compile Include="Utility\Sequence\Id64Generator.cs" />
+    <Compile Include="Utility\Sequence\IdGuidGenerator.cs" />
+    <Compile Include="Utility\Sequence\IdStringGeneratorWrapper.cs" />
+    <Compile Include="Utility\Sequence\IIdGenerator.cs" />
     <Compile Include="Utility\StringHelper.cs" />
     <Compile Include="Utility\SystemStringFormat.cs" />
     <Compile Include="Utility\Extensions\XmlSerializerExtensions.cs" />

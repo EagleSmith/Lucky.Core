@@ -115,7 +115,7 @@ namespace Lucky.Hr.Core.Test.Cache
         }
        
 
-        private Guid GenerateComb()
+        public Guid GenerateComb()
         {
 
             byte[] guidArray = Guid.NewGuid().ToByteArray();
