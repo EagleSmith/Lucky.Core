@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Data.UnitOfWork
+namespace Lucky.Core.Data.UnitOfWork
 {
     /// <summary>
     /// 数据工作单元接口

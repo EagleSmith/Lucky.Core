@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core
+namespace Lucky.Core
 {
     /// <summary>
     /// 数据分页接口

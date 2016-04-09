@@ -7,7 +7,7 @@ using System.Web;
 using Autofac;
 using Autofac.Integration.Mvc;
 
-namespace Lucky.Hr.Core.Infrastructure.DependencyManagement
+namespace Lucky.Core.Infrastructure.DependencyManagement
 {
     /// <summary>
     /// 容器管理器

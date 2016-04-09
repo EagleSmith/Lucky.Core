@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Autofac;
 
-namespace Lucky.Hr.Core.Infrastructure.DependencyManagement
+namespace Lucky.Core.Infrastructure.DependencyManagement
 {
     /// <summary>
     /// 一个 <see cref="IHttpModule"/> 和 <see cref="ILifetimeScopeProvider"/> 实现 

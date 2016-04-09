@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility.Extensions
+namespace Lucky.Core.Utility.Extensions
 {
     public static class DbEnttityExtensions
     {

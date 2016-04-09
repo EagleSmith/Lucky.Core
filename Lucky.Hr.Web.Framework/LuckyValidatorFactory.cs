@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Attributes;
-using Lucky.Hr.Core.Infrastructure;
+using Lucky.Core.Infrastructure;
 
 namespace Lucky.Hr.Web.Framework
 {

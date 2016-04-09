@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Lucky.Hr.Core.Utility.Extensions
+namespace Lucky.Core.Utility.Extensions
 {
     /// <summary>
     /// 大叔为DisplayName进行了扩展

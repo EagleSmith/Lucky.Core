@@ -2,9 +2,9 @@
 using System.Configuration;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using Lucky.Hr.Core.Configuration;
+using Lucky.Core.Configuration;
 
-namespace Lucky.Hr.Core.Infrastructure
+namespace Lucky.Core.Infrastructure
 {
     /// <summary>
     /// 提供单例引擎上下文

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public interface ISignals : IVolatileProvider {
         void Trigger<T>(T signal);
         IVolatileToken When<T>(T signal);

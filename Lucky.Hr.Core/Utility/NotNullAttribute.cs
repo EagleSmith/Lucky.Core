@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility
+namespace Lucky.Core.Utility
 {
     [AttributeUsage(AttributeTargets.Parameter|AttributeTargets.Property | AttributeTargets.Field )]
     public class NotNullAttribute:ArgumentValidationAttribute

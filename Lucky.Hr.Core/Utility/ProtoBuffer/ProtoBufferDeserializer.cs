@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.IO;
 using ProtoBuf;
 
-namespace Lucky.Hr.Core.Utility.ProtoBuffer
+namespace Lucky.Core.Utility.ProtoBuffer
 {
     public class ProtoBufferDeserializer:IProtoBufferDeserializer
     {

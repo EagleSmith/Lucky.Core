@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Lucky.Hr.Core
+namespace Lucky.Core
 {
     /// <summary>
     /// 常用帮助类

@@ -9,7 +9,7 @@
 // ===================================================================
 
 using System.Collections.Generic;
-using Lucky.Hr.Core.Data;
+using Lucky.Core.Data;
 using Lucky.Hr.Entity;
 using Lucky.Hr.ViewModels.Models.SiteManager;
 

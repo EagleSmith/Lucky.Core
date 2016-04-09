@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Lucky.Hr.Core.Data.UnitOfWork
+namespace Lucky.Core.Data.UnitOfWork
 {
     public class MainContext : System.Data.Entity.DbContext, IMainContext
     {

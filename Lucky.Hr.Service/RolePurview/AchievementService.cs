@@ -12,8 +12,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using Lucky.Hr.Core;
-using Lucky.Hr.Core.Data;
+using Lucky.Core;
+using Lucky.Core.Data;
 using Lucky.Hr.Entity;
 using Lucky.Hr.IService;
 

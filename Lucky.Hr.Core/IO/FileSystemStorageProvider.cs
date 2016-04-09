@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Hosting;
 
-namespace Lucky.Hr.Core.IO
+namespace Lucky.Core.IO
 {
     public class FileSystemStorageProvider : IStorageProvider
     {

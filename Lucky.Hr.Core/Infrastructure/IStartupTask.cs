@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Infrastructure
+namespace Lucky.Core.Infrastructure
 {
     /// <summary>
     /// 启动任务接口

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 
-namespace Lucky.Hr.Core.Logging
+namespace Lucky.Core.Logging
 {
     public class LoggingModule:Module
     {

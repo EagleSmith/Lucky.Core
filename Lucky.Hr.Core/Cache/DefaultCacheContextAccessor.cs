@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public class DefaultCacheContextAccessor : ICacheContextAccessor {
         [ThreadStatic]
         private static IAcquireContext _threadInstance;

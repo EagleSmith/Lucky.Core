@@ -8,8 +8,7 @@
 // 负责人：丁富升
 // ===================================================================
 
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Data;
+using Lucky.Core.Data;
 using Lucky.Hr.Entity;
 using Lucky.Hr.IService;
 namespace Lucky.Hr.Service

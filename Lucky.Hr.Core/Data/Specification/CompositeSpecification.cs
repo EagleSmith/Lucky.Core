@@ -7,12 +7,8 @@
 // 创建时间：2014/6/4
 // 创建人：丁富升
 // ===================================================================
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Lucky.Hr.Core.Specification
+namespace Lucky.Core.Data.Specification
 {
     public abstract class CompositeSpecification<TEntity>:Specification<TEntity> where TEntity:class 
     {

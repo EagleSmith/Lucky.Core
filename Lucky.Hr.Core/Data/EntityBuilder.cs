@@ -4,7 +4,7 @@ using System.Data;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace Lucky.Hr.Core
+namespace Lucky.Core.Data
 {
     public class EntityBuilder<TEntity>
     {

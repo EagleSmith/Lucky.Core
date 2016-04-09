@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     /// <summary>
     /// Provides services to enable parallel tasks aware of the current cache context.
     /// </summary>

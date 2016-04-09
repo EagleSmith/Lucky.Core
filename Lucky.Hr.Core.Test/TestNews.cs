@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProtoBuf;
 
-namespace Lucky.Hr.Core.Test
+namespace Lucky.Core.Test
 {
     [ProtoBuf.ProtoContract]
     public  class TestNews

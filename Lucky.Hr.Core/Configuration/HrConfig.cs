@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Lucky.Hr.Core.Configuration
+namespace Lucky.Core.Configuration
 {
     public class HrConfig : IConfigurationSectionHandler
     {

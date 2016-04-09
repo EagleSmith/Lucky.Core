@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Lucky.Hr.Core.Utility.FastInvoke
+namespace Lucky.Core.Utility.FastInvoke
 {
     public interface IFastReflectionCache<TKey, TValue>
     {

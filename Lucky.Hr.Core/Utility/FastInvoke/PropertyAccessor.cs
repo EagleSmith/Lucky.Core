@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Lucky.Hr.Core.Utility.FastInvoke
+namespace Lucky.Core.Utility.FastInvoke
 {
     public interface IPropertyAccessor
     {

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Utility.FastInvoke;
+using Lucky.Core.Utility.FastInvoke;
 using StackExchange.Redis;
 
-namespace Lucky.Hr.Core.Utility
+namespace Lucky.Core.Utility
 {
     public static class RedisUtils
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Caching;
 using System.Web.Routing;
-using Lucky.Hr.Core.Utility;
+using Lucky.Core.Utility;
 
 namespace Lucky.Hr.Web.Framework.HttpHandler
 {

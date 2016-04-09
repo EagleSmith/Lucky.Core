@@ -10,7 +10,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Lucky.Hr.Core.Data;
+using Lucky.Core.Data;
 using Lucky.Hr.Entity;
 
 

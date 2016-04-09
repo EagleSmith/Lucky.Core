@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 
-namespace Lucky.Hr.Core.Infrastructure.DependencyManagement
+namespace Lucky.Core.Infrastructure.DependencyManagement
 {
     public interface IDependencyRegistrar
     {

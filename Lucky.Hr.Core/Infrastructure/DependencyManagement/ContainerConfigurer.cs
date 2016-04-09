@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Configuration;
+using Lucky.Core.Configuration;
 
-namespace Lucky.Hr.Core.Infrastructure.DependencyManagement
+namespace Lucky.Core.Infrastructure.DependencyManagement
 {
     /// <summary>
     /// 配置依赖反转容器

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public interface IAsyncTokenProvider {
         IVolatileToken GetToken(Action<Action<IVolatileToken>> task);
     }

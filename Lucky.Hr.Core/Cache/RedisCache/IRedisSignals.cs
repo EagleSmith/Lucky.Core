@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Infrastructure;
+using Lucky.Core.Infrastructure;
 using StackExchange.Redis;
 using StackExchange.Redis.Extensions.Core;
 
-namespace Lucky.Hr.Core.Cache.RedisCache
+namespace Lucky.Core.Cache.RedisCache
 {
     public interface IRedisSignals : IVolatileProvider
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     /// <summary>
     /// Provides the default implementation for a cache manager. 
     /// The cache manager provides an abstraction over the cache holder allowing it to be easily swaped and isolating it within a component context.

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Data.UnitOfWork;
-using Lucky.Hr.Core.Specification;
+using Lucky.Core.Data.Specification;
+using Lucky.Core.Data.UnitOfWork;
 
-namespace Lucky.Hr.Core.Data
+namespace Lucky.Core.Data
 {
     public interface IRepository<TEntity>
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility.ProtoBuffer
+namespace Lucky.Core.Utility.ProtoBuffer
 {
     public interface IProtoBufferDeserializer
     {

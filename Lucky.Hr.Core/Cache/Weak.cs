@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public class Weak<T> {
         private readonly WeakReference _target;
 

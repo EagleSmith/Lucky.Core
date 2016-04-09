@@ -7,13 +7,11 @@
 // 创建时间：2014/6/4
 // 创建人：丁富升
 // ===================================================================
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 
-namespace Lucky.Hr.Core.Specification
+using System.Collections.Generic;
+using System.Linq.Expressions;
+
+namespace Lucky.Core.Data.Specification
 {
     /// <summary>
     /// Helper for rebinder parameters without use Invoke method in expressions 

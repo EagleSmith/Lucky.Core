@@ -9,9 +9,9 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using Lucky.Hr.Core.ComponentModel;
+using Lucky.Core.ComponentModel;
 
-namespace Lucky.Hr.Core
+namespace Lucky.Core
 {
     /// <summary>
     /// 常用帮助类

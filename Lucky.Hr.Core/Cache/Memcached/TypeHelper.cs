@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Cache.Memcached
+namespace Lucky.Core.Cache.Memcached
 {
     internal static class TypeHelper
     {

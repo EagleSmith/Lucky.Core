@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Data.UnitOfWork
+namespace Lucky.Core.Data.UnitOfWork
 {
     public interface IMainContext : IUnitOfWork
     {

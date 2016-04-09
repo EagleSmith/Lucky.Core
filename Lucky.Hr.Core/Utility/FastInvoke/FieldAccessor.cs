@@ -5,7 +5,7 @@ using System.Text;
 using System.Reflection;
 using System.Linq.Expressions;
 
-namespace Lucky.Hr.Core.Utility.FastInvoke
+namespace Lucky.Core.Utility.FastInvoke
 {
     public interface IFieldAccessor
     {

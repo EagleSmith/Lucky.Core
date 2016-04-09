@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Lucky.Hr.Core.Utility
+namespace Lucky.Core.Utility.Extensions
 {
     public static class XmlSerializerExtensions
     {

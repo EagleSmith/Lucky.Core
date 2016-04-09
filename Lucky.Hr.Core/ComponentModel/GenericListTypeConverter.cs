@@ -15,7 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.ComponentModel
+namespace Lucky.Core.ComponentModel
 {
     /// <summary>
     /// 泛型集合类型转换

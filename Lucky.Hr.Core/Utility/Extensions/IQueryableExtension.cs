@@ -4,6 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility.Extensions
+namespace Lucky.Core.Utility.Extensions
 {
 }

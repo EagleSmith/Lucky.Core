@@ -11,10 +11,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Lucky.Hr.Core.Infrastructure;
-using Lucky.Hr.Core.Logging;
+using Lucky.Core.Infrastructure;
+using Lucky.Core.Logging;
 
-namespace Lucky.Hr.Core.Utility
+namespace Lucky.Core.Utility
 {
     public sealed class Globals
     {

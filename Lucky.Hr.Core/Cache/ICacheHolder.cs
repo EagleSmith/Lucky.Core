@@ -1,6 +1,6 @@
 using System;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public interface ICacheHolder {
         ICache<TKey, TResult> GetCache<TKey, TResult>(Type component);
     }

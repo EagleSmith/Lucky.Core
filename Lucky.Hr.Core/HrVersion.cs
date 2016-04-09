@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core
+namespace Lucky.Core
 {
     public static class HrVersion
     {

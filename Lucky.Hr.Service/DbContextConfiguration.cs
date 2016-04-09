@@ -5,7 +5,7 @@ using System.Data.Entity.Infrastructure.Interception;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Data;
+using Lucky.Core.Data;
 
 namespace Lucky.Hr.Service
 {

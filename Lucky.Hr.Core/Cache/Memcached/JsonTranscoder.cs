@@ -9,7 +9,7 @@ using AutoMapper.Mappers;
 using Enyim.Caching.Memcached;
 using Newtonsoft.Json;
 
-namespace Lucky.Hr.Core.Cache.Memcached
+namespace Lucky.Core.Cache.Memcached
 {
     public class JsonTranscoder:DefaultTranscoder
     {

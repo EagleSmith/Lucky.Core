@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Infrastructure
+namespace Lucky.Core.Infrastructure
 {
     /// <summary>
     /// 发现需要NOP通过在循环组件类型的类 

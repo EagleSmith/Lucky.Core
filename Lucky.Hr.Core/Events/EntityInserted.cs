@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Events
+namespace Lucky.Core.Events
 {
     public class EntityInserted<T> where T:IEntity
     {

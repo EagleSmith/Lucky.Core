@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Events
+namespace Lucky.Core.Events
 {
     /// <summary>
     /// 用于消息通知删除操作

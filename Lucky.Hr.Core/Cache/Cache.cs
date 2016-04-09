@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public class Cache<TKey, TResult> : ICache<TKey, TResult> {
         private readonly ICacheContextAccessor _cacheContextAccessor;
         private readonly ConcurrentDictionary<TKey, CacheEntry> _entries;

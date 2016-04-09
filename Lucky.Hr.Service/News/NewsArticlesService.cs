@@ -14,11 +14,10 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core;
-
-using Lucky.Hr.Core.Data;
-using Lucky.Hr.Core.Data.Dapper;
+using Lucky.Core;
+using Lucky.Core.Cache;
+using Lucky.Core.Data;
+using Lucky.Core.Data.Dapper;
 using Lucky.Hr.Entity;
 
 using Lucky.Hr.IService;

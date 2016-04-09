@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using ServiceStack;
 
-namespace Lucky.Hr.Core.Test
+namespace Lucky.Core.Test
 {
     [TestFixture]
     public class TestProtoBuf

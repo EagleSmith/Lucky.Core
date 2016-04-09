@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Infrastructure;
-using Lucky.Hr.Core.Logging;
+using Lucky.Core.Cache;
+using Lucky.Core.Infrastructure;
+using Lucky.Core.Logging;
 
 namespace Lucky.Hr.Web.Framework.Controllers
 {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Infrastructure;
+using Lucky.Core.Infrastructure;
 
-namespace Lucky.Hr.Core.Plugins
+namespace Lucky.Core.Plugins
 {
     public class PluginDescriptor : IComparable<PluginDescriptor>
     {

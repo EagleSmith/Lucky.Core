@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility
+namespace Lucky.Core.Utility
 {
     /// <summary>
     /// 用与绑定 DropdownList 

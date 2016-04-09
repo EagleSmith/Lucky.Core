@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Lucky.Hr.Core
+namespace Lucky.Core
 {
     public class HrException: Exception
     {

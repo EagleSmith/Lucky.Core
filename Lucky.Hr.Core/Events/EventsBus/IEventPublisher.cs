@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Events.EventsBus
+namespace Lucky.Core.Events.EventsBus
 {
     /// <summary>
     /// 事件发布者接口

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Logging
+namespace Lucky.Core.Logging
 {
     public static class LoggingExtensions
     {

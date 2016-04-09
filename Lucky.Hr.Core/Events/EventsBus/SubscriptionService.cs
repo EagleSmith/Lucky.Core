@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Infrastructure;
+using Lucky.Core.Infrastructure;
 
-namespace Lucky.Hr.Core.Events.EventsBus
+namespace Lucky.Core.Events.EventsBus
 {
     /// <summary>
     /// 订阅服务

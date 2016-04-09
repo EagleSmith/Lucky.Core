@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NLog;
 
-namespace Lucky.Hr.Core.Data
+namespace Lucky.Core.Data
 {
     public class NLogCommandInterceptor : IDbCommandInterceptor
     {

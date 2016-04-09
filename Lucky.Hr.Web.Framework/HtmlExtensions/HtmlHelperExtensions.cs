@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using Lucky.Hr.Core.Utility;
+using Lucky.Core.Utility;
 
 namespace Lucky.Hr.Web.Framework.HtmlExtensions
 {

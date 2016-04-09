@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
-using Lucky.Hr.Core.Configuration;
+using Lucky.Core.Configuration;
 
-namespace Lucky.Hr.Core.Infrastructure
+namespace Lucky.Core.Infrastructure
 {
     /// <summary>
     /// 提供了在当前Web应用程序有关类型的信息

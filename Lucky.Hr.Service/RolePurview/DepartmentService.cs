@@ -11,9 +11,9 @@
 using System.Linq;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Lucky.Hr.Core;
-using Lucky.Hr.Core.Specification;
-using Lucky.Hr.Core.Data;
+using Lucky.Core;
+using Lucky.Core.Data;
+using Lucky.Core.Data.Specification;
 using Lucky.Hr.Entity;
 using Lucky.Hr.IService;
 using Lucky.Hr.ViewModels.Models.SiteManager;

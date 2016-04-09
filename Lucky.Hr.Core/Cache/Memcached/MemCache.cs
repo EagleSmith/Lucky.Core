@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Enyim.Caching;
 using Enyim.Caching.Memcached;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Cache.Memcached;
 
-namespace Lucky.Hr.Core.Caching.Memcached
+namespace Lucky.Core.Cache.Memcached
 {
     public class MemCache<TKey, TResult> : ICache<TKey, TResult>
     {

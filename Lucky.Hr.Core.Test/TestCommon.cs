@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Management;
 using System.Text;
-using Lucky.Hr.Core.Data.Dapper;
-using Lucky.Hr.Core.Utility;
+using Lucky.Core.Data.Dapper;
+using Lucky.Core.Utility;
 using NUnit.Framework;
-namespace Lucky.Hr.Core.Test
+namespace Lucky.Core.Test
 {
     [TestFixture]
     public class TestCommon

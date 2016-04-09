@@ -6,17 +6,17 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Cache.RedisCache;
-using Lucky.Hr.Core.Caching.Memcached;
-using Lucky.Hr.Core.Infrastructure;
-using Lucky.Hr.Core.Logging;
-using Lucky.Hr.Core.Services;
-using Lucky.Hr.Core.Utility.ProtoBuffer;
+using Lucky.Core.Cache;
+using Lucky.Core.Cache.Memcached;
+using Lucky.Core.Cache.RedisCache;
+using Lucky.Core.Infrastructure;
+using Lucky.Core.Logging;
+using Lucky.Core.Services;
+using Lucky.Core.Utility.ProtoBuffer;
 using NUnit.Framework;
 using StackExchange.Redis.Extensions.Core;
 
-namespace Lucky.Hr.Core.Test.Cache
+namespace Lucky.Core.Test.Cache
 {
     [TestFixture]
     public class TestRedisCache

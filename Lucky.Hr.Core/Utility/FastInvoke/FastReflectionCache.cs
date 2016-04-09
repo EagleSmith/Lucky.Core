@@ -5,7 +5,7 @@ using System.Text;
 using System.Reflection;
 using System.Threading;
 
-namespace Lucky.Hr.Core.Utility.FastInvoke
+namespace Lucky.Core.Utility.FastInvoke
 {
     public abstract class FastReflectionCache<TKey, TValue> : IFastReflectionCache<TKey, TValue>
     {

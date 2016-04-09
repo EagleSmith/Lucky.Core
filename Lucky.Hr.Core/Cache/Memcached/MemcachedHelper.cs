@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Enyim.Caching;
 
-namespace Lucky.Hr.Core.Cache.Memcached
+namespace Lucky.Core.Cache.Memcached
 {
     public static class MemcachedHelper
     {

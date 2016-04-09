@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Test
+namespace Lucky.Core.Test
 {
     public class SQLGuidUtil
     {

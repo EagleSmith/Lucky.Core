@@ -6,16 +6,16 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Infrastructure;
-using Lucky.Hr.Core.Logging;
-using Lucky.Hr.Core.Utility.Sequence;
+using Lucky.Core.Cache;
+using Lucky.Core.Infrastructure;
+using Lucky.Core.Logging;
+using Lucky.Core.Utility.Sequence;
 using SharpCode.Test;
 using Xunit;
 using Xunit.Abstractions;
 
 
-namespace Lucky.Hr.Core.Test.SequenceTest
+namespace Lucky.Core.Test.SequenceTest
 {
     /// <summary>
     /// 自动生成序列测试
@@ -86,7 +86,7 @@ namespace Lucky.Hr.Core.Test.SequenceTest
             ILogger logger= _container.Resolve<ILogger>();
             for (int i = 0; i < 2000; i++)
             {
-                logger.Information(SequenceQueue.GetLong().ToString());
+                logger.Information(SequenceQueue.NewIdLong().ToString());
                 //Console.WriteLine(SequenceQueue.GetLong());
             }
         }
@@ -186,6 +186,15 @@ namespace Lucky.Hr.Core.Test.SequenceTest
             {
                 _output.WriteLine(id);
             }
+        }
+        [Fact]
+        public void TestNewGuid()
+        {
+            for (int i = 0; i < 2000; i++)
+            {
+                _output.WriteLine(SequenceQueue.NewIdGuid().ToString());
+            }
+            
         }
         private string GetLongLowerString(int a,int b)
         {

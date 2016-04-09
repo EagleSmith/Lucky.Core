@@ -4,10 +4,10 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Utility;
+using Lucky.Core.Utility;
 using NLog;
 
-namespace Lucky.Hr.Core.Logging
+namespace Lucky.Core.Logging
 {
     public class HrLogger:ILogger
     {

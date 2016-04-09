@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility
+namespace Lucky.Core.Utility.Extensions
 {
     public static class BinarySerializerExtensions
     {

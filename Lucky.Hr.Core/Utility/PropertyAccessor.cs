@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility
+namespace Lucky.Core.Utility
 {
     public class PropertyAccessor
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.IO
+namespace Lucky.Core.IO
 {
     public interface IStorageFile
     {

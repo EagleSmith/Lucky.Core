@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Compilation;
 using System.Web.Hosting;
-using Lucky.Hr.Core.ComponentModel;
+using Lucky.Core.ComponentModel;
 
-namespace Lucky.Hr.Core.Plugins
+namespace Lucky.Core.Plugins
 {
     public class PluginManager
     {

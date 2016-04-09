@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Cache.Memcached;
-using Lucky.Hr.Core.Infrastructure;
+using Lucky.Core.Cache;
+using Lucky.Core.Infrastructure;
+using Lucky.Core.Cache.Memcached;
 using StackExchange.Redis.Extensions.Core;
 
-namespace Lucky.Hr.Core.Services
+namespace Lucky.Core.Services
 {
     public interface IRedisClock : IVolatileProvider
     {

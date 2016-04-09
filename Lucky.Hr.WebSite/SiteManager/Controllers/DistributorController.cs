@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using Lucky.Hr.Core;
+using Lucky.Core;
 using Lucky.Hr.Entity;
 using Lucky.Hr.IService;
 using Lucky.Hr.ViewModels;

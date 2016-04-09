@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Data.Dapper
+namespace Lucky.Core.Data.Dapper
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class IgnorePropertyAttribute : Attribute

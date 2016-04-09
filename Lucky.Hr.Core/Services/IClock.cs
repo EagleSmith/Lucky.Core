@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Caching;
+using Lucky.Core.Cache;
 
-namespace Lucky.Hr.Core.Services
+namespace Lucky.Core.Services
 {
     public interface IClock : IVolatileProvider
     {

@@ -7,7 +7,7 @@ using Xunit;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-namespace Lucky.Hr.Core.Test
+namespace Lucky.Core.Test
 {
     public class XUnitTest
     {

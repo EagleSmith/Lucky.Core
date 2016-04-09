@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public class DefaultParallelCacheContext : IParallelCacheContext {
         private readonly ICacheContextAccessor _cacheContextAccessor;
 

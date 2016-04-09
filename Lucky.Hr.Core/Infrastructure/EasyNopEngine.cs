@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
-using Lucky.Hr.Core.Configuration;
-using Lucky.Hr.Core.Infrastructure.DependencyManagement;
+using Lucky.Core.Configuration;
+using Lucky.Core.Infrastructure.DependencyManagement;
 
-namespace Lucky.Hr.Core.Infrastructure
+namespace Lucky.Core.Infrastructure
 {
     public class HrEngine: IEngine
     {

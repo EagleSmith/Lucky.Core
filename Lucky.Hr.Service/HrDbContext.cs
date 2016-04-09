@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Data.UnitOfWork;
+using Lucky.Core.Data.UnitOfWork;
 using Lucky.Hr.Entity;
 using Lucky.Hr.Entity.Mapping;
 using Lucky.Hr.IService;

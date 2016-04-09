@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
-using Lucky.Hr.Core.Infrastructure;
+using Lucky.Core.Infrastructure;
 
-namespace Lucky.Hr.Core
+namespace Lucky.Core
 {
     /// <summary>
     /// web帮助类

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Lucky.Hr.Core.Logging;
+using Lucky.Core.Logging;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public class DefaultAsyncTokenProvider : IAsyncTokenProvider {
         public DefaultAsyncTokenProvider() {
             Logger = NullLogger.Instance;

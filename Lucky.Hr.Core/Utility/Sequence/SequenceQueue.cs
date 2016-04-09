@@ -1,26 +1,25 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Concurrent;
-using Lucky.Core.Utility.Sequence;
 using StackExchange.Redis.Extensions.Core.Extensions;
 
 
-namespace Lucky.Core.Test.SequenceTest
+namespace Lucky.Core.Utility.Sequence
 {
     public static class SequenceQueue
     {
-        private static ConcurrentQueue<long> _queue=new ConcurrentQueue<long>();
+        private static ConcurrentQueue<long> _queue = new ConcurrentQueue<long>();
         private static ConcurrentQueue<Guid> _queueGuids = new ConcurrentQueue<Guid>();
         private static Id64Generator id64Generator;
         private static IdGuidGenerator idGuid;
-        private static  Object _obj = new Object();
+        private static Object _obj = new Object();
         static SequenceQueue()
         {
             id64Generator = new Id64Generator();
-            idGuid=new IdGuidGenerator();
+            idGuid = new IdGuidGenerator();
         }
         public static long NewIdLong()
         {
@@ -36,7 +35,7 @@ namespace Lucky.Core.Test.SequenceTest
                 {
                     id64Generator.Take(5000).ForEach(a => _queue.Enqueue(a));
                 }
-                
+
                 _queue.TryDequeue(out res);
                 return res;
             }
@@ -44,7 +43,7 @@ namespace Lucky.Core.Test.SequenceTest
 
         public static Guid NewIdGuid()
         {
-            Guid guid =Guid.Empty;
+            Guid guid = Guid.Empty;
             if (_queueGuids.Count > 0)
             {
                 _queueGuids.TryDequeue(out guid);

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Infrastructure;
-using Lucky.Hr.Core.Logging;
-using Lucky.Hr.Core.Plugins;
+using Lucky.Core.Infrastructure;
+using Lucky.Core.Logging;
+using Lucky.Core.Plugins;
 
-namespace Lucky.Hr.Core.Events.EventsBus
+namespace Lucky.Core.Events.EventsBus
 {
     /// <summary>
     /// 事件发布

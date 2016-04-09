@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
-using Lucky.Hr.Caching;
-using Lucky.Hr.Core.Caching.Memcached;
-using Lucky.Hr.Core.Logging;
-using Lucky.Hr.Core.Services;
-using Lucky.Hr.Core.Utility.ProtoBuffer;
+using Lucky.Core.Cache;
+using Lucky.Core.Cache.Memcached;
+using Lucky.Core.Logging;
+using Lucky.Core.Services;
+using Lucky.Core.Utility.ProtoBuffer;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using ProtoBuf;
 using SharpCode.Test;
 using StackExchange.Redis.Extensions.Core;
 
-namespace Lucky.Hr.Core.Test.Cache
+namespace Lucky.Core.Test.Cache
 {
     public class TestCache
     {

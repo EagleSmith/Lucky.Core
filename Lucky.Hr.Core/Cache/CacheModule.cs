@@ -2,7 +2,7 @@
 using System.Linq;
 using Autofac;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     public class CacheModule : Module {
         protected override void Load(ContainerBuilder builder) {
             builder.RegisterType<DefaultCacheManager>()

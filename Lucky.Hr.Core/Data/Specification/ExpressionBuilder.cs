@@ -7,13 +7,12 @@
 // 创建时间：2014/6/4
 // 创建人：丁富升
 // ===================================================================
+
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace Lucky.Hr.Core.Specification
+namespace Lucky.Core.Data.Specification
 {
     /// <summary>
     /// Extension methods for add And and Or with parameters rebinder

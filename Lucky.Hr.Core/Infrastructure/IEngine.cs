@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Configuration;
-using Lucky.Hr.Core.Infrastructure.DependencyManagement;
+using Lucky.Core.Configuration;
+using Lucky.Core.Infrastructure.DependencyManagement;
 
-namespace Lucky.Hr.Core.Infrastructure
+namespace Lucky.Core.Infrastructure
 {
     public interface IEngine
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Attributes;
-using Lucky.Hr.Core.Utility;
+using Lucky.Core.Utility;
 
 namespace Lucky.Hr.ViewModels.Models.News
 {

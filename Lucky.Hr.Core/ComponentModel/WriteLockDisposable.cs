@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.ComponentModel
+namespace Lucky.Core.ComponentModel
 {
     /// <summary>
     /// 多线程读写锁的封装

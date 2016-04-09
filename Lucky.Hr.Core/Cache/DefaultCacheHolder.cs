@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 
-namespace Lucky.Hr.Caching {
+namespace Lucky.Core.Cache {
     /// <summary>
     /// Provides the default implementation for a cache holder.
     /// The cache holder is responsible for actually storing the references to cached entities.

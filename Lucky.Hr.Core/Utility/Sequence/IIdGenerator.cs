@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Utility.Sequence
+namespace Lucky.Core.Utility.Sequence
 {
     /// <summary>
     /// Twitter Snowflake 算法生成序列

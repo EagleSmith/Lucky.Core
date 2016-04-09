@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Enyim.Caching;
-using Lucky.Hr.Caching;
 
-namespace Lucky.Hr.Core.Caching.Memcached
+namespace Lucky.Core.Cache.Memcached
 {
     public interface IMemSignals : IVolatileProvider
     {

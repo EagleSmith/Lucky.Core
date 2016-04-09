@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace Lucky.Hr.Core.Utility.FastInvoke
+namespace Lucky.Core.Utility.FastInvoke
 {
     public class PropertyAccessorFactory : IFastReflectionFactory<PropertyInfo, IPropertyAccessor>
     {

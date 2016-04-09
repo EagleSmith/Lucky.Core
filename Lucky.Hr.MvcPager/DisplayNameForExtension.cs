@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Lucky.Hr.Core;
+using Lucky.Core;
 
 namespace LiteCode.MvcPager
 {

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Lucky.Hr.Core.Test.Cache;
-using Lucky.Hr.Core.Utility.FastInvoke;
+using Lucky.Core.Test.Cache;
+using Lucky.Core.Utility.FastInvoke;
 using NUnit.Framework;
 
-namespace Lucky.Hr.Core.Test
+namespace Lucky.Core.Test
 {
     [TestFixture]
     public class TestGuidUtil

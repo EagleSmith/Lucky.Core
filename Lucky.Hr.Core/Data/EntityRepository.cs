@@ -7,10 +7,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-
-using Lucky.Hr.Core.Data.UnitOfWork;
-using Lucky.Hr.Core.Utility.Extensions;
-namespace Lucky.Hr.Core.Data
+using Lucky.Core.Data.UnitOfWork;
+using Lucky.Core.Utility.Extensions;
+namespace Lucky.Core.Data
 {
     public class EntityRepository<TEntity> : IRepository<TEntity> where TEntity : class ,new()
     {

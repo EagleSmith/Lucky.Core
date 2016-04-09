@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using Dapper;
 
 
-namespace Lucky.Hr.Core.Data.Dapper
+namespace Lucky.Core.Data.Dapper
 {
     public interface IDbConnectionFactory
     {

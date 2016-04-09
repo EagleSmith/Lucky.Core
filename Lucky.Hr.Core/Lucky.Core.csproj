@@ -7,8 +7,8 @@
     <ProjectGuid>{8AE7F2FC-C45B-46DF-9BDA-362CF8CD756E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lucky.Hr.Core</RootNamespace>
-    <AssemblyName>Lucky.Hr.Core</AssemblyName>
+    <RootNamespace>Lucky.Core</RootNamespace>
+    <AssemblyName>Lucky.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -278,6 +278,7 @@
     <Compile Include="Utility\Sequence\IdGuidGenerator.cs" />
     <Compile Include="Utility\Sequence\IdStringGeneratorWrapper.cs" />
     <Compile Include="Utility\Sequence\IIdGenerator.cs" />
+    <Compile Include="Utility\Sequence\SequenceQueue.cs" />
     <Compile Include="Utility\StringHelper.cs" />
     <Compile Include="Utility\SystemStringFormat.cs" />
     <Compile Include="Utility\Extensions\XmlSerializerExtensions.cs" />

@@ -1,4 +1,4 @@
-﻿namespace Lucky.Hr.Caching {
+﻿namespace Lucky.Core.Cache {
     public interface IVolatileProvider  {
     }
 }

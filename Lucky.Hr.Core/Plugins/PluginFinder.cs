@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.Core.Plugins
+namespace Lucky.Core.Plugins
 {
     /// <summary>
     /// 插件查找者
