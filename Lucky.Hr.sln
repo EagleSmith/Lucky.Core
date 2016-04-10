@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.Core.Test", "Lucky
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F1C9E750-1A4B-4B2C-9B22-DE6188704AE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.Entity", "Lucky.Hr.Entity\Lucky.Hr.Entity.csproj", "{B1F36FFD-AA17-475E-8287-7C6BC3F0CA45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Entity", "Lucky.Hr.Entity\Lucky.Entity.csproj", "{B1F36FFD-AA17-475E-8287-7C6BC3F0CA45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.Web.Framework", "Lucky.Hr.Web.Framework\Lucky.Hr.Web.Framework.csproj", "{7F61427B-0B58-4D69-8408-64DCA39D4A75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Web.Framework", "Lucky.Hr.Web.Framework\Lucky.Web.Framework.csproj", "{7F61427B-0B58-4D69-8408-64DCA39D4A75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{E432E27D-5FD6-4CCD-B233-FF9643B1665C}"
 EndProject
@@ -25,9 +25,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.MvcPager", "Lucky.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.SiteManager", "Lucky.Hr.WebSite\SiteManager\Lucky.Hr.SiteManager.csproj", "{3F71CC0D-B87B-4BDD-A9EA-5A56CBC87E4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.IService", "Lucky.Hr.IService\Lucky.Hr.IService.csproj", "{C61AF106-538F-4C42-BE56-1FEE125F91FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.IService", "Lucky.Hr.IService\Lucky.IService.csproj", "{C61AF106-538F-4C42-BE56-1FEE125F91FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.Service", "Lucky.Hr.Service\Lucky.Hr.Service.csproj", "{2872F643-DBC1-4C44-AEEF-EFDF2C368ABC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Service", "Lucky.Hr.Service\Lucky.Service.csproj", "{2872F643-DBC1-4C44-AEEF-EFDF2C368ABC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{63AC1F47-4F73-4FC1-B11E-4BCEE7E79C4D}"
 EndProject

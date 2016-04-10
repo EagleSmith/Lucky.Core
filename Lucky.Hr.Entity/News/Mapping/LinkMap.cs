@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
-namespace Lucky.Hr.Entity.Mapping
+
+namespace Lucky.Entity.Mapping
 {
     public class LinkMap : EntityTypeConfiguration<Link>
     {

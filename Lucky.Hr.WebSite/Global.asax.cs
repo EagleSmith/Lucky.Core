@@ -10,9 +10,9 @@ using System.Web.Routing;
 using FluentValidation.Mvc;
 using Lucky.Core.Infrastructure;
 using Lucky.Hr.ViewModels;
-using Lucky.Hr.Web.Framework;
-using Lucky.Hr.Web.Framework.MVC;
-using Lucky.Hr.Web.Framework.Themes;
+using Lucky.Web.Framework;
+using Lucky.Web.Framework.MVC;
+using Lucky.Web.Framework.Themes;
 
 namespace Lucky.Hr.WebSite
 {

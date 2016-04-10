@@ -152,25 +152,25 @@
       <Project>{8ae7f2fc-c45b-46df-9bda-362cf8cd756e}</Project>
       <Name>Lucky.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.Entity\Lucky.Hr.Entity.csproj">
+    <ProjectReference Include="..\Lucky.Hr.Entity\Lucky.Entity.csproj">
       <Project>{b1f36ffd-aa17-475e-8287-7c6bc3f0ca45}</Project>
-      <Name>Lucky.Hr.Entity</Name>
+      <Name>Lucky.Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.IService\Lucky.Hr.IService.csproj">
+    <ProjectReference Include="..\Lucky.Hr.IService\Lucky.IService.csproj">
       <Project>{c61af106-538f-4c42-be56-1fee125f91fd}</Project>
-      <Name>Lucky.Hr.IService</Name>
+      <Name>Lucky.IService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.Service\Lucky.Hr.Service.csproj">
+    <ProjectReference Include="..\Lucky.Hr.Service\Lucky.Service.csproj">
       <Project>{2872f643-dbc1-4c44-aeef-efdf2c368abc}</Project>
-      <Name>Lucky.Hr.Service</Name>
+      <Name>Lucky.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lucky.Hr.ViewModels\Lucky.Hr.ViewModels.csproj">
       <Project>{b0dac2c8-d84c-4db7-aa0e-6659b1ecb77d}</Project>
       <Name>Lucky.Hr.ViewModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.Web.Framework\Lucky.Hr.Web.Framework.csproj">
+    <ProjectReference Include="..\Lucky.Hr.Web.Framework\Lucky.Web.Framework.csproj">
       <Project>{7f61427b-0b58-4d69-8408-64dca39d4a75}</Project>
-      <Name>Lucky.Hr.Web.Framework</Name>
+      <Name>Lucky.Web.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

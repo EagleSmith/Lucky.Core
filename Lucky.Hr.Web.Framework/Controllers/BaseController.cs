@@ -9,7 +9,7 @@ using Lucky.Core.Cache;
 using Lucky.Core.Infrastructure;
 using Lucky.Core.Logging;
 
-namespace Lucky.Hr.Web.Framework.Controllers
+namespace Lucky.Web.Framework.Controllers
 {
     public abstract class BaseController:Controller
     {

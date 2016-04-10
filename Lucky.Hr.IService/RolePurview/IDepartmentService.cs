@@ -10,7 +10,7 @@
 
 using Lucky.Core;
 using Lucky.Core.Data;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Hr.ViewModels.Models.SiteManager;
 
 namespace Lucky.Hr.IService

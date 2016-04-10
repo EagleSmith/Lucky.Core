@@ -9,7 +9,7 @@
 // ===================================================================
 
 using Lucky.Core.Data;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 
 namespace Lucky.Hr.IService
 {

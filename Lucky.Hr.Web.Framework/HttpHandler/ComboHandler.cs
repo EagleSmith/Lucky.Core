@@ -11,7 +11,7 @@ using System.Web.Caching;
 using System.Web.Routing;
 using Lucky.Core.Utility;
 
-namespace Lucky.Hr.Web.Framework.HttpHandler
+namespace Lucky.Web.Framework.HttpHandler
 {
     public class ComboRouteHandler : IRouteHandler
     {

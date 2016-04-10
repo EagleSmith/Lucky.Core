@@ -14,7 +14,7 @@ using AutoMapper.QueryableExtensions;
 using Lucky.Core;
 using Lucky.Core.Data;
 using Lucky.Core.Data.Specification;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Hr.IService;
 using Lucky.Hr.ViewModels.Models.SiteManager;
 

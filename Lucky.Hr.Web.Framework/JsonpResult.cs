@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
-namespace Lucky.Hr.Web.Framework
+namespace Lucky.Web.Framework
 {
     public class JsonpResult : JsonResult
     {

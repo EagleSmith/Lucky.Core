@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 
 using Lucky.Hr.Service;
 using Lucky.Hr.WebSite.App_Start;

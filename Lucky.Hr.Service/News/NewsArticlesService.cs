@@ -18,7 +18,7 @@ using Lucky.Core;
 using Lucky.Core.Cache;
 using Lucky.Core.Data;
 using Lucky.Core.Data.Dapper;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 
 using Lucky.Hr.IService;
 using Lucky.Hr.ViewModels;

@@ -10,7 +10,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Core.Data;
 
 namespace Lucky.Hr.IService

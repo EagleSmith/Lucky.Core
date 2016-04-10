@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Lucky.Hr.Web.Framework.Controllers
+namespace Lucky.Web.Framework.Controllers
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
     public class AdminAuthorizeAttribute :AuthorizeAttribute

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Lucky.Hr.Web.Framework.Validators
+namespace Lucky.Web.Framework.Validators
 {
     public abstract class BaseValidator<T> : AbstractValidator<T> where T : class
     {

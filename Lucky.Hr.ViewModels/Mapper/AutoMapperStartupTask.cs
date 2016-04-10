@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Lucky.Core.Infrastructure;
 
-using Lucky.Hr.Entity;
+using Lucky.Entity;
+
 using Lucky.Hr.ViewModels.Models.News;
 using Lucky.Hr.ViewModels.Models.SiteManager;
 
@@ -31,7 +32,7 @@ namespace Lucky.Hr.ViewModels
 
             Mapper.CreateMap<NavViewModel, Nav>();
 
-            Mapper.CreateMap<Lucky.Hr.Entity.Manager, AspNetUsersViewModel>();
+            Mapper.CreateMap<Entity.Manager, AspNetUsersViewModel>();
 
             Mapper.CreateMap<AspNetUsersViewModel, Manager>();
 

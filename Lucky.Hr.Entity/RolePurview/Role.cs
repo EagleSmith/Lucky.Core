@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Lucky.Hr.Entity
+namespace Lucky.Entity
 {
     public partial class Role:IdentityRole
     {

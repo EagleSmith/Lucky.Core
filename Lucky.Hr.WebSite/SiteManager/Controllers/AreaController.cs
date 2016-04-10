@@ -8,12 +8,12 @@ using Lucky.Core.Data.Specification;
 using Lucky.Core.Infrastructure;
 using Lucky.Core.Logging;
 using Lucky.Core.Utility;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Hr.IService;
 using Lucky.Hr.ViewModels;
 using Lucky.Hr.ViewModels.Models;
 using Lucky.Hr.ViewModels.Models.SiteManager;
-using Lucky.Hr.Web.Framework;
+using Lucky.Web.Framework;
 
 namespace Lucky.Hr.SiteManager.Controllers
 {

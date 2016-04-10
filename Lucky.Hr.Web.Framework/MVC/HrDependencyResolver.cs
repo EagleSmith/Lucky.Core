@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Lucky.Core.Infrastructure;
 
-namespace Lucky.Hr.Web.Framework.MVC
+namespace Lucky.Web.Framework.MVC
 {
     public class HrDependencyResolver:IDependencyResolver
     {

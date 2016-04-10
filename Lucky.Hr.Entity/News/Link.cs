@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-
-namespace Lucky.Hr.Entity
+namespace Lucky.Entity
 {
     public partial class Link
     {

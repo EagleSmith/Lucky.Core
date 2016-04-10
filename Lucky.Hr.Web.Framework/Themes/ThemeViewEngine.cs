@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Lucky.Hr.Web.Framework.Themes
+namespace Lucky.Web.Framework.Themes
 {
     public class ThemeViewEngine : RazorViewEngine
     {

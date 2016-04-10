@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lucky.Core.Data.UnitOfWork;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
+
 
 namespace Lucky.Hr.IService
 {

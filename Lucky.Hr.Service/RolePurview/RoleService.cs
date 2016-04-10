@@ -11,7 +11,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Lucky.Core.Data;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Hr.IService;
 using Lucky.Hr.ViewModels.Models.SiteManager;
 

@@ -7,7 +7,7 @@ using FluentValidation;
 using FluentValidation.Attributes;
 using Lucky.Core.Infrastructure;
 
-namespace Lucky.Hr.Web.Framework
+namespace Lucky.Web.Framework
 {
     public class LuckyValidatorFactory : AttributedValidatorFactory
     {

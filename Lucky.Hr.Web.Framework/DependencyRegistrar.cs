@@ -19,7 +19,7 @@ using StackExchange.Redis.Extensions.Core;
 using StackExchange.Redis.Extensions.Newtonsoft;
 
 
-namespace Lucky.Hr.Web.Framework
+namespace Lucky.Web.Framework
 {
     /// <summary>
     /// 所有需要注入的接口全在此注入

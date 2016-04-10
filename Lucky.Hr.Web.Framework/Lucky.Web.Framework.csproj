@@ -7,8 +7,8 @@
     <ProjectGuid>{7F61427B-0B58-4D69-8408-64DCA39D4A75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lucky.Hr.Web.Framework</RootNamespace>
-    <AssemblyName>Lucky.Hr.Web.Framework</AssemblyName>
+    <RootNamespace>Lucky.Web.Framework</RootNamespace>
+    <AssemblyName>Lucky.Web.Framework</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -162,17 +162,17 @@
       <Project>{8ae7f2fc-c45b-46df-9bda-362cf8cd756e}</Project>
       <Name>Lucky.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.Entity\Lucky.Hr.Entity.csproj">
+    <ProjectReference Include="..\Lucky.Hr.Entity\Lucky.Entity.csproj">
       <Project>{b1f36ffd-aa17-475e-8287-7c6bc3f0ca45}</Project>
-      <Name>Lucky.Hr.Entity</Name>
+      <Name>Lucky.Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.IService\Lucky.Hr.IService.csproj">
+    <ProjectReference Include="..\Lucky.Hr.IService\Lucky.IService.csproj">
       <Project>{c61af106-538f-4c42-be56-1fee125f91fd}</Project>
-      <Name>Lucky.Hr.IService</Name>
+      <Name>Lucky.IService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.Service\Lucky.Hr.Service.csproj">
+    <ProjectReference Include="..\Lucky.Hr.Service\Lucky.Service.csproj">
       <Project>{2872f643-dbc1-4c44-aeef-efdf2c368abc}</Project>
-      <Name>Lucky.Hr.Service</Name>
+      <Name>Lucky.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Lucky.Core.Utility;
 
-namespace Lucky.Hr.Web.Framework.HtmlExtensions
+namespace Lucky.Web.Framework.HtmlExtensions
 {
     public static class HtmlHelperExtensions
     {

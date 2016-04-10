@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Lucky.Hr.Web.Framework.FilterAttribute
+namespace Lucky.Web.Framework.FilterAttribute
 {
 
     /// <summary>

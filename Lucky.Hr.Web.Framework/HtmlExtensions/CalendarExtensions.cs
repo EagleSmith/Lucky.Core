@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Lucky.Hr.Web.Framework.HtmlExtensions
+namespace Lucky.Web.Framework.HtmlExtensions
 {
     public static class CalendarExtensions
     {

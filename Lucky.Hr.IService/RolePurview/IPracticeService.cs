@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Lucky.Core.Data;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 
 
 namespace Lucky.Hr.IService

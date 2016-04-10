@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Lucky.Core.Cache;
 using Lucky.Core.Logging;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Hr.IService;
 using Lucky.Hr.Service;
 using Microsoft.AspNet.Identity;

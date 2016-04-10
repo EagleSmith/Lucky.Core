@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Lucky.Core.Data.Specification;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 
 namespace Lucky.Hr.ViewModels.Models
 {

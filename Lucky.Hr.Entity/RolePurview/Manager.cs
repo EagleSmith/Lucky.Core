@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Lucky.Hr.Entity
+namespace Lucky.Entity
 {
     public partial class Manager:IdentityUser
     {

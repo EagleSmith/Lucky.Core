@@ -8,7 +8,7 @@
 // 负责人：丁富升
 // ===================================================================
 using Lucky.Core.Data;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 namespace Lucky.Hr.IService
 {
     public interface INavService : IRepository< Nav>

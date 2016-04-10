@@ -8,7 +8,7 @@
 // 负责人：丁富升
 // ===================================================================
 using Lucky.Core.Data;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Hr.IService;
 namespace Lucky.Hr.Service
 {

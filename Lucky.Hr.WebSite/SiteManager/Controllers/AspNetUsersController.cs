@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Lucky.Core;
 using Lucky.Core.Data.Specification;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
 using Lucky.Hr.IService;
 using Lucky.Hr.Service;
 using Lucky.Hr.ViewModels;

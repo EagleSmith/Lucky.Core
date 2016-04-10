@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Lucky.Hr.Entity;
+using Lucky.Entity;
+
 using Lucky.Hr.ViewModels.Models.News;
 using Lucky.Hr.ViewModels.Models.SiteManager;
 

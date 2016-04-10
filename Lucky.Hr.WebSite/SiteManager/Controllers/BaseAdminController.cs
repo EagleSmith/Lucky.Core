@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using Lucky.Hr.Web.Framework.Controllers;
+using Lucky.Web.Framework.Controllers;
 
 namespace Lucky.Hr.SiteManager.Controllers
 {
