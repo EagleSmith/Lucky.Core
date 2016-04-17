@@ -196,6 +196,21 @@ namespace Lucky.Core.Test.SequenceTest
             }
             
         }
+        [Fact]
+        public void TestStringQueue()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                string str = Lucky.Core.Utility.Sequence.SequenceQueue.NewIdString("Luckearth");
+                _output.WriteLine(str);
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                string str = Lucky.Core.Utility.Sequence.SequenceQueue.NewIdString("Users");
+                _output.WriteLine(str);
+            }
+            //_output.WriteLine(str.Length.ToString());
+        }
         private string GetLongLowerString(int a,int b)
         {
             var idGenerator =
