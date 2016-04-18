@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,34 @@ namespace Lucky.Core.Utility
             }
             
             return str.Substring(0,index)+tem;
+        }
+        public static object GetDefaultValue(Type type)
+        {
+            return type.IsValueType ? Activator.CreateInstance(type) : null;
+        }
+        /// <summary>
+        /// 数据类型转换，当要转换的是 string 类型时需要加上最大长度
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="val"></param>
+        /// <param name="maxLength"></param>
+        /// <returns></returns>
+        public static object ConverterStringData(Type type, string val, int maxLength = int.MaxValue)
+        {
+            object defaultval = null;
+            try
+            {
+                TypeConverter typeConverter = TypeDescriptor.GetConverter(type);
+                defaultval = typeConverter.ConvertFromString(val);
+                if (type == typeof(string))
+                    return val.Substring(0, maxLength);
+
+            }
+            catch (Exception ex)
+            {
+                defaultval = GetDefaultValue(type);
+            }
+            return defaultval;
         }
     }
 }

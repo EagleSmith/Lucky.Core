@@ -131,6 +131,7 @@
     <Compile Include="SequenceTest\SequenceQueue.cs" />
     <Compile Include="SequenceTest\TestSequence.cs" />
     <Compile Include="SqlGuidUtil.cs" />
+    <Compile Include="TestGlobals.cs" />
     <Compile Include="TestGuidUtil.cs" />
     <Compile Include="TestNews.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

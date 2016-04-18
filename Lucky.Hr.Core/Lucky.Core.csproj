@@ -188,6 +188,7 @@
     <Compile Include="Data\UnitOfWork\IMainContext.cs" />
     <Compile Include="Data\UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Data\UnitOfWork\MainContext.cs" />
+    <Compile Include="EnumDefined.cs" />
     <Compile Include="Events\EntityDeleted.cs" />
     <Compile Include="Events\EntityInserted.cs" />
     <Compile Include="Events\EntityUpdated.cs" />

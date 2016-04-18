@@ -85,6 +85,56 @@ namespace Lucky.Core.Utility
                 encoding = "none";
             return encoding;
         }
+        /// <summary>
+        /// 根据字节码判断文件真实类型,编码不一样 txt 结果可能不一样
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static FileExtension GetFileType(string filePath)
+        {
+            FileExtension extension;
+            FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            BinaryReader reader = new BinaryReader(stream);
+            string fileclass = "";
+            try
+            {
+
+                for (int i = 0; i < 2; i++)
+                {
+                    fileclass += reader.ReadByte().ToString();
+                }
+                extension = (FileExtension) Enum.Parse(typeof (FileExtension), fileclass);
+            }
+            catch (Exception)
+            {
+                extension=FileExtension.Null;
+                // ignored
+            }
+            return extension;
+            /*文件扩展名说明
+             * 
+             * 4946/104116 txt
+             * 7173        gif 
+             * 255216      jpg
+             * 13780       png
+             * 6677        bmp
+             * 239187      txt,aspx,asp,sql
+             * 208207      xls.doc.ppt
+             * 6063        xml
+             * 6033        htm,html
+             * 4742        js
+             * 8075        xlsx,zip,pptx,mmap,zip
+             * 8297        rar   
+             * 01          accdb,mdb
+             * 7790        exe,dll
+             * 5666        psd 
+             * 255254      rdp 
+             * 10056       bt种子 
+             * 64101       bat 
+             * 4059        sgf    
+             */
+
+        }
 
         public static string GetContentType(string extension)
         {
