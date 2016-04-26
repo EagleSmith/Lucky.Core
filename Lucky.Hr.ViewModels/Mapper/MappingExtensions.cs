@@ -16,36 +16,33 @@ namespace Lucky.Hr.ViewModels
         #region Area
         public static Area ToEntity(this AreaViewModel model)
         {
-            return Mapper.Map<AreaViewModel, Area>(model);
+            return model.MapTo<AreaViewModel, Area>();
         }
-
-        public static AreaViewModel ToModel(this Area entity)
-        {
-            return Mapper.Map<Area, AreaViewModel>(entity);
-        }
-
         public static Area ToEntity(this AreaViewModel model, Area entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo(entity);
         }
-
+        public static AreaViewModel ToModel(this Area entity)
+        {
+            return entity.MapTo<Area, AreaViewModel>();
+        }
         #endregion
 
         #region Distributor
 
         public static Distributor ToEntity(this DistributorViewModel model)
         {
-            return Mapper.Map<DistributorViewModel, Distributor>(model);
+            return model.MapTo<DistributorViewModel, Distributor>();
         }
 
         public static Distributor ToEntity(this DistributorViewModel model, Distributor entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo(entity);
         }
 
         public static DistributorViewModel ToModel(this Distributor entity)
         {
-            return Mapper.Map<Distributor, DistributorViewModel>(entity);
+            return entity.MapTo<Distributor, DistributorViewModel>();
         }
         #endregion
 
@@ -53,39 +50,39 @@ namespace Lucky.Hr.ViewModels
 
         public static Department ToEntity(this DepartmentViewModel model)
         {
-            return Mapper.Map<DepartmentViewModel, Department>(model);
+            return model.MapTo<DepartmentViewModel, Department>();
         }
 
         public static Department ToEntity(this DepartmentViewModel model, Department entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo( entity);
         }
 
         public static DepartmentViewModel ToModel(this Department entity)
         {
-            return Mapper.Map<Department, DepartmentViewModel>(entity);
+            return entity.MapTo<Department, DepartmentViewModel>();
         }
         #endregion
 
         #region Nav
         public static Nav ToEntity(this NavViewModel model)
         {
-            return Mapper.Map<NavViewModel, Nav>(model);
+            return model.MapTo<NavViewModel, Nav>();
         }
 
         public static Nav ToEntity(this NavViewModel model, Nav entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo( entity);
         }
 
         public static NavViewModel ToModel(this Nav entity)
         {
-            return Mapper.Map<Nav, NavViewModel>(entity);
+            return entity.MapTo<Nav, NavViewModel>();
         }
 
         public static NavOperationViewModel ToNavOperationModel(this Nav entity)
         {
-            return Mapper.Map<Nav, NavOperationViewModel>(entity);
+            return entity.MapTo<Nav, NavOperationViewModel>();
         }
         #endregion
 
@@ -93,17 +90,17 @@ namespace Lucky.Hr.ViewModels
 
         public static Manager ToEntity(this AspNetUsersViewModel model)
         {
-            return Mapper.Map<AspNetUsersViewModel, Manager>(model);
+            return model.MapTo<AspNetUsersViewModel, Manager>();
         }
 
         public static Manager ToEntity(this AspNetUsersViewModel model, Manager entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo(entity);
         }
 
         public static AspNetUsersViewModel ToModel(this Manager entity)
         {
-            return Mapper.Map<Manager, AspNetUsersViewModel>(entity);
+            return entity.MapTo<Manager, AspNetUsersViewModel>();
         }
         #endregion
 
@@ -111,17 +108,17 @@ namespace Lucky.Hr.ViewModels
 
         public static Role ToEntity(this AspNetRolesViewModel model)
         {
-            return Mapper.Map<AspNetRolesViewModel, Role>(model);
+            return model.MapTo<AspNetRolesViewModel, Role>();
         }
 
         public static Role ToEntity(this AspNetRolesViewModel model, Role entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo(entity);
         }
 
         public static AspNetRolesViewModel ToModel(this Role entity)
         {
-            return Mapper.Map<Role, AspNetRolesViewModel>(entity);
+            return entity.MapTo<Role, AspNetRolesViewModel>();
         }
         #endregion
 
@@ -129,17 +126,17 @@ namespace Lucky.Hr.ViewModels
 
         public static Operation ToEntity(this OperationViewModel model)
         {
-            return Mapper.Map<OperationViewModel, Operation>(model);
+            return model.MapTo<OperationViewModel, Operation>();
         }
 
         public static Operation ToEntity(this OperationViewModel model, Operation entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo(entity);
         }
 
         public static OperationViewModel ToModel(this Operation entity)
         {
-            return Mapper.Map<Operation, OperationViewModel>(entity);
+            return entity.MapTo<Operation, OperationViewModel>();
         }
         #endregion
 
@@ -147,17 +144,17 @@ namespace Lucky.Hr.ViewModels
 
         public static NewsArticle ToEntity(this NewsArticlesViewModel model)
         {
-            return Mapper.Map<NewsArticlesViewModel, NewsArticle>(model);
+            return model.MapTo<NewsArticlesViewModel, NewsArticle>();
         }
 
         public static NewsArticle ToEntity(this NewsArticlesViewModel model, NewsArticle entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo( entity);
         }
 
         public static NewsArticlesViewModel ToModel(this NewsArticle entity)
         {
-            return Mapper.Map<NewsArticle, NewsArticlesViewModel>(entity);
+            return entity.MapTo<NewsArticle, NewsArticlesViewModel>();
         }
         #endregion
 
@@ -165,17 +162,17 @@ namespace Lucky.Hr.ViewModels
 
         public static Category ToEntity(this CategoryViewModel model)
         {
-            return Mapper.Map<CategoryViewModel, Category>(model);
+            return model.MapTo<CategoryViewModel, Category>();
         }
 
         public static Category ToEntity(this CategoryViewModel model, Category entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo( entity);
         }
 
         public static CategoryViewModel ToModel(this Category entity)
         {
-            return Mapper.Map<Category, CategoryViewModel>(entity);
+            return entity.MapTo<Category, CategoryViewModel>();
         }
         #endregion
 
@@ -183,17 +180,17 @@ namespace Lucky.Hr.ViewModels
 
         public static Link ToEntity(this LinksViewModel model)
         {
-            return Mapper.Map<LinksViewModel, Link>(model);
+            return model.MapTo<LinksViewModel, Link>();
         }
 
         public static Link ToEntity(this LinksViewModel model, Link entity)
         {
-            return Mapper.Map(model, entity);
+            return model.MapTo(entity);
         }
 
         public static LinksViewModel ToModel(this Link entity)
         {
-            return Mapper.Map<Link, LinksViewModel>(entity);
+            return entity.MapTo<Link, LinksViewModel>();
         }
         #endregion
     }

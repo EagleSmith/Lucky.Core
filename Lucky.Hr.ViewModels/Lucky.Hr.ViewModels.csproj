@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\JsonExtensions.cs" />
+    <Compile Include="Mapper\AutoMapperConfiguration.cs" />
     <Compile Include="Mapper\AutoMapperStartupTask.cs" />
     <Compile Include="Mapper\EntityMapper.cs" />
     <Compile Include="Mapper\MappingExtensions.cs" />
