@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -39,6 +42,44 @@ namespace Lucky.Core.Utility.Extensions
             var virtualDir = request.ApplicationPath;
             virtualDir = virtualDir == "/" ? virtualDir : (virtualDir + "/");
             return path.Replace(applicationPath, virtualDir).Replace(@"\", "/");
+        }
+        /// <summary>
+        /// 在同步上下文中查找当前会话<see cref="System.Web.HttpContext" />对象
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public static HttpContext FindHttpContext(this SynchronizationContext context)
+        {
+            if (context == null)
+            {
+                return null;
+            }
+            var factory = GetFindApplicationDelegate(context);
+            if (factory == null)
+            {
+                return null;
+            }
+            return factory(context).Context;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        private static Func<System.Threading.SynchronizationContext, System.Web.HttpApplication> GetFindApplicationDelegate(SynchronizationContext context)
+        {
+            Func<System.Threading.SynchronizationContext, System.Web.HttpApplication> factory = null;
+            Type type = context.GetType();
+            if (!type.FullName.Equals("System.Web.LegacyAspNetSynchronizationContext"))
+            {
+                return null;
+            }
+            ParameterExpression sourceExpression = Expression.Parameter(typeof(System.Threading.SynchronizationContext), "context");
+            Expression sourceInstance = Expression.Convert(sourceExpression, type);
+            FieldInfo applicationFieldInfo = type.GetField("_application", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            Expression fieldExpression = Expression.Field(sourceInstance, applicationFieldInfo);
+            factory = Expression.Lambda<Func<System.Threading.SynchronizationContext, System.Web.HttpApplication>>(fieldExpression, sourceExpression).Compile();
+            return factory;
         }
     }
 }
