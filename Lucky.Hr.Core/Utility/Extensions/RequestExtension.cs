@@ -62,6 +62,19 @@ namespace Lucky.Core.Utility.Extensions
             return factory(context).Context;
         }
         /// <summary>
+        /// 确定异步状态的上下文可用
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public static HttpContext Check(this HttpContext context)
+        {
+            if (context == null)
+            {
+                context = SynchronizationContext.Current.FindHttpContext();
+            }
+            return context;
+        }
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="context"></param>
