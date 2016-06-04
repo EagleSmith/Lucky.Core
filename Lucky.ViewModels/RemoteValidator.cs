@@ -11,7 +11,7 @@ using FluentValidation.Internal;
 using FluentValidation.Mvc;
 using FluentValidation.Validators;
 
-namespace Lucky.Hr.ViewModels
+namespace Lucky.ViewModels
 {
     public class RemoteValidator : PropertyValidator
     {

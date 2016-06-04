@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Lucky.Hr.ViewModels.Mapper;
+using Lucky.ViewModels.Mapper;
 
-namespace Lucky.Hr.ViewModels
+namespace Lucky.ViewModels
 {
     public static class EntityMapper
     {

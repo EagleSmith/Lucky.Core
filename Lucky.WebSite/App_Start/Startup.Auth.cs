@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Web;
 using Lucky.Entity;
 
-using Lucky.Hr.Service;
+using Lucky.Service;
 using Lucky.Hr.WebSite.App_Start;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;

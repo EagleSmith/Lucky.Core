@@ -13,7 +13,7 @@ using System.Text;
 using Lucky.Entity;
 using Lucky.Core.Data;
 
-namespace Lucky.Hr.IService
+namespace Lucky.IService
 {
     public interface ICategoryService : IRepository<Category>
     {

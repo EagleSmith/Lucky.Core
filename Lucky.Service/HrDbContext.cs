@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using Lucky.Core.Data.UnitOfWork;
 using Lucky.Entity;
 using Lucky.Entity.Mapping;
-using Lucky.Hr.IService;
+using Lucky.IService;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public class MainContextIdentity : IdentityDbContext, IMainContext
     {

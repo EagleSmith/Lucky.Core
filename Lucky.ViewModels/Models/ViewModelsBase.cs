@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Lucky.Hr.ViewModels
+namespace Lucky.ViewModels
 {
     public class ViewModelsBase : IViewModelsBase
     {

@@ -9,9 +9,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Lucky.Hr.IService;
-using Lucky.Hr.Service;
-using Lucky.Hr.ViewModels;
+using Lucky.IService;
+using Lucky.Service;
+using Lucky.ViewModels;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 

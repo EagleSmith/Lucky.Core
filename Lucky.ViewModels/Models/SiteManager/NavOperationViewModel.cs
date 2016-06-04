@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucky.Hr.ViewModels.Models.SiteManager
+namespace Lucky.ViewModels.Models.SiteManager
 {
     public class NavOperationViewModel:ViewModelsBase
     {

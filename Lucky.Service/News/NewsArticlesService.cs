@@ -20,11 +20,11 @@ using Lucky.Core.Data;
 using Lucky.Core.Data.Dapper;
 using Lucky.Entity;
 
-using Lucky.Hr.IService;
-using Lucky.Hr.ViewModels;
-using Lucky.Hr.ViewModels.Models.News;
+using Lucky.IService;
+using Lucky.ViewModels;
+using Lucky.ViewModels.Models.News;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public  class NewsArticlesService  :EntityRepository<NewsArticle>,INewsArticlesService
     {

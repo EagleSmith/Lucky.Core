@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Lucky.Core.Data;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public class DbContextConfiguration : DbConfiguration
     {

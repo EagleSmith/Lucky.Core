@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Newtonsoft.Json;
 
-namespace Lucky.Hr.ViewModels.Extensions
+namespace Lucky.ViewModels.Extensions
 {
     public static class JsonExtensions
     {

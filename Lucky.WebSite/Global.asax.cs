@@ -9,7 +9,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using FluentValidation.Mvc;
 using Lucky.Core.Infrastructure;
-using Lucky.Hr.ViewModels;
+using Lucky.ViewModels;
 using Lucky.Web.Framework;
 using Lucky.Web.Framework.MVC;
 using Lucky.Web.Framework.Themes;

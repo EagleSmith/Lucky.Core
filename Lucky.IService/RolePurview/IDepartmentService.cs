@@ -11,9 +11,9 @@
 using Lucky.Core;
 using Lucky.Core.Data;
 using Lucky.Entity;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.ViewModels.Models.SiteManager;
 
-namespace Lucky.Hr.IService
+namespace Lucky.IService
 {
     public interface IDepartmentService : IRepository< Department>
     {

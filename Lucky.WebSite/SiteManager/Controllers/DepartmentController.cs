@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using Lucky.Core.Utility;
-using Lucky.Hr.IService;
-using Lucky.Hr.ViewModels;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.IService;
+using Lucky.ViewModels;
+using Lucky.ViewModels.Models.SiteManager;
 
 namespace Lucky.Hr.SiteManager.Controllers
 {

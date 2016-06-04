@@ -11,7 +11,7 @@
 using Lucky.Core.Data;
 using Lucky.Entity;
 
-namespace Lucky.Hr.IService
+namespace Lucky.IService
 {
     public interface IDepartmentRoleService : IRepository< DepartmentRole>
     {

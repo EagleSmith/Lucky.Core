@@ -89,7 +89,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lucky.Hr.Core\Lucky.Core.csproj">
+    <ProjectReference Include="..\Lucky.Core\Lucky.Core.csproj">
       <Project>{8ae7f2fc-c45b-46df-9bda-362cf8cd756e}</Project>
       <Name>Lucky.Core</Name>
     </ProjectReference>

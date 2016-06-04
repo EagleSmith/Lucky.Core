@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Lucky.Core;
 using Lucky.Core.Data.Specification;
 using Lucky.Entity;
-using Lucky.Hr.IService;
-using Lucky.Hr.ViewModels;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.IService;
+using Lucky.ViewModels;
+using Lucky.ViewModels.Models.SiteManager;
 
 namespace Lucky.Hr.SiteManager.Controllers
 {

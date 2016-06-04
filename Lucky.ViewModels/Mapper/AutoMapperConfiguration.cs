@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Lucky.Entity;
-using Lucky.Hr.ViewModels.Models.News;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.ViewModels.Models.News;
+using Lucky.ViewModels.Models.SiteManager;
 
-namespace Lucky.Hr.ViewModels.Mapper
+namespace Lucky.ViewModels.Mapper
 {
     public class AutoMapperConfiguration
     {

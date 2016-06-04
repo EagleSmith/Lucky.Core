@@ -10,7 +10,7 @@ using FluentValidation;
 using FluentValidation.Attributes;
 using Lucky.Core.Utility;
 
-namespace Lucky.Hr.ViewModels.Models.SiteManager
+namespace Lucky.ViewModels.Models.SiteManager
 {
     /// <summary>
     ///Nav数据实体

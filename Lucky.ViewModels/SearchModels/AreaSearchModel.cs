@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Lucky.Core.Data.Specification;
 using Lucky.Entity;
 
-namespace Lucky.Hr.ViewModels.Models
+namespace Lucky.ViewModels.Models
 {
     public class AreaSearchModel
     {

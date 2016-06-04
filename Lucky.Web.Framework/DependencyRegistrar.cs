@@ -13,8 +13,8 @@ using Lucky.Core.Events.EventsBus;
 using Lucky.Core.Infrastructure.DependencyManagement;
 using Lucky.Core.Logging;
 using Lucky.Core.Plugins;
-using Lucky.Hr.IService;
-using Lucky.Hr.Service;
+using Lucky.IService;
+using Lucky.Service;
 using StackExchange.Redis.Extensions.Core;
 using StackExchange.Redis.Extensions.Newtonsoft;
 

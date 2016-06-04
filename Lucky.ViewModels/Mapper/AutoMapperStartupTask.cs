@@ -7,11 +7,11 @@ using AutoMapper;
 using Lucky.Core.Infrastructure;
 
 using Lucky.Entity;
-using Lucky.Hr.ViewModels.Mapper;
-using Lucky.Hr.ViewModels.Models.News;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.ViewModels.Mapper;
+using Lucky.ViewModels.Models.News;
+using Lucky.ViewModels.Models.SiteManager;
 
-namespace Lucky.Hr.ViewModels
+namespace Lucky.ViewModels
 {
     public class AutoMapperStartupTask : IStartupTask
     {

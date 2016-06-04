@@ -18,9 +18,9 @@ using Lucky.Core.Data;
 
 using Lucky.Entity;
 
-using Lucky.Hr.IService;
+using Lucky.IService;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public  class NewsArticleTextService : EntityRepository< NewsArticleText>, INewsArticleTextService
     {

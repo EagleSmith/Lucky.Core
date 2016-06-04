@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Attributes;
 
-namespace Lucky.Hr.ViewModels.Models.SiteManager
+namespace Lucky.ViewModels.Models.SiteManager
 {
     /// <summary>
     ///Operation数据实体

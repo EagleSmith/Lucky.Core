@@ -15,8 +15,8 @@ using System.Data.SqlClient;
 using Lucky.Core;
 using Lucky.Core.Data;
 using Lucky.Entity;
-using Lucky.Hr.IService;
-namespace Lucky.Hr.Service
+using Lucky.IService;
+namespace Lucky.Service
 {
     public  class PersonalService  :EntityRepository< Personal>,IPersonalService
     {

@@ -14,7 +14,7 @@ using Lucky.Entity;
 using Lucky.Core.Data;
 
 
-namespace Lucky.Hr.IService
+namespace Lucky.IService
 {
     public interface ILinksService : IRepository<Link>
     {

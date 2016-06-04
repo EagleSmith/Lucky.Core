@@ -158,19 +158,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lucky.Hr.Core\Lucky.Core.csproj">
+    <ProjectReference Include="..\Lucky.Core\Lucky.Core.csproj">
       <Project>{8ae7f2fc-c45b-46df-9bda-362cf8cd756e}</Project>
       <Name>Lucky.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.Entity\Lucky.Entity.csproj">
+    <ProjectReference Include="..\Lucky.Entity\Lucky.Entity.csproj">
       <Project>{b1f36ffd-aa17-475e-8287-7c6bc3f0ca45}</Project>
       <Name>Lucky.Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.IService\Lucky.IService.csproj">
+    <ProjectReference Include="..\Lucky.IService\Lucky.IService.csproj">
       <Project>{c61af106-538f-4c42-be56-1fee125f91fd}</Project>
       <Name>Lucky.IService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucky.Hr.Service\Lucky.Service.csproj">
+    <ProjectReference Include="..\Lucky.Service\Lucky.Service.csproj">
       <Project>{2872f643-dbc1-4c44-aeef-efdf2c368abc}</Project>
       <Name>Lucky.Service</Name>
     </ProjectReference>

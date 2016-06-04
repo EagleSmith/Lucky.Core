@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Lucky.Hr.ViewModels.Models.SiteManager.NavViewModel>
+﻿@model IEnumerable<Lucky.ViewModels.Models.SiteManager.NavViewModel>
            @{
                var plist = Model.Where(a => a.NavId.Length == 6);
                var clist = Model.Where(a => a.ParentId.Length == 6);

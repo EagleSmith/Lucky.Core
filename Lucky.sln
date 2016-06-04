@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Core", "Lucky.Core\Lucky.Core.csproj", "{8AE7F2FC-C45B-46DF-9BDA-362CF8CD756E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.Core.Test", "Lucky.Core.Test\Lucky.Hr.Core.Test.csproj", "{2F93C72A-41EB-4B2C-AD23-EFD17D8E1FB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Core.Test", "Lucky.Core.Test\Lucky.Core.Test.csproj", "{2F93C72A-41EB-4B2C-AD23-EFD17D8E1FB3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F1C9E750-1A4B-4B2C-9B22-DE6188704AE0}"
 EndProject
@@ -15,15 +15,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Web.Framework", "Luck
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{E432E27D-5FD6-4CCD-B233-FF9643B1665C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.WebSite", "Lucky.WebSite\Lucky.Hr.WebSite.csproj", "{4E223A27-15E4-4F4D-A850-3209EB1C666A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.WebSite", "Lucky.WebSite\Lucky.WebSite.csproj", "{4E223A27-15E4-4F4D-A850-3209EB1C666A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lucky.Controls", "Lucky.Controls", "{52BE1E73-F864-4990-B225-4D7F9DC66589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.GridMvc", "Lucky.GridMvc\Lucky.Hr.GridMvc.csproj", "{742CA5DD-16DB-464A-A267-A1F4E422733B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.GridMvc", "Lucky.GridMvc\Lucky.GridMvc.csproj", "{742CA5DD-16DB-464A-A267-A1F4E422733B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.MvcPager", "Lucky.MvcPager\Lucky.Hr.MvcPager.csproj", "{FBC21132-7DAB-4315-ABE3-020A0607270C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.MvcPager", "Lucky.MvcPager\Lucky.MvcPager.csproj", "{FBC21132-7DAB-4315-ABE3-020A0607270C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.SiteManager", "Lucky.WebSite\SiteManager\Lucky.Hr.SiteManager.csproj", "{3F71CC0D-B87B-4BDD-A9EA-5A56CBC87E4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.SiteManager", "Lucky.WebSite\SiteManager\Lucky.SiteManager.csproj", "{3F71CC0D-B87B-4BDD-A9EA-5A56CBC87E4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.IService", "Lucky.IService\Lucky.IService.csproj", "{C61AF106-538F-4C42-BE56-1FEE125F91FD}"
 EndProject
@@ -33,9 +33,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{F774F1C5-FCAB-4C97-8583-1AC30BD35A52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.ViewModels", "Lucky.ViewModels\Lucky.Hr.ViewModels.csproj", "{B0DAC2C8-D84C-4DB7-AA0E-6659B1ECB77D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.ViewModels", "Lucky.ViewModels\Lucky.ViewModels.csproj", "{B0DAC2C8-D84C-4DB7-AA0E-6659B1ECB77D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.Hr.ApiService", "Lucky.ApiService\Lucky.Hr.ApiService.csproj", "{60FA495B-BE6D-4137-9FBD-3A773F8C30A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucky.ApiService", "Lucky.ApiService\Lucky.ApiService.csproj", "{60FA495B-BE6D-4137-9FBD-3A773F8C30A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

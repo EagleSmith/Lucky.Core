@@ -9,10 +9,10 @@ using Lucky.Core.Infrastructure;
 using Lucky.Core.Logging;
 using Lucky.Core.Utility;
 using Lucky.Entity;
-using Lucky.Hr.IService;
-using Lucky.Hr.ViewModels;
-using Lucky.Hr.ViewModels.Models;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.IService;
+using Lucky.ViewModels;
+using Lucky.ViewModels.Models;
+using Lucky.ViewModels.Models.SiteManager;
 using Lucky.Web.Framework;
 
 namespace Lucky.Hr.SiteManager.Controllers

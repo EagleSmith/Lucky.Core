@@ -12,10 +12,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Lucky.Core.Data;
 using Lucky.Entity;
-using Lucky.Hr.IService;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.IService;
+using Lucky.ViewModels.Models.SiteManager;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public  class RoleService  :EntityRepository< Role>,IRoleService
     {
@@ -27,7 +27,7 @@ namespace Lucky.Hr.Service
 
 
 
-      public IList<ViewModels.Models.SiteManager.NavOperationViewModel> GetNavOperationViewModels(string roleid)
+      public IList<NavOperationViewModel> GetNavOperationViewModels(string roleid)
       {
           var list = (from nav in _context.Navs
               where nav.State == 1

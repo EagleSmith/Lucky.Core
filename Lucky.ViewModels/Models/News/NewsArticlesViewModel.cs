@@ -9,7 +9,7 @@ using FluentValidation;
 using FluentValidation.Attributes;
 using Lucky.Core.Utility;
 
-namespace Lucky.Hr.ViewModels.Models.News
+namespace Lucky.ViewModels.Models.News
 {
     /// <summary>
     ///NewsArticles数据实体

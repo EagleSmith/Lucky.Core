@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Attributes;
 
-namespace Lucky.Hr.ViewModels.Models.News
+namespace Lucky.ViewModels.Models.News
 {
     /// <summary>
     ///Links数据实体

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Lucky.Core.Data.UnitOfWork;
 using Lucky.Entity;
 
-namespace Lucky.Hr.IService
+namespace Lucky.IService
 {
     public interface IHrDbContext : IMainContext
     {

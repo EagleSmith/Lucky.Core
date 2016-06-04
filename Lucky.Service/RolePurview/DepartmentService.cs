@@ -15,10 +15,10 @@ using Lucky.Core;
 using Lucky.Core.Data;
 using Lucky.Core.Data.Specification;
 using Lucky.Entity;
-using Lucky.Hr.IService;
-using Lucky.Hr.ViewModels.Models.SiteManager;
+using Lucky.IService;
+using Lucky.ViewModels.Models.SiteManager;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public  class DepartmentService  :EntityRepository< Department>,IDepartmentService
     {

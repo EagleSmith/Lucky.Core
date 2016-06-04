@@ -15,9 +15,9 @@ using System.Data.SqlClient;
 using Lucky.Core;
 using Lucky.Core.Data;
 using Lucky.Entity;
-using Lucky.Hr.IService;
+using Lucky.IService;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public  class AchievementService  :EntityRepository< Achievement>,IAchievementService
     {

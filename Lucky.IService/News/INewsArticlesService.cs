@@ -12,9 +12,9 @@ using System.Collections.Generic;
 using System.Text;
 using Lucky.Entity;
 using Lucky.Core.Data;
-using Lucky.Hr.ViewModels.Models.News;
+using Lucky.ViewModels.Models.News;
 
-namespace Lucky.Hr.IService
+namespace Lucky.IService
 {
     public interface INewsArticlesService : IRepository<NewsArticle>
     {

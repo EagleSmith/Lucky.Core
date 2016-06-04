@@ -12,15 +12,15 @@ using Lucky.Core.Logging;
 using Lucky.Core.Utility;
 using Lucky.Entity;
 using Lucky.Entity.Mapping;
-using Lucky.Hr.IService;
-using Lucky.Hr.Service;
-using Lucky.Hr.ViewModels.Models.News;
+using Lucky.IService;
+using Lucky.Service;
+using Lucky.ViewModels.Models.News;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
-namespace Lucky.Hr.WebSite.Controllers
+namespace Lucky.WebSite.Controllers
 {
     public class HomeController : Controller
     {

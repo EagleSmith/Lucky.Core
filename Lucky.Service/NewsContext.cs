@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Lucky.Entity;
 using Lucky.Entity.Mapping;
 
-using Lucky.Hr.IService;
+using Lucky.IService;
 
-namespace Lucky.Hr.Service
+namespace Lucky.Service
 {
     public class NewsContext : MainContext, INewsContext
     {

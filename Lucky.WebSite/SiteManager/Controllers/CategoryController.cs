@@ -7,9 +7,9 @@ using Lucky.Core;
 using Lucky.Core.Data.Specification;
 using Lucky.Core.Utility;
 using Lucky.Entity;
-using Lucky.Hr.IService;
-using Lucky.Hr.ViewModels;
-using Lucky.Hr.ViewModels.Models.News;
+using Lucky.IService;
+using Lucky.ViewModels;
+using Lucky.ViewModels.Models.News;
 
 namespace Lucky.Hr.SiteManager.Controllers
 {
