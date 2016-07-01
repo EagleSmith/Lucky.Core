@@ -138,6 +138,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AdminAuthorizeAttribute.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ControllerExtentions.cs" />
     <Compile Include="DependencyRegistrar.cs" />
     <Compile Include="FilterAttribute\StaticFilterAttribute.cs" />
     <Compile Include="HtmlExtensions\CalendarExtensions.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="HtmlExtensions\HtmlHelperExtensions.cs" />
     <Compile Include="HtmlExtensions\RadioButtonListExtensions.cs" />
     <Compile Include="HttpHandler\ComboHandler.cs" />
+    <Compile Include="JsonNetResult.cs" />
     <Compile Include="JsonpResult.cs" />
     <Compile Include="LuckyValidatorFactory.cs" />
     <Compile Include="MultipleButtonAttribute.cs" />
