@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
+using Autofac.Core;
 using Lucky.Core.Cache;
 using Lucky.Core.Cache.Memcached;
 using Lucky.Core.Cache.RedisCache;
@@ -28,8 +29,18 @@ namespace Lucky.Core.Test.Cache
         {
             EngineContext.Initialize(false);
             var builder = new ContainerBuilder();
+            
+            builder.RegisterType<DefaultCacheManager>().As<ICacheManager>().SingleInstance();
+            //.WithParameters(
+            //new[] { new ResolvedParameter((pi, i) => pi.ParameterType == typeof(Type), (pi, i) => GetType()), new ResolvedParameter((pi, i) => pi.ParameterType == typeof(ICacheHolder), (pi, i) => i.Resolve<ICacheHolder>()) }
+            //).SingleInstance();
 
-            builder.RegisterType<RedisCacheHolder>().As<ICacheHolder>().SingleInstance();
+            builder.RegisterType<DefaultCacheHolder>().As<ICacheHolder>().SingleInstance();
+            builder.RegisterType<RedisCacheManager>().As<IRedisCacheManager>()
+                .WithParameters(
+                new[] { new ResolvedParameter((pi, i) => pi.ParameterType == typeof(Type), (pi, i) => GetType()), new ResolvedParameter((pi, i) => pi.ParameterType == typeof(IRedisCacheHolder), (pi, i) => i.Resolve<IRedisCacheHolder>()) }
+                ).SingleInstance();
+            builder.RegisterType<RedisCacheHolder>().As<IRedisCacheHolder>().SingleInstance();
             builder.RegisterType<MemCacheHolder>().As<IMemCacheHolder>().SingleInstance();
             builder.RegisterType<DefaultCacheContextAccessor>().As<ICacheContextAccessor>().SingleInstance();
             builder.RegisterType<DefaultParallelCacheContext>().As<IParallelCacheContext>().SingleInstance();
@@ -56,9 +67,16 @@ namespace Lucky.Core.Test.Cache
             _container = builder.Build();
         }
         [Test]
-        public void TestGet()
+        public void TestCache()
         {
             _cacheManager = _container.Resolve<ICacheManager>(new TypedParameter(typeof(Type), GetType()));
+            var result = _cacheManager.Get("testItem_0", ctx => "testResult");
+            Console.WriteLine(result);
+        }
+        [Test]
+        public void TestGet()
+        {
+            _cacheManager = _container.Resolve<IRedisCacheManager>();
             var result = _cacheManager.Get("testItem", ctx => "testResult");
             Console.WriteLine(result);
         }

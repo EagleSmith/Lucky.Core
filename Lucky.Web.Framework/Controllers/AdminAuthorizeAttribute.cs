@@ -35,6 +35,7 @@ namespace Lucky.Web.Framework.Controllers
                 if (route != null)
                 {
                     string urlController = route.Values["controller"].ToString();
+                    string action = route.Values["action"].ToString();
                     var item=httpContext.GetOwinContext().Authentication.User.Claims;
                     
                     switch (urlController)

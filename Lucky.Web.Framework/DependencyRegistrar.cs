@@ -34,14 +34,16 @@ namespace Lucky.Web.Framework
             builder.RegisterType<PluginFinder>().As<IPluginFinder>().InstancePerLifetimeScope();
 
             #region 缓存注入
+            //本地内存缓存
             builder.RegisterModule(new CacheModule());
-            //builder.RegisterType<>().As<ICacheManager>().SingleInstance();
-            //builder.RegisterType<DefaultCacheManager>().Keyed<ICacheManager>("RedisCacheManager")
-            //    .WithParameters(
-            //    new[] { new ResolvedParameter((pi, i) => pi.ParameterType == typeof(Type), (pi, i) => GetType()), new ResolvedParameter((pi, i) => pi.ParameterType == typeof(ICacheHolder), (pi, i) => i.ResolveNamed<ICacheHolder>("RedisCache")) }
-            //    ).SingleInstance();
-            // builder.RegisterType<RedisCacheHolder>().Keyed<ICacheHolder>("RedisCache").SingleInstance();
-            builder.RegisterType<RedisCacheHolder>().As<ICacheHolder>().SingleInstance();
+            builder.RegisterType<DefaultCacheHolder>().As<ICacheHolder>().SingleInstance();
+            //分布式Redis 缓存
+            builder.RegisterType<RedisCacheManager>().As<IRedisCacheManager>()
+                .WithParameters(
+                new[] { new ResolvedParameter((pi, i) => pi.ParameterType == typeof(Type), (pi, i) => GetType()), new ResolvedParameter((pi, i) => pi.ParameterType == typeof(IRedisCacheHolder), (pi, i) => i.Resolve<IRedisCacheHolder>()) }
+                ).SingleInstance();
+            builder.RegisterType<RedisCacheHolder>().As<IRedisCacheHolder>().SingleInstance();
+
             builder.RegisterType<DefaultCacheContextAccessor>().As<ICacheContextAccessor>().SingleInstance();
             builder.RegisterType<DefaultParallelCacheContext>().As<IParallelCacheContext>().SingleInstance();
             builder.RegisterType<DefaultAsyncTokenProvider>().As<IAsyncTokenProvider>().SingleInstance();

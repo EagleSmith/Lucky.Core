@@ -8,7 +8,12 @@ using StackExchange.Redis.Extensions.Core;
 
 namespace Lucky.Core.Cache.RedisCache
 {
-    public class RedisCacheHolder : ICacheHolder
+
+    public interface IRedisCacheHolder : ICacheHolder
+    {
+
+    }
+    public class RedisCacheHolder : IRedisCacheHolder
     {
         private readonly ICacheContextAccessor _cacheContextAccessor;
         private readonly ConcurrentDictionary<CacheKey, object> _caches = new ConcurrentDictionary<CacheKey, object>();
