@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Core;
 using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
 using Lucky.Core.Cache;
 using Lucky.Core.Cache.RedisCache;
 using Lucky.Core.Data.Dapper;
@@ -30,6 +32,8 @@ namespace Lucky.Web.Framework
         {
             //注册控制器
             builder.RegisterControllers(typeFinder.GetAssemblies().ToArray());
+            //注册Web Api
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             //插件
             builder.RegisterType<PluginFinder>().As<IPluginFinder>().InstancePerLifetimeScope();
 

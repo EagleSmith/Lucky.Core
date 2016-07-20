@@ -4,9 +4,11 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
 using Lucky.Core.Configuration;
 using Lucky.Core.Infrastructure.DependencyManagement;
 
@@ -86,6 +88,8 @@ namespace Lucky.Core.Infrastructure
 
 
             this._containerManager = new ContainerManager(container);
+            //注册API 注入
+            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
             //set dependency resolver
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
