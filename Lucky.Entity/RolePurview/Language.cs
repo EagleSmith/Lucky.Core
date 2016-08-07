@@ -9,7 +9,7 @@ namespace Lucky.Entity
         public int ResumeId { get; set; }
         public string LanguageType { get; set; }
         public string SkillLevel { get; set; }
-        public string Cert { get; set; }
+        public string Cert { get; set; } 
         public System.DateTime AddDate { get; set; }
         public virtual Resume Resume { get; set; }
     }

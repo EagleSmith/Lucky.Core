@@ -1,0 +1,15 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/Lucky.ApiService/obj/Debug
+/Lucky.GridMvc/obj/Debug
+/Lucky.IService/obj/Debug
+/Lucky.MvcPager/obj/Debug
+/Lucky.Service/obj/Debug
+/Lucky.ViewModels/obj/Debug
+/Lucky.Web.Framework/obj/Debug
+/Lucky.WebSite/obj/Debug
+/Lucky.WebSite/SiteManager/obj/Debug
+/Lucky.Core/obj/Debug
+/Lucky.Entity/obj/Debug
