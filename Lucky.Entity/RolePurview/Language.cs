@@ -5,6 +5,9 @@ namespace Lucky.Entity
 {
     public partial class Language
     {
+        /// <summary>
+        /// ±àºÅ
+        /// </summary>
         public int LanguageId { get; set; }
         public int ResumeId { get; set; }
         public string LanguageType { get; set; }
