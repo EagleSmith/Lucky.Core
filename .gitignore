@@ -13,3 +13,6 @@
 /Lucky.WebSite/SiteManager/obj/Debug
 /Lucky.Core/obj/Debug
 /Lucky.Entity/obj/Debug
+/Lucky.ApiService/bin
+/packages
+/Lucky.ApiService/Lucky.ApiService.csproj.user
