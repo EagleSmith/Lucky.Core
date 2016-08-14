@@ -16,3 +16,13 @@
 /Lucky.ApiService/bin
 /packages
 /Lucky.ApiService/Lucky.ApiService.csproj.user
+/Lucky.Core/bin/Debug
+/Lucky.Core.Test/bin/Debug
+/Lucky.Core.Test/obj/Debug
+/Lucky.Entity/bin/Debug
+/Lucky.IService/bin/Debug
+/Lucky.Service/bin/Debug
+/Lucky.ViewModels/bin/Debug
+/Lucky.Web.Framework/bin/Debug
+/Lucky.WebSite/bin
+/Lucky.WebSite/SiteManager/bin

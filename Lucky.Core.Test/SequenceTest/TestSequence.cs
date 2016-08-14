@@ -228,5 +228,24 @@ namespace Lucky.Core.Test.SequenceTest
             _output.WriteLine(formatter, argument,
                 BitConverter.ToString(byteArray));
         }
+        [Fact]
+        public void TestOtherEpoch()
+        {
+            var date=new DateTime(1985,1,1);
+            var id=new Id64Generator(ConvertDataTimeLong(date), 1,1);
+            _output.WriteLine(id.GenerateId().ToString());
+
+            var date1 = new DateTime(1986, 1, 1);
+            var id1 = new Id64Generator(ConvertDataTimeLong(date1), 2, 1);
+            _output.WriteLine(id1.GenerateId().ToString());
+        }
+        public  long ConvertDataTimeLong(DateTime dt)
+        {
+            DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            TimeSpan toNow = DateTime.Now.Subtract(dtStart);
+            long timeStamp = toNow.Ticks;
+            timeStamp = long.Parse(timeStamp.ToString().Substring(0, timeStamp.ToString().Length - 7));
+            return timeStamp;
+        }
     }
 }

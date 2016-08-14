@@ -24,8 +24,13 @@ namespace Lucky.Core.Utility.Sequence
         /// </summary>
         private static readonly DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         // 基准时间
-        private const long Epoch = 1351606710465L;
+        private  long _epoch = 1351606710465L;
 
+        public long Epoch
+        {
+            get { return _epoch; }
+            set { _epoch = value; }
+        }
         /// <summary>
         /// Number of bits allocated for a worker id in the generated identifier. 5 bits indicates values from 0 to 31
         /// </summary>
@@ -113,8 +118,9 @@ namespace Lucky.Core.Utility.Sequence
             }
         }
 
-        public Id64Generator(int workerId, int datacenterId, int sequence = 0)
+        public Id64Generator(long epoch,int workerId, int datacenterId, int sequence = 0)
         {
+            _epoch = epoch;
             // sanity check for workerId
             if (workerId > MaxWorkerId || workerId < 0)
             {
@@ -185,11 +191,7 @@ namespace Lucky.Core.Utility.Sequence
 
         #endregion Private Properties
 
-        #region Public Methods
-        #endregion Public Methods
-
-        #region Private Static Methods
-        #endregion Private Static Methods
+        
 
         #region Private Methods
 
