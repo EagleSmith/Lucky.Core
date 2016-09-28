@@ -26,3 +26,7 @@
 /Lucky.Web.Framework/bin/Debug
 /Lucky.WebSite/bin
 /Lucky.WebSite/SiteManager/bin
+/Lucky.GridMvc/bin/Debug
+/Lucky.MvcPager/bin/Debug
+/Lucky.WebSite/Lucky.WebSite.csproj.user
+/Lucky.WebSite/logs/Logs/2016-09-28.txt
