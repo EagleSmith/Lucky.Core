@@ -22,7 +22,10 @@ using Microsoft.Owin.Security;
 
 namespace Lucky.WebSite.Controllers
 {
-    public class HomeController : Controller
+    /// <summary>
+    /// 真正使用的controller在sitemanager里面。这里改成Homebase
+    /// </summary>
+    public class HomeBaseController : Controller
     {
         private ICacheManager _cacheManager;
         public ILogger _Logger;
@@ -31,7 +34,7 @@ namespace Lucky.WebSite.Controllers
         private IHrDbContext _dbContext;
         private INewsArticlesService _articlesRepository;
 
-        public HomeController(
+        public HomeBaseController(
             ICacheManager cacheManager,
             ILogger logger,
             IAreaService areaService,

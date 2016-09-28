@@ -15,7 +15,7 @@
     <AssemblyName>Lucky.Hr.WebSite</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -168,6 +168,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\LoggingFilter.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Content\ueditor1_4_3\net\App_Code\Config.cs" />
     <Compile Include="Content\ueditor1_4_3\net\App_Code\ConfigHandler.cs" />
@@ -1007,7 +1008,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>14723</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:14723/</IISUrl>
+          <IISUrl>http://localhost/Lucky.WebSite</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:14723/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
